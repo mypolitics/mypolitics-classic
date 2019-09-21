@@ -1,0 +1,13 @@
+.loading {
+  display: flex;
+  align-items: center;
+  svg {
+    height: 2rem;
+    padding-right: 1.2rem;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}

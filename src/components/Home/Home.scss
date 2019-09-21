@@ -1,0 +1,16 @@
+.home {
+  margin-top: 80px;
+
+  &__section {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+
+    & > div {
+      max-width: 1200px;
+      width: 100%;
+    }
+  }
+}

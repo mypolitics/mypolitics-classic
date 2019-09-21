@@ -1,0 +1,36 @@
+.home__hero {
+  background: #00b4db;
+  background: -webkit-linear-gradient(to right, #00b4db, #0083b0);
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  height: 80vh;
+  &__container {
+    padding: 1rem;
+  }
+  &__title {
+    color: #fafafa;
+    margin: 0;
+    padding-bottom: 3rem;
+    line-height: 1.2;
+  }
+  &__btn {
+    border: 0;
+    background: #fafafa;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      color: #00b4db;
+      transform: scale(1.05);
+    }
+    &:active {
+      color: #00b4db;
+      transform: scale(1.025);
+    }
+  }
+}

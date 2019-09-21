@@ -1,0 +1,27 @@
+.test {
+  &__nav {
+    margin-top: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    &__btn {
+      border: 0;
+      padding: 1rem;
+      width: 100%;
+      background: #f5f5f5;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      &--red {
+        color: #d24d57;
+      }
+      svg {
+        padding-right: 0.75rem;
+      }
+      &:hover {
+        filter: brightness(95%);
+      }
+    }
+  }
+}

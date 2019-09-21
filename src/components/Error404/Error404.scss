@@ -1,0 +1,34 @@
+.e404 {
+  margin: auto;
+  margin-top: 80px;
+  padding: 1rem;
+  display: grid;
+  max-width: 40rem;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background: #ececec;
+    border-radius: 0.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__link {
+    background: #00b4db;
+    background: -webkit-linear-gradient(to right, #00b4db, #0083b0);
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    padding: 1rem;
+    font-weight: 600;
+    border: 0;
+    border-radius: 0.5rem;
+    color: #fafafa;
+    width: calc(100% - 2rem);
+    text-align: center;
+    text-decoration: none;
+  }
+}

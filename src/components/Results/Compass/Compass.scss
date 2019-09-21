@@ -1,0 +1,81 @@
+@mixin chart($height) {
+  grid-template-columns: $height calc(100% - #{$height});
+
+  &__chart {
+    position: relative;
+    height: $height;
+    width: $height;
+    img {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      display: block;
+      width: $height;
+      height: $height;
+    }
+  }
+
+  &__info {
+    $padding: $height / 4;
+    grid-gap: $padding / 2;
+    width: calc(100% - #{$padding * 2});
+    padding: $padding / 6 $padding;
+    @media only screen and (min-width: 400px) {
+      padding: $padding / 2 $padding;
+    }
+  }
+}
+
+.compass {
+  @include chart(6rem) display: grid;
+  margin: auto;
+  width: 100%;
+
+  &__point {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    background: #e74c3c;
+    border: 2px solid #333;
+    position: absolute;
+    top: calc(50% - 0.5rem - 4px);
+    left: calc(50% - 0.5rem - 2px);
+  }
+
+  &__info {
+    display: grid;
+    overflow: hidden;
+    background: #f5f5f5;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    &__el {
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      font-weight: 600;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    &__value {
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .compass {
+    &__info__el {
+      flex-direction: row;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .compass {
+    @include chart(10rem) &__info__el {
+      font-size: 1.2rem;
+    }
+  }
+}

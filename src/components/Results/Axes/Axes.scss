@@ -1,0 +1,47 @@
+.axes {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    color: #fafafa;
+    &.big {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+  }
+
+  &__bars {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+    &--grey {
+      background: #fafafa;
+      color: #111;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}

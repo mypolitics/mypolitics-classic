@@ -1,0 +1,41 @@
+.home__stats {
+  padding: 2rem 1rem;
+
+  &__title {
+    color: #111;
+    margin: 0;
+    padding-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  &__list {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  &__el {
+    background: #fafafa;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    &__value {
+      padding: 2rem 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &__info {
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #fafafa;
+      background: #00b4db;
+      background: linear-gradient(to right, #00b4db, #0083b0);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home__stats {
+    padding: 2rem;
+  }
+}

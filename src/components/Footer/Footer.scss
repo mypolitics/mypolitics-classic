@@ -1,0 +1,27 @@
+.home__footer {
+  background: #f5f5f5;
+  color: #111;
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem;
+  svg {
+    &:first-child {
+      color: #c3272b;
+    }
+  }
+  a {
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+}

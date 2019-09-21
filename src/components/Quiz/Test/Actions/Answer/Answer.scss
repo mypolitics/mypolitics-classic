@@ -1,0 +1,40 @@
+.test__answer {
+  border: 0;
+  padding: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  &--darkgreen {
+    color: #fafafa;
+    background: #16a085;
+  }
+
+  &--green {
+    color: #fafafa;
+    background: #2abb9b;
+  }
+
+  &--grey {
+    color: #111;
+    background: #ececec;
+  }
+
+  &--red {
+    color: #fafafa;
+    background: #d24d57;
+  }
+
+  &--darkred {
+    color: #fafafa;
+    background: #d64541;
+  }
+
+  &:disabled {
+    filter: brightness(80%);
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+}

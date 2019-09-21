@@ -1,0 +1,8 @@
+.test {
+  margin-top: 80px;
+  padding: 1rem;
+  &__answers {
+    display: flex;
+    flex-direction: column;
+  }
+}

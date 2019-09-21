@@ -1,0 +1,72 @@
+.intro {
+  margin-top: 80px;
+  padding: 1rem;
+  display: grid;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background: #ececec;
+    border-radius: 0.5rem;
+  }
+
+  &__info {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #f5f5f5;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+    & > span {
+      color: #00b4db;
+    }
+    & > ol {
+      list-style: none;
+      padding-left: 2.75rem;
+      font-weight: 600;
+      counter-reset: counter;
+      & > li {
+        &:before {
+          content: counter(counter);
+          counter-increment: counter;
+          font-weight: 700;
+          color: #fafafa;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          text-align: center;
+          margin-bottom: -2rem;
+          margin-left: -2.75rem;
+          margin-right: 0.75rem;
+          width: 1rem;
+          display: table;
+          background: #00b4db;
+          background: linear-gradient(to right, #00b4db, #0083b0);
+        }
+
+        b {
+          font-weight: 700;
+        }
+
+        &:not(:last-child) {
+          padding-bottom: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    background: #00b4db;
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    padding: 1rem;
+    font-weight: 600;
+    border: 0;
+    border-radius: 0.5rem;
+    color: #fafafa;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

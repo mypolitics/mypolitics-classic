@@ -1,0 +1,51 @@
+.ideology {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    background: #f5f5f5;
+  }
+  &__btn {
+    padding: 1rem;
+    width: 1.5rem;
+    background: #ececec;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #111;
+  }
+
+  &__more {
+    background: #ececec;
+    &__accuracy {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      color: #2ecc71;
+      span {
+        font-weight: 700;
+      }
+    }
+    &__link {
+      padding: 1rem;
+      display: block;
+      text-align: center;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      background: #e4e4e4;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.app {
+  font-family: Montserrat;
+  color: #111;
+
+  &__router {
+    transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &.block--blur {
+      transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+  }
+}
