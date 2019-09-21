@@ -5,7 +5,7 @@
 
 # mypolitics
 
-mypolitics is a political test showing your views on seven axes and a compass. Made with React, Redux, SCSS and TypeScript.
+mypolitics is a political test showing your views on seven axes and a political compass. Made with React, Redux, SCSS and TypeScript.
 
 ![logo](https://user-images.githubusercontent.com/10941338/65378407-196a4980-dcb8-11e9-8562-fb4e53a7b355.png)
 
