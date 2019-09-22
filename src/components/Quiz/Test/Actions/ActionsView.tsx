@@ -14,13 +14,14 @@ library.add(faArrowLeft, faUndo);
 export type Props = {
   question: Question
   loading: boolean
+  resetInitialized?: boolean
   previousQuestion?: Function
-  clearQuizData?: Function
+  clearAnswers?: Function
 };
 
 const ActionsView: React.FC<Props> = (props) => {
   const {
-    question, loading, previousQuestion, clearQuizData,
+    question, loading, previousQuestion, clearAnswers, resetInitialized
   } = props;
   return (
     <div className="test__actions">
@@ -49,10 +50,15 @@ const ActionsView: React.FC<Props> = (props) => {
           className="test__nav__btn test__nav__btn--red"
           type="button"
           disabled={question.index === 0}
-          onClick={() => (clearQuizData ? clearQuizData() : null)}
+          onClick={() => (clearAnswers ? clearAnswers() : null)}
         >
-          <FaIcon icon={faUndo} />
-          Resetuj
+          {!resetInitialized && (
+            <div>
+              <FaIcon icon={faUndo} />
+              Cofnij do początku
+            </div>
+          )}
+          {resetInitialized && "Potwierdzam"}
         </button>
       </div>
       <Effects
