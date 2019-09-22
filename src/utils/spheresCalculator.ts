@@ -13,7 +13,6 @@ const calcEconomicsSphere = (axes: AxesResults): number => {
   const econAxesSides = axesSides.slice(0, 1);
 
   const econLeft = econAxesSides.map((side) => axes[side.left]);
-
   const econRight = econAxesSides.map((side) => axes[side.right]);
 
   const econLeftAverage = average(econLeft);
@@ -29,7 +28,6 @@ const calcSocialSphere = (axes: AxesResults): number => {
   const socialAxesSides = axesSides.slice(2);
 
   const socialLeft = socialAxesSides.map((side) => axes[side.left]);
-
   const socialRight = socialAxesSides.map((side) => axes[side.right]);
 
   const socialLeftAverage = average(socialLeft);

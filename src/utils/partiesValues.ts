@@ -53,7 +53,7 @@ export const parties: Party[] = [
     logo: Konfederacja,
     spheresValues: {
       economics: 0.9,
-      social: 0.75,
+      social: 0.6,
     },
     links: {
       www: 'https://konfederacja.net/',
@@ -76,7 +76,7 @@ export const parties: Party[] = [
     name: 'Polskie Stronnictwo Ludowe',
     logo: Psl,
     spheresValues: {
-      economics: -0.2,
+      economics: 0.1,
       social: 0.1,
     },
     links: {
@@ -98,7 +98,7 @@ export const parties: Party[] = [
     },
   },
   {
-    name: 'Sld',
+    name: 'Sojusz Lewicy Demokratycznej',
     logo: Sld,
     spheresValues: {
       economics: -0.5,
