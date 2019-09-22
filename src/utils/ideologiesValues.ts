@@ -296,7 +296,7 @@ export default [
   {
     spheresValues: {
       economics: 0.9,
-      social: 1
+      social: -1
     },
   }
 ];
