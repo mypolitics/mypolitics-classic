@@ -1,14 +1,13 @@
 import * as React from 'react';
 
 import './Party.scss';
-import { Results } from 'store/results/types';
+import { SpheresType } from 'utils/spheresCalculator';
 import { findParty } from 'utils/partyFinder';
 import { Party as PartyType } from 'utils/partiesValues';
-import { calcSpheresResults } from 'utils/spheresCalculator';
 import PartyView from './PartyView';
 
 type Props = {
-  results: Results
+  spheresResults: SpheresType
 };
 
 type State = {
@@ -25,8 +24,7 @@ class Party extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    const { results } = this.props;
-    const spheresResults = calcSpheresResults(results);
+    const { spheresResults } = this.props;
     const party = findParty({
       economics: spheresResults.economics,
       social: spheresResults.social,

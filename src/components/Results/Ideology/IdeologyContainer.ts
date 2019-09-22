@@ -2,11 +2,11 @@ import React from 'react';
 
 import './Ideology.scss';
 import findIdeology from 'utils/ideologyFinder';
-import { Results } from 'store/results/types';
+import { SpheresType } from 'utils/spheresCalculator';
 import IdeologyView, { Props as State } from './IdeologyView';
 
 interface Props {
-  results: Results;
+  spheresResults: SpheresType;
 }
 
 class Ideology extends React.Component<Props, State> {
@@ -19,11 +19,11 @@ class Ideology extends React.Component<Props, State> {
   }
 
   async componentDidMount(): Promise<void> {
-    const { results } = this.props;
-    const ideologyData = findIdeology(results);
+    const { spheresResults } = this.props;
+    const ideology = findIdeology(spheresResults);
 
     this.setState({
-      ideology: ideologyData.name,
+      ideology: ideology
     });
   }
 

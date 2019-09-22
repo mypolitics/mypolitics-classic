@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import myPoliticsResultsThumbnail from 'assets/images/thumbnails/mypolitics-results.png';
 import LoadingInfo from 'components/LoadingInfo';
 import { Results } from 'store/results/types';
-import myPoliticsResultsThumbnail from 'assets/images/thumbnails/mypolitics-results.png';
+import { SpheresType } from 'utils/spheresCalculator';
 import Axes from './Axes';
 import Ideology from './Ideology';
 import Compass from './Compass';
@@ -13,12 +14,13 @@ import Actions from './Actions';
 type Props = {
   loading: boolean
   results: Results
+  spheresResults: SpheresType
 };
 
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
 const ResultsView: React.FC<Props> = (props) => {
-  const { loading, results } = props;
+  const { loading, results, spheresResults } = props;
   return (
     <main className="results">
       <Helmet>
@@ -28,7 +30,7 @@ const ResultsView: React.FC<Props> = (props) => {
         <meta property="og:description" content="Sprawdź moje wyniki w teście politycznym myPolitics!" />
         <meta property="og:image" content={myPoliticsResultsThumbnail} />
       </Helmet>
-      {!loading && results && (
+      {!loading && spheresResults && (
         <div>
           <h1 className="results__title">
             Wyniki z
@@ -44,9 +46,9 @@ const ResultsView: React.FC<Props> = (props) => {
               <Axes results={results} />
             </div>
             <div className="results__inner__column">
-              <Ideology results={results} />
-              <Compass results={results} />
-              <Party results={results} />
+              <Ideology spheresResults={spheresResults} />
+              <Compass spheresResults={spheresResults} />
+              <Party spheresResults={spheresResults} />
             </div>
           </div>
           <Actions />

@@ -1,12 +1,11 @@
 import React from 'react';
 
 import './Compass.scss';
-import { SpheresType, calcSpheresResults } from 'utils/spheresCalculator';
-import { Results } from 'store/results/types';
+import { SpheresType } from 'utils/spheresCalculator';
 import CompassView from './CompassView';
 
 type Props = {
-  results: Results
+  spheresResults: SpheresType
 };
 
 type State = SpheresType;
@@ -22,8 +21,7 @@ class Compass extends React.Component<Props, State> {
   }
 
   async componentDidMount() {
-    const { results } = this.props;
-    const spheresResults = await calcSpheresResults(results);
+    const { spheresResults } = this.props;
 
     this.setState({
       economics: spheresResults.economics,
