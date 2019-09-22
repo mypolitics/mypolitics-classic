@@ -2,6 +2,7 @@
   "name": "mypolitics",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://mypolitics.orlow.me/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
