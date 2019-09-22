@@ -36,7 +36,7 @@ const Axis: React.FC<Props> = (props) => {
         <div
           className="axis__bar axis__bar--grey"
           style={{
-            width: `${widths.center}%`,
+            width: `${widths.center + 1}%`,
           }}
         >
           {widths.center > 20 && `${widths.center}%`}
