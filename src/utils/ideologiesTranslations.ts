@@ -3,85 +3,85 @@ export default [
     lang: 'pl-PL',
     values: [
       {
-        name: 'NOT_FOUND',
-      },
-      {
-        name: 'Anarcho-komunizm',
-      },
-      {
-        name: 'Komunizm libertariański',
-      },
-      {
-        name: 'Trockizm',
-      },
-      {
-        name: 'Marksizm',
-      },
-      {
-        name: 'De Leonizm',
+        name: 'Maoizm',
       },
       {
         name: 'Leninizm',
       },
       {
-        name: 'Stalinizm/Maoizm',
+        name: 'Trockizm',
       },
       {
-        name: 'Religijny komunizm',
+        name: 'Klasyczny marksizm',
       },
       {
-        name: 'Socjalizm państwowy',
+        name: 'Neokomunizm',
       },
       {
-        name: 'Teokratyczny socjalizm',
+        name: 'Anarcho-komunizm',
       },
       {
-        name: 'Religijny socjalizm',
-      },
-      {
-        name: 'Socjalizm demokratyczny',
+        name: 'Stalinizm',
       },
       {
         name: 'Socjalizm rewolucyjny',
       },
       {
-        name: 'Socjalizm libertariański',
+        name: 'Konserwatywny socjalizm',
       },
       {
-        name: 'Syndykalizm',
-      },
-      {
-        name: 'Populizm lewicowy',
-      },
-      {
-        name: 'Dystrybucjonizm teokratyczny',
-      },
-      {
-        name: 'Dystrybucjonizm',
-      },
-      {
-        name: 'Sojalliberalizm',
-      },
-      {
-        name: 'Chrześcijańska demokracja',
+        name: 'Socjalizm utopijny',
       },
       {
         name: 'Socjaldemokracja',
       },
       {
-        name: 'Progresywizm',
+        name: 'Socjalliberalizm',
       },
       {
-        name: 'Anarcho-mutualizm',
+        name: 'Zielony socjalizm',
       },
       {
-        name: 'Narodowy totalitaryzm',
+        name: 'Nowa lewica',
       },
       {
-        name: 'Międzynarodowy totalitaryzm',
+        name: 'Anarcho-prymitywizm',
       },
       {
-        name: 'Technokracja',
+        name: 'Syndykalizm',
+      },
+      {
+        name: 'Nazizm',
+      },
+      {
+        name: 'Faszyzm',
+      },
+      {
+        name: 'Lewicowy nacjonalizm',
+      },
+      {
+        name: 'Etatyzm',
+      },
+      {
+        name: 'Socjalizm rynkowy',
+      },
+      {
+        name: 'Solidaryzm',
+      },
+      {
+        name: 'Reformizm',
+      },
+      {
+        name: 'Liberalny socjalizm',
+      },
+      {
+        name: 'Ekologizm',
+      },
+      {
+        name: 'Geolibertarianizm',
+      },
+      {
+        name: 'Mutualizm',
       },
       {
         name: 'Centryzm',
@@ -90,77 +90,68 @@ export default [
         name: 'Liberalizm',
       },
       {
-        name: 'Religijny anarchizm',
+        name: 'Frankizm',
       },
       {
-        name: 'Prawicowy populizm',
+        name: 'Nacjonalizm klasyczny',
       },
       {
-        name: 'Umiarkowany konserwatyzm',
+        name: 'Tradycjonalizm',
       },
       {
-        name: 'Reakcjonizm',
+        name: 'Konserwatyzm ewolucyjny',
       },
       {
-        name: 'Socjallibertarianizm',
+        name: 'Progresywizm',
       },
       {
-        name: 'Libertarianizm',
+        name: 'Aktywizm',
       },
       {
-        name: 'Anarcho-egoizm',
-      },
-      {
-        name: 'Nazizm',
-      },
-      {
-        name: 'Autokracja',
-      },
-      {
-        name: 'Faszyzm',
-      },
-      {
-        name: 'Faszyzm kapitalistyczny',
-      },
-      {
-        name: 'Konserwatyzm',
-      },
-      {
-        name: 'Neoliberalizm',
-      },
-      {
-        name: 'Liberalizm klasyczny',
-      },
-      {
-        name: 'Kapitalizm autorytarny',
-      },
-      {
-        name: 'Kapitalizm państwowy',
+        name: 'Anarchoindywidualizm',
       },
       {
         name: 'Neokonserwatyzm',
       },
       {
-        name: 'Fundamentalizm',
+        name: 'Republikanizm',
       },
       {
-        name: 'Kapitalizm libertariański',
+        name: 'Liberalizm klasyczny',
       },
       {
-        name: 'Anarchizm rynkowy',
+        name: 'Minarchizm',
       },
       {
-        name: 'Obiektywizm',
+        name: 'Zielony libertarianizm',
       },
       {
-        name: 'Kapitalizm totalitarny',
+        name: 'Agoryzm',
       },
       {
-        name: 'Ultrakapitalizm',
+        name: 'Kapitalizm dyktatorski',
       },
       {
-        name: 'Anarchokapitalizm',
+        name: 'Nacjonalizm wolnorynkowy',
       },
+      {
+        name: 'Paleokonserwatyzm',
+      },
+      {
+        name: 'Konserwatywny liberalizm',
+      },
+      {
+        name: 'Paleolibertarianizm',
+      },
+      {
+        name: 'Neolibertarianizm',
+      },
+      {
+        name: 'Anarcho-kapitalizm',
+      },
+      {
+        name: 'Propertarianizm',
+      }
     ],
   },
 ];

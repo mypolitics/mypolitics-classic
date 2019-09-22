@@ -1,66 +1,35 @@
-import { Results } from 'store/results/types';
-import ideologiesValues from './ideologiesValues';
+import { SpheresType } from './spheresCalculator';
+import ideologies from './ideologiesValues';
 import ideologiesTranslations from './ideologiesTranslations';
 
-const getClosestIdeologyIndexAndAccuracy = (results: Results) => {
-  const {
-    communism,
-    capitalism,
-    interventionism,
-    laissezfaire,
-    anarchism,
-    pacifism,
-    progressivism,
-  } = results.axes;
-  const communismAndInterventionism = (communism
-      + (100 - (capitalism + communism)) / 3
-      + (interventionism + (100 - (laissezfaire + interventionism)) / 3))
-    / 2;
-
-  let ideologyIndex = 0;
-  let accuracy = 0;
-  let longestIdeologyDistance = 0;
+const findIdeologyIndex = (spheresValues: SpheresType): number => {
+  let closestIdeologyIndex = 0;
   let shortestIdeologyDistance = Infinity;
 
-  for (let i = 0; i < ideologiesValues.length; i++) {
-    const ideology = ideologiesValues[i];
+  for (let i = 0; i < ideologies.length; i++) {
+    const ideology = ideologies[i];
     let presentIdeologyDistance = 0;
 
     presentIdeologyDistance
       += Math.abs(
-        ideology.values.communismAndInterventionism
-          - communismAndInterventionism,
+        ideology.spheresValues.economics - spheresValues.economics,
       ) ** 2;
 
     presentIdeologyDistance
-      += Math.abs(ideology.values.anarchism - anarchism) ** 2;
-
-    presentIdeologyDistance
-      += Math.abs(ideology.values.pacifism - pacifism) ** 1.74;
-
-    presentIdeologyDistance
-      += Math.abs(ideology.values.progressivism - progressivism) ** 1.74;
-
-    if (longestIdeologyDistance === 0) {
-      longestIdeologyDistance = presentIdeologyDistance;
-    }
+      += Math.abs(
+        ideology.spheresValues.social - spheresValues.social,
+      ) ** 2;
 
     if (presentIdeologyDistance < shortestIdeologyDistance) {
-      ideologyIndex = ideologiesValues.indexOf(ideology);
-      accuracy = Math.floor(
-        100 - presentIdeologyDistance / longestIdeologyDistance,
-      );
+      closestIdeologyIndex = i;
       shortestIdeologyDistance = presentIdeologyDistance;
     }
-  }
-
-  return {
-    index: ideologyIndex + 1,
-    accuracy,
   };
+
+  return closestIdeologyIndex;
 };
 
-const getIdeologyNameByIndex = (index: number, lang: string) => {
+const getIdeologyNameByIndex = (index: number, lang: string): string => {
   const localeIdeologies = ideologiesTranslations.find(
     (ideologies) => ideologies.lang === lang,
   );
@@ -70,15 +39,11 @@ const getIdeologyNameByIndex = (index: number, lang: string) => {
   return 'NOT_FOUND';
 };
 
-const findIdeology = (results: Results) => {
-  const ideologyIndexAndAccuracy = getClosestIdeologyIndexAndAccuracy(results);
-  const ideologyIndex = ideologyIndexAndAccuracy.index;
+const findIdeology = (spheresValues: SpheresType): string => {
+  const ideologyIndex = findIdeologyIndex(spheresValues);
   const ideologyName = getIdeologyNameByIndex(ideologyIndex, 'pl-PL');
 
-  return {
-    name: ideologyName,
-    accuracy: ideologyIndexAndAccuracy.accuracy,
-  };
+  return ideologyName
 };
 
 export default findIdeology;
