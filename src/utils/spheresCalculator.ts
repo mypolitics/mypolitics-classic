@@ -13,13 +13,8 @@ const calcEconomicsSphere = (axes: AxesResults): number => {
   const econAxesSides = axesSides.slice(0, 1);
 
   const econLeft = econAxesSides.map((side) => axes[side.left]);
-  const econRight = econAxesSides.map((side) => axes[side.right]);
-
   const econLeftAverage = average(econLeft);
-  const econRightAverage = average(econRight);
-  const econAverageMax = econLeftAverage + econRightAverage;
-
-  const econScore = 1 - 2 * (econLeftAverage / econAverageMax);
+  const econScore = 1 - 2 * (econLeftAverage / 100);
 
   return econScore;
 };
@@ -28,13 +23,8 @@ const calcSocialSphere = (axes: AxesResults): number => {
   const socialAxesSides = axesSides.slice(2);
 
   const socialLeft = socialAxesSides.map((side) => axes[side.left]);
-  const socialRight = socialAxesSides.map((side) => axes[side.right]);
-
   const socialLeftAverage = average(socialLeft);
-  const socialRightAverage = average(socialRight);
-  const socialAverageMax = socialLeftAverage + socialRightAverage;
-
-  const socialScore = 1 - 2 * (socialLeftAverage / socialAverageMax);
+  const socialScore = 1 - 2 * (socialLeftAverage / 100);
 
   return socialScore;
 };
