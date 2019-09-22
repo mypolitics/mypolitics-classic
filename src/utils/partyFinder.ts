@@ -5,7 +5,8 @@ export const findParty = (spheresValues: SpheresType): Party | null => {
   let closestParty = null;
   let shortestPartyDistance = Infinity;
 
-  parties.forEach((party) => {
+  for (let i = 0; i < parties.length; i++) {
+    const party = parties[i];
     let presentPartyDistance = 0;
 
     presentPartyDistance
@@ -22,7 +23,7 @@ export const findParty = (spheresValues: SpheresType): Party | null => {
       closestParty = party;
       shortestPartyDistance = presentPartyDistance;
     }
-  });
+  };
 
   return closestParty;
 };
