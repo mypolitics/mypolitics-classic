@@ -45,21 +45,6 @@ class QuizActions extends React.Component<Props, State> {
 
   previousQuestion(): void {
     const { question, getAndSetQuestionByIndex } = this.props;
-    const { resetInitialized } = this.state;
-
-    if (!resetInitialized) {
-      this.setState({
-        resetInitialized: true
-      })
-
-      setTimeout(() => {
-        this.setState({
-          resetInitialized: false
-        })
-      }, 1000)
-    } else {
-    }
-
     getAndSetQuestionByIndex(question.index - 1);
   }
 
