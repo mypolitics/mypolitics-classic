@@ -144,7 +144,7 @@ export default [
         name: 'Paleolibertarianizm',
       },
       {
-        name: 'Neolibertarianizm',
+        name: 'Libertarianizm',
       },
       {
         name: 'Anarcho-kapitalizm',
