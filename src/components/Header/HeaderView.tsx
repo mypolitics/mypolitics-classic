@@ -6,7 +6,7 @@ import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Header.scss';
 import Nav from './Nav';
-import Logo from '../Logo';
+import { ReactComponent as Logo } from 'assets/vectors/logo.svg';
 
 library.add(faBars, faTimes);
 
@@ -22,7 +22,7 @@ export const HeaderView: React.FC<Props> = (props) => {
     <header className="header">
       <div className="header__container">
         <Link to="/">
-          <Logo className="app__logo" modern />
+          <Logo />
         </Link>
         <button className="header__nav__btn" type="button" onClick={() => toggleNav()}>
           {!showNav && <FaIcon icon={faBars} />}
