@@ -2,7 +2,7 @@
   "name": "mypolitics",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://mypolitics.orlow.me/",
+  "homepage": "http://mypolitics.orlow.me/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
@@ -16,6 +16,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.0.2",
     "react-router-dom": "^5.0.0",
