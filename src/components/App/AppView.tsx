@@ -3,7 +3,6 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import ReactGA from 'react-ga';
 
 import './App.scss';
 import Header from 'components/Header';
@@ -14,10 +13,7 @@ import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
 import myPoliticsMainThumbnail from 'assets/images/thumbnails/mypolitics.png';
-import { GA_TRACKING_ID } from 'config/index';
 
-ReactGA.initialize(GA_TRACKING_ID);
-ReactGA.pageview(window.location.href.split('/#/')[1] || '/');
 library.add(faBars, faTimes);
 
 const App: React.FC = () => (
