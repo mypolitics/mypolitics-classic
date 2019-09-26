@@ -39,7 +39,7 @@
     border-bottom-right-radius: 0.5rem;
   }
 
-  &:hover {
-    filter: brightness(90%);
+  &:hover:not(:disabled) {
+    filter: brightness(95%);
   }
 }
