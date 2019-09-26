@@ -3,6 +3,7 @@
   padding: 1.25rem;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 
   &--darkgreen {
     color: #fafafa;
@@ -36,5 +37,9 @@
   &:last-child {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+  }
+
+  &:hover {
+    filter: brightness(90%);
   }
 }
