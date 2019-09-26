@@ -18,8 +18,8 @@ class QuizActions extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      resetInitialized: false
-    }
+      resetInitialized: false,
+    };
 
     this.clearAnswers = this.clearAnswers.bind(this);
     this.previousQuestion = this.previousQuestion.bind(this);
@@ -31,18 +31,18 @@ class QuizActions extends React.Component<Props, State> {
 
     if (!resetInitialized) {
       this.setState({
-        resetInitialized: true
-      })
+        resetInitialized: true,
+      });
 
       setTimeout(() => {
         this.setState({
-          resetInitialized: false
-        })
-      }, 1000)
+          resetInitialized: false,
+        });
+      }, 1000);
     } else {
       ReactGA.event({
         category: 'Quiz',
-        action: 'Resetted'
+        action: 'Resetted',
       });
 
       clearQuizData();

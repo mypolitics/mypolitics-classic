@@ -37,7 +37,7 @@ class ResultsHistoryForm extends React.Component<Props, State> {
 
     ReactGA.event({
       category: 'ResultsHistory',
-      action: 'Added'
+      action: 'Added',
     });
 
     this.setState({

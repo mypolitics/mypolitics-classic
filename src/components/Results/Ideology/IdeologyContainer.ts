@@ -23,7 +23,7 @@ class Ideology extends React.Component<Props, State> {
     const ideology = findIdeology(spheresResults);
 
     this.setState({
-      ideology: ideology
+      ideology,
     });
   }
 

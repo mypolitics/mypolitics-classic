@@ -151,7 +151,7 @@ export default [
       },
       {
         name: 'Propertarianizm',
-      }
+      },
     ],
   },
 ];

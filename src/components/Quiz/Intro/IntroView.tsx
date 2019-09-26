@@ -14,7 +14,7 @@ const IntroView: React.FC<Props> = (props) => {
   const completeIntro = () => {
     ReactGA.event({
       category: 'Quiz',
-      action: 'Initialized'
+      action: 'Initialized',
     });
 
     setIntroValue(true);

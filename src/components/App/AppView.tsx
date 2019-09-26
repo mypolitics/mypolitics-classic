@@ -14,7 +14,7 @@ import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
 import myPoliticsMainThumbnail from 'assets/images/thumbnails/mypolitics.png';
-import { GA_TRACKING_ID } from 'config/index'
+import { GA_TRACKING_ID } from 'config/index';
 
 ReactGA.initialize(GA_TRACKING_ID);
 ReactGA.pageview(window.location.href.split('/#/')[1] || '/');

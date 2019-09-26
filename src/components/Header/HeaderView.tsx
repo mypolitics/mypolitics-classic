@@ -5,8 +5,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Header.scss';
-import Nav from './Nav';
 import { ReactComponent as Logo } from 'assets/vectors/logo.svg';
+import Nav from './Nav';
 
 library.add(faBars, faTimes);
 

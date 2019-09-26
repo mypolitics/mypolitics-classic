@@ -5,14 +5,14 @@ import { faHeart, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Footer.scss';
-import { ReactComponent as Logo } from 'assets/vectors/logo-grey.svg'
+import { ReactComponent as Logo } from 'assets/vectors/logo-grey.svg';
 
 library.add(faHeart, faCoffee);
 
 const Footer: React.FC = () => (
   <footer className="home__footer">
     <section className="home__footer__section">
-      <div  className="home__footer__list">
+      <div className="home__footer__list">
         <Logo className="home__footer__logo" />
       </div>
       <ul className="home__footer__list">
@@ -24,14 +24,18 @@ const Footer: React.FC = () => (
             href="https://facebook.com/myPoliticsTest"
             target="_blank"
             rel="noopener noreferrer"
-          >Facebook</a>
+          >
+Facebook
+          </a>
         </li>
         <li>
           <a
             href="https://github.com/myPolitics"
             target="_blank"
             rel="noopener noreferrer"
-          >GitHub</a>
+          >
+GitHub
+          </a>
         </li>
       </ul>
     </section>
@@ -45,7 +49,7 @@ const Footer: React.FC = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-        {'Adrian Orłów'}
+          {'Adrian Orłów'}
         </a>
       </span>
     </section>

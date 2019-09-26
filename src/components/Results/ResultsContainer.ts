@@ -3,9 +3,9 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './Results.scss';
+import calcSpheresResults from 'utils/spheresCalculator';
 import { mapStateToProps, mapDispatcherToProps } from './ResultsRedux';
 import ResultsView from './ResultsView';
-import calcSpheresResults from 'utils/spheresCalculator';
 
 type ReduxType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatcherToProps>;
 type MatchProps = RouteComponentProps<{ id: string }>;
@@ -22,7 +22,7 @@ class Results extends React.Component<Props, State> {
 
     this.state = {
       results: null,
-      spheresResults: null
+      spheresResults: null,
     };
 
     this.loadFromStore = this.loadFromStore.bind(this);
@@ -40,9 +40,9 @@ class Results extends React.Component<Props, State> {
       await this.loadFromDatabase(id);
     }
 
-    this.setState({
-      spheresResults: calcSpheresResults(this.state.results)
-    });
+    this.setState((state) => ({
+      spheresResults: calcSpheresResults(state.results),
+    }));
   }
 
   loadFromStore(id: string) {
@@ -50,7 +50,7 @@ class Results extends React.Component<Props, State> {
     const resultsData = resultsHistory.find((results) => results.id === id);
 
     this.setState({
-      results: resultsData
+      results: resultsData,
     });
   }
 
@@ -64,14 +64,14 @@ class Results extends React.Component<Props, State> {
     }
 
     this.setState({
-      results: resultsData
+      results: resultsData,
     });
   }
 
   render = () => ResultsView({
     loading: this.props.loading,
     results: this.state.results,
-    spheresResults: this.state.spheresResults
+    spheresResults: this.state.spheresResults,
   })
 }
 

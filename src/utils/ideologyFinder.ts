@@ -6,7 +6,7 @@ const findIdeologyIndex = (spheresValues: SpheresType): number => {
   let closestIdeologyIndex = 0;
   let shortestIdeologyDistance = Infinity;
 
-  for (let i = 0; i < ideologies.length; i++) {
+  for (let i = 0; i < ideologies.length; i += 1) {
     const ideology = ideologies[i];
     let presentIdeologyDistance = 0;
 
@@ -24,14 +24,14 @@ const findIdeologyIndex = (spheresValues: SpheresType): number => {
       closestIdeologyIndex = i;
       shortestIdeologyDistance = presentIdeologyDistance;
     }
-  };
+  }
 
   return closestIdeologyIndex;
 };
 
 const getIdeologyNameByIndex = (index: number, lang: string): string => {
   const localeIdeologies = ideologiesTranslations.find(
-    (ideologies) => ideologies.lang === lang,
+    (ideology) => ideology.lang === lang,
   );
   if (localeIdeologies !== undefined) {
     return localeIdeologies.values[index].name;
@@ -43,7 +43,7 @@ const findIdeology = (spheresValues: SpheresType): string => {
   const ideologyIndex = findIdeologyIndex(spheresValues);
   const ideologyName = getIdeologyNameByIndex(ideologyIndex, 'pl-PL');
 
-  return ideologyName
+  return ideologyName;
 };
 
 export default findIdeology;

@@ -21,7 +21,7 @@ export type Props = {
 
 const ActionsView: React.FC<Props> = (props) => {
   const {
-    question, loading, previousQuestion, clearAnswers, resetInitialized
+    question, loading, previousQuestion, clearAnswers, resetInitialized,
   } = props;
   return (
     <div className="test__actions">
@@ -58,7 +58,7 @@ const ActionsView: React.FC<Props> = (props) => {
               Cofnij do początku
             </div>
           )}
-          {resetInitialized && "Potwierdzam"}
+          {resetInitialized && 'Potwierdzam'}
         </button>
       </div>
       <Effects

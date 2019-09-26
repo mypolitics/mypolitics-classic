@@ -57,7 +57,7 @@ class Answer extends React.Component<Props> {
 
       ReactGA.event({
         category: 'Quiz',
-        action: 'Finished'
+        action: 'Finished',
       });
 
       clearQuizData();
@@ -66,7 +66,7 @@ class Answer extends React.Component<Props> {
       ReactGA.event({
         category: 'Quiz',
         action: 'Next Question',
-        label: nextQuestionIndex.toString()
+        label: nextQuestionIndex.toString(),
       });
 
       getAndSetQuestionByIndex(nextQuestionIndex);

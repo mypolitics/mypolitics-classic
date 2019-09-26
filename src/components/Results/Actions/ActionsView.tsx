@@ -12,7 +12,7 @@ interface Props {
   results: any;
 }
 
-const ActionsView: React.FC<Props> = props => {
+const ActionsView: React.FC<Props> = (props) => {
   const { results } = props;
 
   const copyToClipboard = (e: any) => {
