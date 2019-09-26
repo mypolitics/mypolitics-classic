@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListView from './ListView';
+import ReactGA from 'react-ga';
 
 import { mapStateToProps, mapDispatcherToProps } from './ListRedux';
 
@@ -19,6 +20,11 @@ class ResultsHistory extends React.Component<Props> {
 
     if (id !== undefined) {
       deleteResultsHistoryElement(id);
+
+      ReactGA.event({
+        category: 'ResultsHistory',
+        action: 'Deleted'
+      });
     }
   }
 

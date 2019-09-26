@@ -51,7 +51,7 @@ const ResultsView: React.FC<Props> = (props) => {
               <Party spheresResults={spheresResults} />
             </div>
           </div>
-          <Actions />
+          <Actions results={results} />
         </div>
       )}
       {loading && <LoadingInfo colorHEX="#111" />}

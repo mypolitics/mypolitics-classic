@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import './Answer.scss';
 import { calcResults } from 'utils/resultsCalculator';
@@ -53,10 +54,21 @@ class Answer extends React.Component<Props> {
       const results = calcResults(this.props.answers);
       const resultsId = await addAndSetResults(results);
       await addToResultsHistoryById(resultsId);
-      clearQuizData();
 
+      ReactGA.event({
+        category: 'Quiz',
+        action: 'Finished'
+      });
+
+      clearQuizData();
       this.props.history.push(`/results/${resultsId}`);
     } else {
+      ReactGA.event({
+        category: 'Quiz',
+        action: 'Next Question',
+        label: nextQuestionIndex.toString()
+      });
+
       getAndSetQuestionByIndex(nextQuestionIndex);
     }
   }

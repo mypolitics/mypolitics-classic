@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 
 import { mapStateToProps, mapDispatcherToProps } from './FormRedux';
 import FormView from './FormView';
@@ -33,10 +34,15 @@ class ResultsHistoryForm extends React.Component<Props, State> {
     const resultsId = splittedResultsId[splittedResultsId.length - 1];
 
     addResultsById(resultsId);
+
+    ReactGA.event({
+      category: 'ResultsHistory',
+      action: 'Added'
+    });
+
     this.setState({
       resultsId: '',
     });
-
     event.preventDefault();
   }
 

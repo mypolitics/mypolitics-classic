@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 
 import './Intro.scss';
 import { mapDispatcherToProps } from './IntroRedux';
@@ -11,6 +12,11 @@ const IntroView: React.FC<Props> = (props) => {
   const { setIntroValue, getAndSetFirstQuestion } = props;
 
   const completeIntro = () => {
+    ReactGA.event({
+      category: 'Quiz',
+      action: 'Initialized'
+    });
+
     setIntroValue(true);
     getAndSetFirstQuestion();
   };

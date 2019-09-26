@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 
 import './Actions.scss';
 import { mapDispatcherToProps } from './ActionsRedux';
@@ -39,6 +40,11 @@ class QuizActions extends React.Component<Props, State> {
         })
       }, 1000)
     } else {
+      ReactGA.event({
+        category: 'Quiz',
+        action: 'Resetted'
+      });
+
       clearQuizData();
     }
   }

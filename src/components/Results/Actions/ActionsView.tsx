@@ -8,7 +8,13 @@ import './Actions.scss';
 
 library.add(faArrowRight);
 
-const ActionsView: React.FC = () => {
+interface Props {
+  results: any;
+}
+
+const ActionsView: React.FC<Props> = props => {
+  const { results } = props;
+
   const copyToClipboard = (e: any) => {
     e.target.select();
     document.execCommand('copy');
@@ -24,7 +30,7 @@ const ActionsView: React.FC = () => {
         <span>Udostępnij</span>
         <input
           type="text"
-          value={window.location.toString()}
+          value={`https://mypolitics.orlow.me/#/results/${results.id}`}
           onFocus={(e) => copyToClipboard(e)}
           readOnly
         />
