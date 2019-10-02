@@ -45,11 +45,11 @@ class QuizActions extends React.Component<Props, State> {
       ReactGA.event({
         category: 'Quiz',
         action: 'Resetted',
-        label: sourceQuestionIndex.toString()
+        label: sourceQuestionIndex.toString(),
       });
 
       ReactPixel.trackCustom('QuizReset', {
-        sourceQuestionIndex: sourceQuestionIndex
+        sourceQuestionIndex,
       });
 
       clearQuizData();
@@ -64,12 +64,12 @@ class QuizActions extends React.Component<Props, State> {
     ReactGA.event({
       category: 'Quiz',
       action: 'Previous Question',
-      label: sourceQuestionIndex.toString()
+      label: sourceQuestionIndex.toString(),
     });
 
     ReactPixel.trackCustom('QuizPreviousQuestion', {
-      sourceQuestionIndex: sourceQuestionIndex,
-      destinationQuestionIndex: destinationQuestionIndex
+      sourceQuestionIndex,
+      destinationQuestionIndex,
     });
 
     getAndSetQuestionByIndex(question.index - 1);

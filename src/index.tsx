@@ -16,7 +16,7 @@ ReactGA.pageview(window.location.hash.split('#')[1] || '/');
 
 ReactPixel.init('897359370664007', undefined, {
   autoConfig: true,
-  debug: false
+  debug: false,
 });
 ReactPixel.pageView();
 

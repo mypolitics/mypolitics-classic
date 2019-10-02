@@ -49,11 +49,11 @@ class Results extends React.Component<Props, State> {
     ReactGA.event({
       category: 'Results',
       action: 'Opened',
-      label: id
+      label: id,
     });
 
     ReactPixel.trackCustom('ResultsOpen', {
-      id: id
+      id,
     });
   }
 

@@ -24,11 +24,11 @@ const ActionsView: React.FC<Props> = (props) => {
     ReactGA.event({
       category: 'Results',
       action: 'Share Button Clicked',
-      label: results.id
+      label: results.id,
     });
 
     ReactPixel.trackCustom('ResultsShareButtonClick', {
-      id: results.id
+      id: results.id,
     });
   };
 

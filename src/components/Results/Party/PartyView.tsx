@@ -12,7 +12,7 @@ const Party: React.FC<Props> = (props) => {
   const {
     party,
     onPartyWebsiteButtonClick,
-    onPartyProgrammeButtonClick
+    onPartyProgrammeButtonClick,
   } = props;
 
   if (party) {

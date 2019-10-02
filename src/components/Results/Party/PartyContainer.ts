@@ -41,30 +41,30 @@ class Party extends React.Component<Props, State> {
   }
 
   onPartyWebsiteButtonClick() {
-    const { party } = this.state
+    const { party } = this.state;
 
     ReactGA.event({
       category: 'Party',
       action: 'Website Link Clicked',
-      label: party ? party.name : 'NOT_FOUND'
+      label: party ? party.name : 'NOT_FOUND',
     });
 
     ReactPixel.trackCustom('PartyWebsiteLinkClicked', {
-      party: party ? party.name : 'NOT_FOUND'
+      party: party ? party.name : 'NOT_FOUND',
     });
   }
 
   onPartyProgrammeButtonClick() {
-    const { party } = this.state
+    const { party } = this.state;
 
     ReactGA.event({
       category: 'Party',
       action: 'Programme Link Clicked',
-      label: party ? party.name : 'NOT_FOUND'
+      label: party ? party.name : 'NOT_FOUND',
     });
 
     ReactPixel.trackCustom('PartyProgrammeLinkClicked', {
-      party: party ? party.name : 'NOT_FOUND'
+      party: party ? party.name : 'NOT_FOUND',
     });
   }
 

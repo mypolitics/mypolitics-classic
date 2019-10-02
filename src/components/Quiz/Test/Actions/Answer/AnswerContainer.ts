@@ -50,7 +50,7 @@ class Answer extends React.Component<Props> {
     const answer = await this.getBuiltAnswer();
 
     addAnswer(answer);
-    ReactPixel.trackCustom('QuizAddAnswer', answer)
+    ReactPixel.trackCustom('QuizAddAnswer', answer);
 
     if (nextQuestionIndex === question.totalCount) {
       const results = calcResults(this.props.answers);
@@ -61,7 +61,7 @@ class Answer extends React.Component<Props> {
         category: 'Quiz',
         action: 'Finished',
       });
-      ReactPixel.trackCustom('QuizAddResults', results)
+      ReactPixel.trackCustom('QuizAddResults', results);
 
       clearQuizData();
       this.props.history.push(`/results/${resultsId}`);

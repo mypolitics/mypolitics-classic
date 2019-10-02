@@ -18,7 +18,7 @@ const IntroView: React.FC<Props> = (props) => {
       category: 'Quiz',
       action: 'Initialized',
     });
-    ReactPixel.trackCustom('QuizInitialize', {})
+    ReactPixel.trackCustom('QuizInitialize', {});
 
     setIntroValue(true);
     getAndSetFirstQuestion();
@@ -34,14 +34,18 @@ const IntroView: React.FC<Props> = (props) => {
         <ol>
           <li>
             {'Wykonanie quizu nie zajmie Ci więcej niż '}
-            <b>9 minut</b>.
+            <b>9 minut</b>
+.
           </li>
           <li>
-            <b>Odpowiedzi są automatycznie zapisywane</b>. Możesz wyjść z
+            <b>Odpowiedzi są automatycznie zapisywane</b>
+. Możesz wyjść z
             quizu w każdej chwili i wrócić kiedy będziesz miał/miała czas.
           </li>
           <li>
-            Rozpoczynając test akceptujesz naszą <Link to='/privacy' target='_blank'>politykę prywatności</Link>
+            Rozpoczynając test akceptujesz naszą
+            {' '}
+            <Link to="/privacy" target="_blank">politykę prywatności</Link>
           </li>
         </ol>
       </div>

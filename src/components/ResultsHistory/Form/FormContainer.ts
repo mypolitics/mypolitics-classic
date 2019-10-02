@@ -39,11 +39,11 @@ class ResultsHistoryForm extends React.Component<Props, State> {
     ReactGA.event({
       category: 'ResultsHistory',
       action: 'Added',
-      label: resultsId
+      label: resultsId,
     });
 
     ReactPixel.trackCustom('ResultsHistoryAdd', {
-      id: resultsId
+      id: resultsId,
     });
 
     this.setState({
