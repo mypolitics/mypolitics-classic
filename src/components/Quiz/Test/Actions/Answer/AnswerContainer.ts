@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import './Answer.scss';
 import { calcResults } from 'utils/resultsCalculator';
@@ -49,6 +50,7 @@ class Answer extends React.Component<Props> {
     const answer = await this.getBuiltAnswer();
 
     addAnswer(answer);
+    ReactPixel.trackCustom('QuizAddAnswer', answer)
 
     if (nextQuestionIndex === question.totalCount) {
       const results = calcResults(this.props.answers);
@@ -59,6 +61,7 @@ class Answer extends React.Component<Props> {
         category: 'Quiz',
         action: 'Finished',
       });
+      ReactPixel.trackCustom('QuizAddResults', results)
 
       clearQuizData();
       this.props.history.push(`/results/${resultsId}`);

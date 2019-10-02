@@ -3,11 +3,17 @@ import * as React from 'react';
 import { Party as PartyType } from 'utils/partiesValues';
 
 type Props = {
-  party: PartyType | null
+  party: PartyType | null,
+  onPartyWebsiteButtonClick: Function,
+  onPartyProgrammeButtonClick: Function
 };
 
 const Party: React.FC<Props> = (props) => {
-  const { party } = props;
+  const {
+    party,
+    onPartyWebsiteButtonClick,
+    onPartyProgrammeButtonClick
+  } = props;
 
   if (party) {
     return (
@@ -20,10 +26,20 @@ const Party: React.FC<Props> = (props) => {
             <img alt={party.name} src={party.logo} />
             <span className="party__info__name">{party.name}</span>
             <div className="party__info__links">
-              <a href={party.links.www} target="_blank" rel="noopener noreferrer">
+              <a
+                href={party.links.www}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onPartyWebsiteButtonClick()}
+              >
                 Strona WWW
               </a>
-              <a href={party.links.programme} target="_blank" rel="noopener noreferrer">
+              <a
+                href={party.links.programme}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onPartyProgrammeButtonClick()}
+              >
                 Program
               </a>
             </div>

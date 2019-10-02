@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import 'normalize.css';
 import App from 'components/App';
@@ -11,10 +12,15 @@ import configureStore from './store';
 import { GA_TRACKING_ID } from './config';
 
 ReactGA.initialize(GA_TRACKING_ID);
-ReactGA.pageview(window.location.href.split('#/')[1] || '/');
+ReactGA.pageview(window.location.hash.split('#')[1] || '/');
+
+ReactPixel.init('897359370664007', undefined, {
+  autoConfig: true,
+  debug: false
+});
+ReactPixel.pageView();
 
 const { persistor, store } = configureStore();
-
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

@@ -17,7 +17,9 @@ export const mapDispatcherToProps = (dispatch: MultipleDispatch) => ({
   getAndSetQuestionByIndex: async (questionIndex: number) => {
     await quizAsyncactions.getAndSetQuestionByIndex(dispatch, questionIndex);
   },
-  addAndSetResults: (results: Results) => resultsAsyncactions.addAndSetResults(dispatch, results),
+  addAndSetResults: (results: Results) => {
+    return resultsAsyncactions.addAndSetResults(dispatch, results)
+  },
   addToResultsHistoryById: async (id: string) => {
     await resultsAsyncactions.addToResultsHistoryById(dispatch, id);
   },

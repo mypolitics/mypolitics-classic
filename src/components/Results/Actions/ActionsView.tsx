@@ -3,6 +3,8 @@ import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { HashLink as Link } from 'react-router-hash-link';
+import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import './Actions.scss';
 
@@ -18,6 +20,16 @@ const ActionsView: React.FC<Props> = (props) => {
   const copyToClipboard = (e: any) => {
     e.target.select();
     document.execCommand('copy');
+
+    ReactGA.event({
+      category: 'Results',
+      action: 'Share Button Clicked',
+      label: results.id
+    });
+
+    ReactPixel.trackCustom('ResultsShareButtonClick', {
+      id: results.id
+    });
   };
 
   return (

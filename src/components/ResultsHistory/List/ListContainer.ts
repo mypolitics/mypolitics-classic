@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactGA from 'react-ga';
 import ListView from './ListView';
+import ReactPixel from 'react-facebook-pixel';
 
 import { mapStateToProps, mapDispatcherToProps } from './ListRedux';
 
@@ -24,6 +25,11 @@ class ResultsHistory extends React.Component<Props> {
       ReactGA.event({
         category: 'ResultsHistory',
         action: 'Deleted',
+        label: id
+      });
+
+      ReactPixel.trackCustom('ResultsHistoryDelete', {
+        id: id
       });
     }
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import './Results.scss';
 import calcSpheresResults from 'utils/spheresCalculator';
@@ -43,6 +45,16 @@ class Results extends React.Component<Props, State> {
     this.setState((state) => ({
       spheresResults: calcSpheresResults(state.results),
     }));
+
+    ReactGA.event({
+      category: 'Results',
+      action: 'Opened',
+      label: id
+    });
+
+    ReactPixel.trackCustom('ResultsOpen', {
+      id: id
+    });
   }
 
   loadFromStore(id: string) {

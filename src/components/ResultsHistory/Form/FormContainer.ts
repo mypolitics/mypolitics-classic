@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import { mapStateToProps, mapDispatcherToProps } from './FormRedux';
 import FormView from './FormView';
@@ -38,11 +39,17 @@ class ResultsHistoryForm extends React.Component<Props, State> {
     ReactGA.event({
       category: 'ResultsHistory',
       action: 'Added',
+      label: resultsId
+    });
+
+    ReactPixel.trackCustom('ResultsHistoryAdd', {
+      id: resultsId
     });
 
     this.setState({
       resultsId: '',
     });
+
     event.preventDefault();
   }
 

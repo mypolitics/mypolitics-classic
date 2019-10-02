@@ -76,7 +76,12 @@ Przysługuje Ci prawo żądania od Administratora:
         <li>Informacje zachowaniu użytkowników w serwisie mogą podlegać logowaniu. Dane te są wykorzystywane w celu administrowania serwisem.</li>
       </ol>
       <h2>7. Istotne techniki marketingowe</h2>
-      <ol><li>Operator stosuje analizę statystyczną ruchu na stronie, poprzez Google Analytics (Google Inc. z siedzibą w USA). Operator nie przekazuje do operatora tej usługi danych osobowych, a jedynie zanonimizowane informacje. Usługa bazuje na wykorzystaniu ciasteczek w urządzeniu końcowym użytkownika. W zakresie informacji o preferencjach użytkownika gromadzonych przez sieć reklamową Google użytkownik może przeglądać i edytować informacje wynikające z plików cookies przy pomocy narzędzia: https://www.google.com/ads/preferences/</li></ol>
+      <ol>
+        <li>Operator stosuje analizę statystyczną ruchu na stronie, poprzez Google Analytics (Google Inc. z siedzibą w USA) i Facebook Pixel (Facebook Inc. z siedzibą w USA oraz Facebook Ireland Ltd. z siedzibą w Irlandii).</li>
+        <li>Operator nie przekazuje do operatorów tych usług danych osobowych, a jedynie zanonimizowane informacje. Usługi bazują na wykorzystaniu ciasteczek w urządzeniu końcowym użytkownika.</li>
+        <li>W zakresie informacji o preferencjach użytkownika gromadzonych przez sieć reklamową Google użytkownik może przeglądać i edytować informacje wynikające z plików cookies przy pomocy narzędzia: https://www.google.com/ads/preferences/</li>
+        <li>Informacje na temat zbierania i wykorzystywania danych przez portal Facebook oraz praw i możliwości użytkownika w zakresie ochrony prywatności można znaleźć w polityce ochrony danych portalu Facebook pod adresem https://www.facebook.com/about/privacy/update. Konkretne informacje i szczegóły dotyczące funkcji Facebook Pixel i sposobu jej działania są dostępne w sekcji pomocy portalu Facebook pod adresem https://www.facebook.com/business/help/651294705016616. Funkcję tę można wyłączyć w sposób pokazany na stronie https://www.facebook.com/settings?tab=ads. Aby tego dokonać, należy zalogować się do portalu Facebook.</li>
+      </ol>
 
       <h2>8. Informacja o plikach cookies</h2>
       <ol>

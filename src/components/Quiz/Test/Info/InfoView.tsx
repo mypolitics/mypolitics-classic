@@ -17,7 +17,7 @@ const QuizInfo: React.FC<Props> = (props) => {
         Pytanie
         {' '}
         {questionNumber}
-/
+        /
         {questionsTotalCount}
       </span>
     </div>

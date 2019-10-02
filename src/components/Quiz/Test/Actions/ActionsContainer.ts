@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 import './Actions.scss';
 import { mapDispatcherToProps } from './ActionsRedux';
@@ -26,8 +27,9 @@ class QuizActions extends React.Component<Props, State> {
   }
 
   clearAnswers(): void {
-    const { clearQuizData } = this.props;
+    const { question, clearQuizData } = this.props;
     const { resetInitialized } = this.state;
+    const sourceQuestionIndex = question.index;
 
     if (!resetInitialized) {
       this.setState({
@@ -43,6 +45,11 @@ class QuizActions extends React.Component<Props, State> {
       ReactGA.event({
         category: 'Quiz',
         action: 'Resetted',
+        label: sourceQuestionIndex.toString()
+      });
+
+      ReactPixel.trackCustom('QuizReset', {
+        sourceQuestionIndex: sourceQuestionIndex
       });
 
       clearQuizData();
@@ -51,6 +58,20 @@ class QuizActions extends React.Component<Props, State> {
 
   previousQuestion(): void {
     const { question, getAndSetQuestionByIndex } = this.props;
+    const sourceQuestionIndex = question.index;
+    const destinationQuestionIndex = question.index - 1;
+
+    ReactGA.event({
+      category: 'Quiz',
+      action: 'Previous Question',
+      label: sourceQuestionIndex.toString()
+    });
+
+    ReactPixel.trackCustom('QuizPreviousQuestion', {
+      sourceQuestionIndex: sourceQuestionIndex,
+      destinationQuestionIndex: destinationQuestionIndex
+    });
+
     getAndSetQuestionByIndex(question.index - 1);
   }
 
