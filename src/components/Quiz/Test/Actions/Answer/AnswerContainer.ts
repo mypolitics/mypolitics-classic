@@ -54,14 +54,16 @@ class Answer extends React.Component<Props> {
 
     if (nextQuestionIndex === question.totalCount) {
       const results = calcResults(this.props.answers);
-      const resultsId = await addAndSetResults(results);
-      await addToResultsHistoryById(resultsId);
 
       ReactGA.event({
         category: 'Quiz',
         action: 'Finished',
       });
+
       ReactPixel.trackCustom('QuizAddResults', results);
+
+      const resultsId = await addAndSetResults(results);
+      await addToResultsHistoryById(resultsId);
 
       clearQuizData();
       this.props.history.push(`/results/${resultsId}`);
