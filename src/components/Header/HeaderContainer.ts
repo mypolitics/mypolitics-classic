@@ -5,7 +5,7 @@ type State = {
   showNav: boolean
 };
 
-class App extends React.Component<any, State> {
+class Header extends React.Component<any, State> {
   constructor(props: any) {
     super(props);
 
@@ -28,4 +28,4 @@ class App extends React.Component<any, State> {
   })
 }
 
-export default App;
+export default Header;
