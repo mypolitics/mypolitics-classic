@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ const App: React.FC = () => (
       <meta property="og:description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
       <meta property="og:image" content={myPoliticsMainThumbnail} />
     </Helmet>
-    <HashRouter>
+    <Router>
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -36,7 +36,7 @@ const App: React.FC = () => (
         <Route path="/404" component={Error404} />
         <Route path="*" component={Error404} />
       </Switch>
-    </HashRouter>
+    </Router>
   </div>
 );
 

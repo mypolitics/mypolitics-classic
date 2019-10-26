@@ -12,7 +12,7 @@ import configureStore from './store';
 import { GA_TRACKING_ID } from './config';
 
 ReactGA.initialize(GA_TRACKING_ID);
-ReactGA.pageview(window.location.hash.split('#')[1] || '/');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactPixel.init('897359370664007', undefined, {
   autoConfig: true,
