@@ -23,7 +23,7 @@ And run the server with
 npm start
 ```
 
-## Deployment (GitHub Pages)
+## Deployment (Dokku)
 
 Build an app to production with
 
@@ -31,13 +31,17 @@ Build an app to production with
 npm run build
 ```
 
-Then deploy it to `gh-pages` branch via
+Add Dokku remote repository
 
 ```
-npm run deploy
+git remote add dokku dokku@server_ip:app_name
 ```
 
-And configure GitHub Pages in your repository settings.
+and deploy it
+
+```
+git push dokku master
+```
 
 ## License
 
