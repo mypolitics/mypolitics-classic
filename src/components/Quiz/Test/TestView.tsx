@@ -13,7 +13,7 @@ type Props = ReduxType;
 const TestView: React.FC<Props> = (props) => {
   const { question, loading, getAndSetFirstQuestion } = props;
 
-  if (!question || question.index === 0) {
+  if (!question || question.totalCount === 0) {
     getAndSetFirstQuestion().then(() => window.location.reload());
   }
 
