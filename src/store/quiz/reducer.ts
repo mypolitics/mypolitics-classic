@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { Constants, QuizActions, QuizState } from './types';
 
-const initialState: QuizState = {
+export const initialState: QuizState = {
   question: {
     totalCount: 0,
     index: 0,

@@ -20,8 +20,7 @@ const IntroView: React.FC<Props> = (props) => {
     });
     ReactPixel.trackCustom('QuizInitialize', {});
 
-    setIntroValue(true);
-    getAndSetFirstQuestion();
+    getAndSetFirstQuestion().then(() => setIntroValue(true));
   };
 
   return (
