@@ -5,13 +5,17 @@ import './Test.scss';
 import Info from './Info';
 import Question from './Question';
 import Actions from './Actions';
-import { mapStateToProps } from './TestRedux';
+import { mapStateToProps, mapDispatcherToProps } from './TestRedux';
 
-type ReduxType = ReturnType<typeof mapStateToProps>;
+type ReduxType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatcherToProps>;
 type Props = ReduxType;
 
 const TestView: React.FC<Props> = (props) => {
-  const { question, loading } = props;
+  const { question, loading, getAndSetFirstQuestion } = props;
+
+  if (!question) {
+    getAndSetFirstQuestion().then(() => window.location.reload());
+  }
 
   return (
     <div className="test">
@@ -28,4 +32,4 @@ const TestView: React.FC<Props> = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(TestView);
+export default connect(mapStateToProps, mapDispatcherToProps)(TestView);
