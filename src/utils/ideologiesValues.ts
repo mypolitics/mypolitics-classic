@@ -271,14 +271,14 @@ export default [
   },
   {
     spheresValues: {
-      economics: 0.8,
-      social: 0.4,
+      economics: 0.75,
+      social: 0.3,
     },
   },
   {
     spheresValues: {
-      economics: 0.8,
-      social: 0.2,
+      economics: 0.9,
+      social: 0.3,
     },
   },
   {
