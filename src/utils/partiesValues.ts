@@ -1,7 +1,8 @@
 
 import Nowoczesna from 'assets/images/parties/nowoczesna.png';
 import PlatformaObywatelska from 'assets/images/parties/platformaObywatelska.png';
-import Konfederacja from 'assets/images/parties/konfederacja.png';
+import Korwin from 'assets/images/parties/korwin.png';
+import RuchNarodowy from 'assets/images/parties/ruchNarodowy.jpg';
 import Pis from 'assets/images/parties/pis.jpg';
 import Psl from 'assets/images/parties/psl.png';
 import Razem from 'assets/images/parties/razem.png';
@@ -49,15 +50,27 @@ export const parties: Party[] = [
     },
   },
   {
-    name: 'Konfederacja',
-    logo: Konfederacja,
+    name: 'KORWiN',
+    logo: Korwin,
     spheresValues: {
       economics: 0.9,
-      social: 0.6,
+      social: 0.5,
     },
     links: {
-      www: 'https://konfederacja.net/',
-      programme: 'https://konfederacja.net/',
+      www: 'https://wolnosc.pl/',
+      programme: 'https://wolnosc.pl/deklaracja-ideowa/',
+    },
+  },
+  {
+    name: 'Ruch Narodowy',
+    logo: RuchNarodowy,
+    spheresValues: {
+      economics: 0.1,
+      social: 0.7,
+    },
+    links: {
+      www: 'https://ruchnarodowy.net/',
+      programme: 'https://ruchnarodowy.net/wp-content/uploads/Program-Ruchu-Narodowego.pdf',
     },
   },
   {
