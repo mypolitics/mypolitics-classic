@@ -61,6 +61,7 @@ class Answer extends React.Component<Props> {
         category: 'Quiz',
         action: 'Finished',
       });
+
       ReactPixel.trackCustom('QuizAddResults', results.axes);
 
       clearQuizData();
