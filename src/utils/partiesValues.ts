@@ -5,6 +5,7 @@ import Korwin from 'assets/images/parties/korwin.png';
 import RuchNarodowy from 'assets/images/parties/ruchNarodowy.jpg';
 import Pis from 'assets/images/parties/pis.jpg';
 import Psl from 'assets/images/parties/psl.png';
+import PolskaPartiaSocjalistyczna from 'assets/images/parties/polskaPartiaSocjalistyczna.png';
 import Razem from 'assets/images/parties/razem.png';
 import Sld from 'assets/images/parties/sld.jpg';
 import Wiosna from 'assets/images/parties/wiosna.jpg';
@@ -96,6 +97,18 @@ export const parties: Party[] = [
       www: 'https://www.psl.pl/',
       programme:
         'https://www.psl.pl/wp-content/uploads/2019/09/PROGRAM_PSL_2019.pdf',
+    },
+  },
+  {
+    name: 'Polska Partia Socjalistyczna',
+    logo: PolskaPartiaSocjalistyczna,
+    spheresValues: {
+      economics: -0.9,
+      social: 0.5,
+    },
+    links: {
+      www: 'http://ppspl.eu/',
+      programme: 'http://ppspl.eu/index.php/dokumenty-statutowe/7-o-nas',
     },
   },
   {
