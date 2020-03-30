@@ -19,7 +19,7 @@ export const findParty = (spheresValues: SpheresType): Party | null => {
     }
   }
 
-  const distanceTooBig = shortestPartyDistance > 0.4;
+  const distanceTooBig = shortestPartyDistance > 0.5;
 
   return distanceTooBig ? null : closestParty;
 };

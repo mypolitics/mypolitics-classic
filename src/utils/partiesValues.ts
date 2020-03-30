@@ -78,8 +78,8 @@ export const parties: Party[] = [
     name: 'Prawo i Sprawiedliwość',
     logo: Pis,
     spheresValues: {
-      economics: -0.5,
-      social: 0.5,
+      economics: -0.33,
+      social: 0.33,
     },
     links: {
       www: 'http://pis.org.pl/',
@@ -104,7 +104,7 @@ export const parties: Party[] = [
     logo: PolskaPartiaSocjalistyczna,
     spheresValues: {
       economics: -0.9,
-      social: 0.5,
+      social: 0.0,
     },
     links: {
       www: 'http://ppspl.eu/',
