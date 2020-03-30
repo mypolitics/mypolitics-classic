@@ -23,7 +23,7 @@ const Party: React.FC<Props> = (props) => {
             Najbliższa partia
           </div>
           <div className="party__info">
-            <img alt={party.name} src={party.logo} />
+            <img alt={party.name} src={party.logo}/>
             <span className="party__info__name">{party.name}</span>
             <div className="party__info__links">
               <a
@@ -48,7 +48,20 @@ const Party: React.FC<Props> = (props) => {
       </div>
     );
   }
-  return null;
+  return (
+    <div className="party__container">
+      <div className="party">
+        <div className="party__title">
+          Najbliższa partia
+        </div>
+        <div className="party__info notfound">
+          <div className="party__name">
+            Twoje wyniki nie pasują do żadnej polskiej partii
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Party;

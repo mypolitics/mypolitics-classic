@@ -7,17 +7,11 @@ export const findParty = (spheresValues: SpheresType): Party | null => {
 
   for (let i = 0; i < parties.length; i += 1) {
     const party = parties[i];
-    let presentPartyDistance = 0;
 
-    presentPartyDistance
-      += Math.abs(
-        party.spheresValues.economics - spheresValues.economics,
-      ) ** 2;
+    const economicsDifference = (party.spheresValues.economics - spheresValues.economics) ** 2;
+    const socialDifference = (party.spheresValues.social - spheresValues.social) ** 2;
 
-    presentPartyDistance
-      += Math.abs(
-        party.spheresValues.social - spheresValues.social,
-      ) ** 2;
+    const presentPartyDistance = Math.sqrt(economicsDifference + socialDifference);
 
     if (presentPartyDistance < shortestPartyDistance) {
       closestParty = party;
@@ -25,7 +19,9 @@ export const findParty = (spheresValues: SpheresType): Party | null => {
     }
   }
 
-  return closestParty;
+  const distanceTooBig = shortestPartyDistance > 0.5;
+
+  return distanceTooBig ? null : closestParty;
 };
 
 export default findParty;

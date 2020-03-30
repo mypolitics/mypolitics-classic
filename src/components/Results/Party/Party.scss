@@ -73,6 +73,16 @@
         }
       }
     }
+
+    &.notfound {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #ececec;
+      font-weight: 600;
+    }
   }
 }
 
@@ -87,6 +97,11 @@
 
       &__links,
       &__name {
+        font-size: 1.2rem;
+      }
+
+      &.notfound {
+        padding: 4.5rem 1rem;
         font-size: 1.2rem;
       }
     }
