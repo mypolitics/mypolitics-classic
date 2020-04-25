@@ -1,14 +1,14 @@
 
 import Nowoczesna from 'assets/images/parties/nowoczesna.png';
-import PlatformaObywatelska from 'assets/images/parties/platformaObywatelska.png';
+import PlatformaObywatelska from 'assets/images/parties/po.png';
 import Korwin from 'assets/images/parties/korwin.png';
-import RuchNarodowy from 'assets/images/parties/ruchNarodowy.jpg';
-import Pis from 'assets/images/parties/pis.jpg';
-import Psl from 'assets/images/parties/psl.png';
-import PolskaPartiaSocjalistyczna from 'assets/images/parties/polskaPartiaSocjalistyczna.png';
+import RuchNarodowy from 'assets/images/parties/rn.png';
+import PrawoISprawiedliwosc from 'assets/images/parties/pis.png';
+import PolskieStronnictwoLudowe from 'assets/images/parties/psl.png';
+import PolskaPartiaSocjalistyczna from 'assets/images/parties/pps.png';
 import Razem from 'assets/images/parties/razem.png';
-import Sld from 'assets/images/parties/sld.jpg';
-import Wiosna from 'assets/images/parties/wiosna.jpg';
+import SojuszLewicyDemokratycznej from 'assets/images/parties/sld.png';
+import Wiosna from 'assets/images/parties/wiosna.png';
 import { SpheresType } from './spheresCalculator';
 
 export interface Party {
@@ -76,7 +76,7 @@ export const parties: Party[] = [
   },
   {
     name: 'Prawo i Sprawiedliwość',
-    logo: Pis,
+    logo: PrawoISprawiedliwosc,
     spheresValues: {
       economics: -0.33,
       social: 0.33,
@@ -88,7 +88,7 @@ export const parties: Party[] = [
   },
   {
     name: 'Polskie Stronnictwo Ludowe',
-    logo: Psl,
+    logo: PolskieStronnictwoLudowe,
     spheresValues: {
       economics: 0.1,
       social: 0.1,
@@ -125,7 +125,7 @@ export const parties: Party[] = [
   },
   {
     name: 'Sojusz Lewicy Demokratycznej',
-    logo: Sld,
+    logo: SojuszLewicyDemokratycznej,
     spheresValues: {
       economics: -0.5,
       social: -0.5,
