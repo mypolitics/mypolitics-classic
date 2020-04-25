@@ -9,6 +9,7 @@ import PolskaPartiaSocjalistyczna from 'assets/images/parties/pps.png';
 import Razem from 'assets/images/parties/razem.png';
 import SojuszLewicyDemokratycznej from 'assets/images/parties/sld.png';
 import Wiosna from 'assets/images/parties/wiosna.png';
+import Libertarianie from 'assets/images/parties/libertarianie.png';
 import { SpheresType } from './spheresCalculator';
 
 export interface Party {
@@ -145,6 +146,18 @@ export const parties: Party[] = [
     links: {
       www: 'https://wiosnabiedronia.pl/',
       programme: 'https://wiosnabiedronia.pl/program',
+    },
+  },
+  {
+    name: 'Libertarianie',
+    logo: Libertarianie,
+    spheresValues: {
+      economics: 0.8,
+      social: -0.8,
+    },
+    links: {
+      www: 'https://www.partialibertarianie.pl/',
+      programme: 'https://www.partialibertarianie.pl/program',
     },
   },
 ];
