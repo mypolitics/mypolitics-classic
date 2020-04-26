@@ -153,7 +153,7 @@ export const parties: Party[] = [
     logo: Libertarianie,
     spheresValues: {
       economics: 0.8,
-      social: -0.8,
+      social: -0.5,
     },
     links: {
       www: 'https://www.partialibertarianie.pl/',
