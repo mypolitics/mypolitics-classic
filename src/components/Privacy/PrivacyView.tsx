@@ -11,12 +11,12 @@ const PrivacyView: React.FC = () => (
       <h2>1. Informacje ogólne</h2>
       <ol>
         <li>
-Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url:
-          <b>mypolitics.orlow.me</b>
+Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url:&nbsp;
+          <b>mypolitics.pl</b>
         </li>
         <li>Operatorem serwisu oraz Administratorem danych osobowych jest: Adrian Orłów </li>
 
-        <li>Adres kontaktowy poczty elektronicznej operatora: adrian@orlow.me</li>
+        <li>Adres kontaktowy poczty elektronicznej operatora: software@orlow.me</li>
 
         <li>Operator jest Administratorem Twoich danych osobowych w odniesieniu do danych podanych dobrowolnie w Serwisie.</li>
         <li>Serwis wykorzystuje dane osobowe w następujących celach:</li>
@@ -34,11 +34,21 @@ Serwis realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowan
       <h2>2. Wybrane metody ochrony danych stosowane przez Operatora</h2>
       <ol>
         <li>Miejsca logowania i wprowadzania danych osobowych są chronione w warstwie transmisji (certyfikat SSL). Dzięki temu dane osobowe i dane logowania, wprowadzone na stronie, zostają zaszyfrowane w komputerze użytkownika i mogą być odczytane jedynie na docelowym serwerze.</li>
+        <li>Operator okresowo zmienia swoje hasła administracyjne.</li>
         <li>Istotnym elementem ochrony danych jest regularna aktualizacja wszelkiego oprogramowania, wykorzystywanego przez Operatora do przetwarzania danych osobowych, co w szczególności oznacza regularne aktualizacje komponentów programistycznych.</li>
       </ol>
       <h2>3. Hosting</h2>
       <ol>
-        <li>Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: GitHub Pages</li>
+        <li>Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: ultimahost.pl Szeliga sp. j.</li>
+        <li>
+          Szczegółowe dane operatora:
+          <br />
+          ultimahost.pl Szeliga sp. j.
+          <br />
+          90-019 Łódź, Dowborczyków 25
+          <br />
+          NIP: 9671354758 REGON: 341287109 KRS: 0000423178
+        </li>
       </ol>
       <h2>4. Twoje prawa i dodatkowe informacje o sposobie wykorzystania danych</h2>
       <ol>
@@ -68,7 +78,7 @@ Przysługuje Ci prawo żądania od Administratora:
         <li>Serwis zbiera informacje podane dobrowolnie przez użytkownika, w tym dane osobowe, o ile zostaną one podane.</li>
         <li>Serwis może zapisać informacje o parametrach połączenia (oznaczenie czasu, adres IP).</li>
         <li>Serwis, w niektórych wypadkach, może zapisać informację ułatwiającą powiązanie danych w formularzu z adresem e-mail użytkownika wypełniającego formularz. W takim wypadku adres e-mail użytkownika pojawia się wewnątrz adresu url strony zawierającej formularz.</li>
-        <li>Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu dokonania procesu obsługi zgłoszenia serwisowego lub kontaktu handlowego, rejestracji usług itp. Każdorazowo kontekst i opis formularza w czytelny sposób informuje, do czego on służy.</li>
+        <li>Dane osobowe są przekazywane od krajów trzecich w rozumieniu przepisów o ochronie danych osobowych. Oznacza to, że przesyłamy je poza teren Unii Europejskiej.</li>
       </ol>
 
       <h2>6. Logi Administratora</h2>
