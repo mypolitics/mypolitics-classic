@@ -10,7 +10,7 @@ const sum = (numbers: number[]) => numbers.reduce((total, aNumber) => total + aN
 const average = (numbers: number[]) => sum(numbers) / numbers.length;
 
 const calcEconomicsSphere = (axes: AxesResults): number => {
-  const econAxesSides = axesSides.slice(0, 1);
+  const econAxesSides = axesSides.slice(0, 2);
 
   const econLeft = econAxesSides.map((side) => axes[side.left]);
   const econLeftAverage = average(econLeft);
