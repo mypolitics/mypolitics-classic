@@ -4,6 +4,7 @@ import { Results, AxesResults } from 'store/results/types';
 interface Axis {
   left: string;
   right: string;
+  notApplicableToSpheres?: boolean;
 }
 
 interface Scores {
@@ -35,6 +36,7 @@ export const axes: Axis[] = [
   {
     left: 'environmentalism',
     right: 'anthropocentrism',
+    notApplicableToSpheres: true,
   },
   {
     left: 'progressivism',

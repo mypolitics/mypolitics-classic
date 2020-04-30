@@ -20,7 +20,9 @@ const calcEconomicsSphere = (axes: AxesResults): number => {
 };
 
 const calcSocialSphere = (axes: AxesResults): number => {
-  const socialAxesSides = axesSides.slice(2);
+  const socialAxesSides = axesSides
+    .slice(2)
+    .filter((side) => !side.notApplicableToSpheres);
 
   const socialLeft = socialAxesSides.map((side) => axes[side.left]);
   const socialLeftAverage = average(socialLeft);
