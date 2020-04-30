@@ -17,12 +17,8 @@
 	.st11{fill:#121212;}
 
 	@media (prefers-color-scheme: dark) {
-		.st6, .st7, .st8, .st9, .st10, .st11 {
-			fill: #fff !important;
-		}
-
-		.st1, .st2, .st3, .st4, .st5, .st5 {
-			fill: #adadad !important;
+		.st2 {
+			fill: #777 !important;
 		}
     }
 </style>
