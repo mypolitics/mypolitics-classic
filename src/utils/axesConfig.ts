@@ -52,7 +52,7 @@ interface AxisSlideMetaTranslations {
   [index: string]: AxisSideMeta;
 }
 
-interface AxisSideMeta {
+export interface AxisSideMeta {
   title: string;
   description: string;
 }

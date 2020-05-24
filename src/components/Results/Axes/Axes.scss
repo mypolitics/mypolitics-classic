@@ -8,7 +8,7 @@
   grid-template-columns: 3.5rem calc(100% - 7rem) 3.5rem;
   width: 100%;
   border-radius: 0.5rem;
-  overflow: hidden;
+  position: relative;
 
   &__icon {
     display: flex;
@@ -19,9 +19,20 @@
     height: 1.5rem;
     font-size: 1.5rem;
     color: #fafafa;
+    cursor: pointer;
     &.big {
       font-size: 2rem;
       font-weight: 900;
+    }
+
+    &.left {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    &.right {
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
     }
   }
 
@@ -42,6 +53,84 @@
       color: #111;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.axis__popover {
+  display: grid;
+  width: 75%;
+  position: absolute;
+  grid-template-areas:
+          "Title"
+          "Description";
+  grid-template-columns: auto;
+  z-index: 1000;
+
+  &__icon {
+    grid-area: Icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    color: #fafafa;
+    &.big {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+  }
+
+  &__title {
+    grid-area: Title;
+    height: 1.5rem;
+    padding: 1rem;
+  }
+
+  &__description {
+    grid-area: Description;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 1rem;
+    line-height: 1.2;
+  }
+
+  &__title,
+  &__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &.left {
+    margin-left: 3.5rem;
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.1));
+
+    .axis__popover__icon {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    .axis__popover__title {
+      border-top-right-radius: 0.5rem;
+    }
+  }
+
+  &.right {
+    margin-left: calc(25% - 3.5rem);
+    filter: drop-shadow(-10px 10px 10px rgba(0,0,0,0.1));
+
+    .axis__popover__icon {
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+
+    .axis__popover__title {
+      border-top-left-radius: 0.5rem;
     }
   }
 }
