@@ -42,7 +42,7 @@ const ActionsView: React.FC<Props> = (props) => {
         <span>Udostępnij</span>
         <input
           type="text"
-          value={`https://mypolitics.orlow.me/#/results/${results.id}`}
+          value={`https://mypolitics.pl/results/${results.id}`}
           onFocus={(e) => copyToClipboard(e)}
           readOnly
         />

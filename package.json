@@ -11,6 +11,7 @@
     "@types/react-router-hash-link": "^1.2.1",
     "@types/uuid": "^3.4.5",
     "express": "^4.17.1",
+    "express-http-proxy": "^1.6.0",
     "history": "^4.9.0",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
@@ -53,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/apicache": "^1.2.2",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.7",
     "@types/react": "^16.8.14",
