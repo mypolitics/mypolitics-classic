@@ -183,8 +183,8 @@ export const parties: Party[] = [
       social: 0.6,
     },
     links: {
-      www: 'https://partiamozemy.pl/',
-      programme: 'https://partiamozemy.pl/wp-content/uploads/2020/01/Deklaracja.pdf',
+      www: 'https://kom-pol.org/',
+      programme: 'https://kom-pol.org/program/',
     },
   },
   {
@@ -195,8 +195,8 @@ export const parties: Party[] = [
       social: 0.7,
     },
     links: {
-      www: 'https://partiamozemy.pl/',
-      programme: 'https://partiamozemy.pl/wp-content/uploads/2020/01/Deklaracja.pdf',
+      www: 'https://konfederacjakoronypolskiej.pl/',
+      programme: 'https://konfederacjakoronypolskiej.pl/',
     },
   },
 ];
