@@ -147,7 +147,7 @@ export default [
         name: 'Libertarianizm',
       },
       {
-        name: 'Anarcho-kapitalizm',
+        name: 'Anarchokapitalizm',
       },
       {
         name: 'Propertarianizm',
