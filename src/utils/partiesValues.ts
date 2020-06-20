@@ -10,6 +10,9 @@ import Razem from 'assets/images/parties/razem.png';
 import SojuszLewicyDemokratycznej from 'assets/images/parties/sld.png';
 import Wiosna from 'assets/images/parties/wiosna.png';
 import Libertarianie from 'assets/images/parties/libertarianie.png';
+import KonfederacjaKoronyPolskiej from 'assets/images/parties/kkp.png';
+import KomunistycznaPartiaPolski from 'assets/images/parties/kpp.png';
+import PartiaMozemy from 'assets/images/parties/mozemy.png';
 import { SpheresType } from './spheresCalculator';
 
 export interface Party {
@@ -158,6 +161,42 @@ export const parties: Party[] = [
     links: {
       www: 'https://www.partialibertarianie.pl/',
       programme: 'https://www.partialibertarianie.pl/program',
+    },
+  },
+  {
+    name: 'Partia Możemy',
+    logo: PartiaMozemy,
+    spheresValues: {
+      economics: 0.6,
+      social: -0.5,
+    },
+    links: {
+      www: 'https://partiamozemy.pl/',
+      programme: 'https://partiamozemy.pl/wp-content/uploads/2020/01/Deklaracja.pdf',
+    },
+  },
+  {
+    name: 'Komunistyczna Partia Polski',
+    logo: KomunistycznaPartiaPolski,
+    spheresValues: {
+      economics: -0.9,
+      social: 0.6,
+    },
+    links: {
+      www: 'https://partiamozemy.pl/',
+      programme: 'https://partiamozemy.pl/wp-content/uploads/2020/01/Deklaracja.pdf',
+    },
+  },
+  {
+    name: 'Konfederacja Korony Polskiej',
+    logo: KonfederacjaKoronyPolskiej,
+    spheresValues: {
+      economics: 0.5,
+      social: 0.7,
+    },
+    links: {
+      www: 'https://partiamozemy.pl/',
+      programme: 'https://partiamozemy.pl/wp-content/uploads/2020/01/Deklaracja.pdf',
     },
   },
 ];
