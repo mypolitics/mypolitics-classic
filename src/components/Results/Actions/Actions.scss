@@ -3,6 +3,18 @@
   grid-gap: 1rem;
   margin-top: 2rem;
 
+  .kofi-btn-container {
+    display: flex;
+
+    .kofi-button {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+
   &__share {
     font-weight: 600;
     display: flex;

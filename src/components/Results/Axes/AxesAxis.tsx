@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
-import { AxisSide, AxisSideMeta, Sides, Widths } from 'utils/axesConfig';
+import { AxisSide, Sides, Widths } from 'utils/axesConfig';
 
 type Props = {
   config: Sides

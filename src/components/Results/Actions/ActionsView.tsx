@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { HashLink as Link } from 'react-router-hash-link';
 import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 
 import './Actions.scss';
+import KoFi from '../../KoFi';
 
 library.add(faArrowRight);
 
@@ -32,12 +31,21 @@ const ActionsView: React.FC<Props> = (props) => {
     });
   };
 
+  const handleKoFiClick = () => (
+    ReactGA.event({
+      category: 'KoFi',
+      action: 'Donate Button Clicked',
+    })
+  );
+
   return (
     <div className="results__actions">
-      <Link className="results__actions__ideologies" smooth to="/#ideologies">
-        Opisy ideologii
-        <FaIcon icon={faArrowRight} />
-      </Link>
+      <KoFi
+        color="#29abe0"
+        id="R5R11NV4G"
+        label="Wspomóż autora :)"
+        onClick={handleKoFiClick}
+      />
       <div className="results__actions__share">
         <span>Udostępnij</span>
         <input
