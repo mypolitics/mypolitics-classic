@@ -86,7 +86,7 @@ const Party: React.FC<Props> = (props) => {
         {title}
         <InfoContainer notFound>
           <Name>
-            Twoje wyniki nie pasują do żadnej polskiej partii
+            Twoje wyniki nie pasują do żadnej partii wybranej kategorii
           </Name>
         </InfoContainer>
       </Inner>
