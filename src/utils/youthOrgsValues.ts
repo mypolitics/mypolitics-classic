@@ -68,7 +68,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/przedwiosnie.org/',
     spheresValues: {
       economics: -0.3,
-      social: -0.8,
+      social: -0.6,
     },
   },
   {
@@ -128,7 +128,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/ostrazielen/',
     spheresValues: {
       economics: -0.5,
-      social: -0.8,
+      social: -0.7,
     },
   },
   {
