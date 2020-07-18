@@ -22,6 +22,21 @@
     &__column {
       display: grid;
       grid-gap: 1rem;
+      & > .results__actions {
+        display: none;
+      }
+
+      @media only screen and (min-width: 768px) {
+        & > .results__actions {
+          display: grid;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      & > .results__actions {
+        display: none;
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ const Info: React.FC = () => (
       <h1 className="home__info__title">Funkcje</h1>
       <div className="home__info__cards">
         <InfoElement value="+100" title="pytań w quizie" color="green" />
-        <InfoElement value="5" title="kategorii pytań" color="violet" />
+        <InfoElement value="3" title="kategorie pytań" color="violet" />
         <InfoElement icon={faHistory} title="historia wyników" color="blue" />
         <InfoElement
           icon={faFistRaised}

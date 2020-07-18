@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
 import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
+import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Actions.scss';
 import KoFi from '../../KoFi';
 
-library.add(faArrowRight);
+library.add(faShare);
 
 interface Props {
   results: any;
@@ -47,7 +48,9 @@ const ActionsView: React.FC<Props> = (props) => {
         onClick={handleKoFiClick}
       />
       <div className="results__actions__share">
-        <span>Udostępnij</span>
+        <span>
+          <FaIcon icon="share" />
+        </span>
         <input
           type="text"
           value={`https://mypolitics.pl/results/${results.id}`}

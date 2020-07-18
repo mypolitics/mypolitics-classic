@@ -1,9 +1,19 @@
 import * as React from 'react';
 
 import { Party as PartyType } from 'utils/partiesValues';
+import {
+  Container,
+  Inner,
+  Title,
+  InfoContainer,
+  Name,
+  Links, ButtonGroup, Button,
+} from './PartyStyle';
 
 type Props = {
   party: PartyType | null,
+  parliamentOnly: boolean;
+  onParliamentOnlyChange(value: boolean): void;
   onPartyWebsiteButtonClick: Function,
   onPartyProgrammeButtonClick: Function
 };
@@ -11,21 +21,43 @@ type Props = {
 const Party: React.FC<Props> = (props) => {
   const {
     party,
+    parliamentOnly,
+    onParliamentOnlyChange,
     onPartyWebsiteButtonClick,
     onPartyProgrammeButtonClick,
   } = props;
 
+  const title = (
+    <Title>
+      <span>
+        Najbliższa partia
+      </span>
+      <ButtonGroup>
+        <Button
+          onClick={() => onParliamentOnlyChange(true)}
+          selected={parliamentOnly}
+        >
+          w sejmie
+        </Button>
+        <Button
+          onClick={() => onParliamentOnlyChange(false)}
+          selected={!parliamentOnly}
+        >
+          wszystkie
+        </Button>
+      </ButtonGroup>
+    </Title>
+  );
+
   if (party) {
     return (
-      <div className="party__container">
-        <div className="party">
-          <div className="party__title">
-            Najbliższa partia
-          </div>
-          <div className="party__info">
-            <img alt={party.name} src={party.logo}/>
-            <span className="party__info__name">{party.name}</span>
-            <div className="party__info__links">
+      <Container>
+        <Inner>
+          {title}
+          <InfoContainer>
+            <img alt={party.name} src={party.logo} />
+            <Name>{party.name}</Name>
+            <Links>
               <a
                 href={party.links.www}
                 target="_blank"
@@ -42,25 +74,23 @@ const Party: React.FC<Props> = (props) => {
               >
                 Program
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Links>
+          </InfoContainer>
+        </Inner>
+      </Container>
     );
   }
   return (
-    <div className="party__container">
-      <div className="party">
-        <div className="party__title">
-          Najbliższa partia
-        </div>
-        <div className="party__info notfound">
-          <div className="party__name">
+    <Container>
+      <Inner>
+        {title}
+        <InfoContainer notFound>
+          <Name>
             Twoje wyniki nie pasują do żadnej polskiej partii
-          </div>
-        </div>
-      </div>
-    </div>
+          </Name>
+        </InfoContainer>
+      </Inner>
+    </Container>
   );
 };
 
