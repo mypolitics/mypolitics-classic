@@ -12,7 +12,6 @@ import ResultsHistory from 'components/ResultsHistory';
 import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
-import myPoliticsMainThumbnail from 'assets/images/thumbnails/mypolitics.png';
 
 library.add(faBars, faTimes);
 
@@ -23,7 +22,7 @@ const App: React.FC = () => (
       <meta property="og:title" content="myPolitics – Test poglądów politycznych" />
       <meta name="description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
       <meta property="og:description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
-      <meta property="og:image" content={myPoliticsMainThumbnail} />
+      <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
     </Helmet>
     <Router>
       <Header />
