@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import chart from 'assets/vectors/chart.svg';
 import { SpheresType } from 'utils/spheresCalculator';
 
 type Props = SpheresType;
@@ -22,7 +21,8 @@ const CompassView: React.FC<Props> = (props) => {
   };
 
   const correctPosition = (value: number): string => {
-    const correctValue = (value / 2 + 0.5) * 100;
+    const roundedValue = Math.round((value + Number.EPSILON) * 100) / 100;
+    const correctValue = (roundedValue / 2 + 0.5) * 100;
     return `calc(${correctValue}% - 0.5rem - 4px)`;
   };
 
@@ -36,7 +36,7 @@ const CompassView: React.FC<Props> = (props) => {
     <div className="compass__container">
       <div className="compass">
         <div className="compass__chart">
-          <img src={chart} alt="Wykres" />
+          <img src="/vectors/chart.svg" alt="Wykres" />
           <div className="compass__point" style={style} />
         </div>
         <div className="compass__info">
