@@ -21,7 +21,7 @@ export const findYouthOrg = (
     }
   }
 
-  const distanceTooBig = shortestYouthOrgDistance > 0.5;
+  const distanceTooBig = shortestYouthOrgDistance > 0.4;
 
   return distanceTooBig ? null : closestYouthOrg;
 };
