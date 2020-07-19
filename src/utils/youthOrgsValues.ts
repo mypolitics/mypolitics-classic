@@ -18,7 +18,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/mlodzi.nowoczesni/',
     spheresValues: {
       economics: 0.5,
-      social: -0.5,
+      social: -0.6,
     },
   },
   {
@@ -58,7 +58,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/MlodziLibertarianie/',
     spheresValues: {
       economics: 0.8,
-      social: -0.5,
+      social: -0.6,
     },
   },
   {
@@ -97,7 +97,7 @@ export const youthOrgs: YouthOrg[] = [
     logo: `${YOUTHORGS_IMAGES_DIR}/kmk15.png`,
     link: 'https://www.facebook.com/MlodziK15/',
     spheresValues: {
-      economics: 0.35,
+      economics: 0.4,
       social: -0.1,
     },
   },
@@ -139,6 +139,16 @@ export const youthOrgs: YouthOrg[] = [
     spheresValues: {
       economics: 0.1,
       social: 0.4,
+    },
+  },
+  {
+    name: 'Młodzież Wszechpolska',
+    color: '#030708',
+    logo: `${YOUTHORGS_IMAGES_DIR}/mw.jpg`,
+    link: 'https://www.facebook.com/Wszechpolacy1922/',
+    spheresValues: {
+      economics: 0.3,
+      social: 0.8,
     },
   },
 ];

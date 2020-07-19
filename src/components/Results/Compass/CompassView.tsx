@@ -23,7 +23,7 @@ const CompassView: React.FC<Props> = (props) => {
   const correctPosition = (value: number): string => {
     const roundedValue = Math.round((value + Number.EPSILON) * 100) / 100;
     const correctValue = (roundedValue / 2 + 0.5) * 100;
-    return `calc(${correctValue}% - 0.5rem - 4px)`;
+    return `calc(${correctValue}% - 0.5rem - 2px)`;
   };
 
   const style: React.CSSProperties = {
