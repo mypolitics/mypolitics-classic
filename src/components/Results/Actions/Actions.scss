@@ -32,6 +32,10 @@
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
       width: 100%;
+      @media only screen and (min-width: 1200px) {
+        box-sizing: border-box;
+        max-width: calc(100% - 3rem);
+      }
     }
   }
 

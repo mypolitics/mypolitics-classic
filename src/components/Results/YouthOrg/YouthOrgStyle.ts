@@ -56,8 +56,7 @@ export const InfoContainer = styled.a<InfoContainerProps>`
 
 export const Image = styled.img`
   display: block;
-  height: 100%;
-  min-height: 3rem;
+  height: 3.5rem;
 `;
 
 export const Name = styled.div`

@@ -26,7 +26,8 @@
 }
 
 .compass {
-  @include chart(6rem) display: grid;
+  @include chart(6rem);
+  display: grid;
   margin: auto;
   width: 100%;
 
