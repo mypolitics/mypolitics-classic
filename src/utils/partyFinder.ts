@@ -4,6 +4,7 @@ import { Party, parties } from './partiesValues';
 export const findParty = (
   spheresValues: SpheresType,
   parliamentOnly: boolean,
+  radius: number = 0.5,
 ): Party | null => {
   let closestParty = null;
   let shortestPartyDistance = Infinity;
@@ -25,7 +26,7 @@ export const findParty = (
     }
   }
 
-  const distanceTooBig = shortestPartyDistance > 0.5;
+  const distanceTooBig = shortestPartyDistance > radius;
 
   return distanceTooBig ? null : closestParty;
 };

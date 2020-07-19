@@ -3,6 +3,7 @@ import { YouthOrg, youthOrgs } from './youthOrgsValues';
 
 export const findYouthOrg = (
   spheresValues: SpheresType,
+  radius: number = 0.4,
 ): YouthOrg | null => {
   let closestYouthOrg = null;
   let shortestYouthOrgDistance = Infinity;
@@ -21,7 +22,7 @@ export const findYouthOrg = (
     }
   }
 
-  const distanceTooBig = shortestYouthOrgDistance > 0.4;
+  const distanceTooBig = shortestYouthOrgDistance > radius;
 
   return distanceTooBig ? null : closestYouthOrg;
 };

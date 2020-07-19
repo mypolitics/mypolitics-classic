@@ -5,13 +5,15 @@ import { AxisSide, Sides, Widths } from 'utils/axesConfig';
 type Props = {
   config: Sides
   widths: Widths
+  editable?: boolean
+  onChange?(e: React.ChangeEvent<HTMLInputElement>): void
 };
 
 type ShowPopover = 'none' | 'left' | 'right';
 
 const Axis: React.FC<Props> = (props) => {
   const [showPopover, setShowPopover] = React.useState<ShowPopover>('none');
-  const { config, widths } = props;
+  const { config, widths, editable, onChange } = props;
   const { left } = config;
   const { right } = config;
   const isLeftFontAwesome = left.iconType === 'font-awesome';
@@ -65,7 +67,24 @@ const Axis: React.FC<Props> = (props) => {
             width: `${widths.left}%`,
           }}
         >
-          {widths.left > 20 && `${widths.left}%`}
+          {!editable && widths.left > 20 && (
+            `${widths.left}%`
+          )}
+          {editable && (
+            <div className="inputwrapper">
+              <input
+                name={left.title}
+                value={widths.left}
+                onChange={onChange}
+                type="number"
+                min={0}
+                max={100 - widths.right}
+              />
+              <span>
+                %
+              </span>
+            </div>
+          )}
         </div>
         <div
           className="axis__bar axis__bar--grey"
@@ -73,7 +92,10 @@ const Axis: React.FC<Props> = (props) => {
             width: `${widths.center + 1}%`,
           }}
         >
-          {widths.center > 20 && `${widths.center}%`}
+          {widths.center > 20 && (
+            `${widths.center}%`
+          )}
+
         </div>
         <div
           className="axis__bar"
@@ -82,7 +104,22 @@ const Axis: React.FC<Props> = (props) => {
             width: `${widths.right}%`,
           }}
         >
-          {widths.right > 20 && `${widths.right}%`}
+          {!editable && widths.right > 20 && `${widths.right}%`}
+          {editable && (
+            <div className="inputwrapper">
+              <input
+                name={right.title}
+                value={widths.right}
+                onChange={onChange}
+                type="number"
+                min={0}
+                max={100 - widths.left}
+              />
+              <span>
+                %
+              </span>
+            </div>
+          )}
         </div>
       </div>
       <div

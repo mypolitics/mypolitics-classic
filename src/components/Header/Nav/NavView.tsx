@@ -56,6 +56,15 @@ export const NavView: React.FC<Props> = (props) => {
         <FaIcon icon={faHistory} />
         <span>Historia wyników</span>
       </NavLink>
+      <NavLink
+        activeClassName="active"
+        to="/lab"
+        className="header__nav__el"
+        onClick={() => toggleNav()}
+      >
+        <FaIcon icon="flask" />
+        <span>Lab</span>
+      </NavLink>
       <hr />
       <a
         href="https://github.com/myPolitics/myPolitics/issues"

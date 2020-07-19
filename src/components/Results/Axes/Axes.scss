@@ -54,6 +54,50 @@
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+
+    .inputwrapper {
+      background: rgba(0,0,0, 0.5);
+      border-radius: 0.5rem;
+      display: flex;
+      z-index: 1;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+
+      input {
+        background: rgba(0,0,0, 0.5);
+        width: 3rem;
+        border: 0;
+        padding: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+        color: #FFF;
+        font-weight: 600;
+
+        &::after {
+          content: "%";
+        }
+      }
+
+      span {
+        padding: 0.5rem;
+        color: #FFF;
+        font-weight: 600;
+      }
+
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.5);
+
+        input {
+          background: none;
+          color: #000;
+        }
+
+        span {
+          color: #000;
+        }
+      }
+    }
   }
 }
 
