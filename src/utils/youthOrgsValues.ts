@@ -131,6 +131,16 @@ export const youthOrgs: YouthOrg[] = [
       social: 0.4,
     },
   },
+  {
+    name: 'Ostra Zieleń',
+    color: '#6dbc19',
+    logo: `${YOUTHORGS_IMAGES_DIR}/oz.png`,
+    link: 'https://www.facebook.com/ostrazielen/',
+    spheresValues: {
+      economics: -0.5,
+      social: -0.7,
+    },
+  },
 ];
 
 export default youthOrgs;

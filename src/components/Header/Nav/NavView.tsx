@@ -7,12 +7,13 @@ import {
   faTasks,
   faHistory,
   faBug,
+  faFlask,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import { mapStateToProps } from './NavRedux';
 
-library.add(faHome, faTasks, faHistory, faBug);
+library.add(faHome, faTasks, faFlask, faHistory, faBug);
 
 type ReduxType = ReturnType<typeof mapStateToProps>;
 type NavProps = {
@@ -62,7 +63,7 @@ export const NavView: React.FC<Props> = (props) => {
         className="header__nav__el"
         onClick={() => toggleNav()}
       >
-        <FaIcon icon="flask" />
+        <FaIcon icon={faFlask} />
         <span>Lab</span>
       </NavLink>
       <hr />
