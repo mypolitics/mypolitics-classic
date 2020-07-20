@@ -7,8 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Container, Title, Section, SectionTitle, SubTitle,
 } from './LabStyle';
-import CompassLab from './CompassLab';
-import ResultsLab from './ResultsLab';
+import LoadingInfo from '../LoadingInfo';
+
+const CompassLab = React.lazy(() => import('./CompassLab'));
+const ResultsLab = React.lazy(() => import('./ResultsLab'));
 
 library.add(faFlask, faChevronDown, faChevronUp);
 
@@ -66,7 +68,9 @@ const LabSection: React.FC<LabSectionProps> = ({ title, content }) => {
           )}
         </span>
       </SectionTitle>
-      {visible && content}
+      <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
+        {visible && content}
+      </React.Suspense>
     </Section>
   );
 };

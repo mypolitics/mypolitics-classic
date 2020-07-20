@@ -56,9 +56,12 @@ const CompassLab: React.FC = () => {
   });
 
   const handleSpheresChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(e.target.value);
+    const correctedValue = value > 1 ? 1 : (value < -1 ? -1 : value);
+
     const updatedSpheresResult: SpheresType = {
       ...spheresResult,
-      [e.target.name]: parseFloat(e.target.value),
+      [e.target.name]: correctedValue,
     };
 
     setSpheresResult(updatedSpheresResult);
@@ -102,8 +105,6 @@ const CompassLab: React.FC = () => {
           type="number"
           name="economics"
           step={0.1}
-          min={-1.0}
-          max={1.0}
           value={spheresResult.economics}
           onChange={handleSpheresChange}
         />
@@ -112,8 +113,6 @@ const CompassLab: React.FC = () => {
           type="number"
           name="social"
           step={0.1}
-          min={-1.0}
-          max={1.0}
           value={spheresResult.social}
           onChange={handleSpheresChange}
         />

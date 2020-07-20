@@ -3,6 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-gap: 2rem;
+  grid-template-columns: 100%;
+  
+  .axes {
+    grid-template-columns: 100%;
+  }
 `;
 
 export const ButtonGroup = styled.div`

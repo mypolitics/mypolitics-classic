@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-gap: 1rem;
+  grid-auto-columns: 100%;
   
   @media only screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
@@ -17,6 +18,9 @@ export const CompassContainer = styled.div`
   @media only screen and (min-width: 768px) {
     min-height: 20rem;
     min-width: 20rem;
+    
+    max-height: 20rem;
+    max-width: 20rem;
   }
 `;
 
@@ -30,8 +34,8 @@ export const CompassImage = styled.img`
 `;
 
 export const TopWrapper = styled.div`
+  max-width: 90vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -39,6 +43,7 @@ export const TopWrapper = styled.div`
 export const Inner = styled.div`
   display: grid;
   grid-gap: 1rem;
+  grid-auto-columns: 100%;
 `;
 
 export const Divider = styled.hr`
@@ -66,7 +71,7 @@ export const CompassDistribution = styled.div`
   width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
-  top: -100%;
+  top: 0;
   left: 0;
-  position: relative;
+  position: absolute;
 `;
