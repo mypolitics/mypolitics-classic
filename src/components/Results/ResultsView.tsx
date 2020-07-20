@@ -44,6 +44,9 @@ const ResultsView: React.FC<Props> = (props) => {
               'pl-PL',
               dateOptions,
             )}
+            {results.generated && (
+              <span className="results__title-generated">Wygenerowane</span>
+            )}
           </h1>
 
           <div className="results__inner">

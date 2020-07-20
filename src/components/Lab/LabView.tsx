@@ -5,7 +5,7 @@ import { faFlask, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  Container, Title, Section, SectionTitle,
+  Container, Title, Section, SectionTitle, SubTitle,
 } from './LabStyle';
 import CompassLab from './CompassLab';
 import ResultsLab from './ResultsLab';
@@ -23,6 +23,13 @@ const LabView: React.FC = () => (
       Lab
       <FontAwesomeIcon icon="flask" />
     </Title>
+    <Section>
+      <SubTitle>
+        Lab to środowisko testowe myPolitics, możesz tutaj przetestować główne funkcje testu.
+        <br />
+        Uwaga! Mogą wystąpić problemy z wydajnością.
+      </SubTitle>
+    </Section>
     <LabSection
       title="Kompas"
       content={<CompassLab />}

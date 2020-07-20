@@ -12,7 +12,7 @@ const round = (value: number): number => (
 const correctPosition = (value: number): string => {
   const roundedValue = round(value);
   const correctValue = (roundedValue / 2 + 0.5) * 100;
-  return `calc(${correctValue}% - 0.5rem - 2px)`;
+  return `${correctValue}%`;
 };
 
 type FindOrgFunction = (spheresResult: SpheresType) => Party | YouthOrg;
@@ -32,6 +32,11 @@ export const getOrganizationElements = (
         social: ((j / inRow) * 2) - 1,
       };
 
+      const finderPosition: SpheresType = {
+        economics: position.economics + 0.1,
+        social: position.social + 0.1,
+      };
+
       const size = `${round((1 / inRow) * 100)}%`;
 
       const style: React.CSSProperties = {
@@ -42,12 +47,12 @@ export const getOrganizationElements = (
         top: 'unset',
         position: 'absolute',
         borderRadius: 0,
-        opacity: 0.9,
+        opacity: 0.6,
       };
 
       const org = organizationType === 'party'
-        ? findParty(position, parliamentOnly, radius)
-        : findYouthOrg(position, radius);
+        ? findParty(finderPosition, parliamentOnly, radius)
+        : findYouthOrg(finderPosition, radius);
 
       if (org) {
         elements.push(

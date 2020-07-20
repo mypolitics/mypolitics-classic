@@ -27,6 +27,7 @@ const resultsService = {
           singleResultsById(id: ${JSON.stringify(resultsId)}){
             id: _id
             additionDate
+            generated
             axes {
               ... AxesFragment
             }

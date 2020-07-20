@@ -58,5 +58,15 @@ export const CompassPoint = styled.div`
   position: absolute;
   top: calc(50% - 0.5rem - 4px);
   left: calc(50% - 0.5rem - 2px);
-  z-index: 100;
+  z-index: 1;
+`;
+
+export const CompassDistribution = styled.div`
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  top: -100%;
+  left: 0;
+  position: relative;
 `;

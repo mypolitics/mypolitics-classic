@@ -12,7 +12,8 @@ type Props = {
 
 const Party: React.FC<Props> = ({ spheresResults }) => {
   const [parliamentOnly, setParliamentOnly] = React.useState<boolean>(true);
-  const party = findParty({
+  const getParty = React.useCallback(findParty, [spheresResults, parliamentOnly]);
+  const party = getParty({
     economics: spheresResults.economics,
     social: spheresResults.social,
   }, parliamentOnly);

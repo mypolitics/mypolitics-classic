@@ -1,7 +1,16 @@
 import React, { ChangeEvent } from 'react';
 
 import { SpheresType } from 'utils/spheresCalculator';
-import { Container, CompassContainer, CompassImage, Inner, Divider, CompassPoint, TopWrapper } from './CompassLabStyle';
+import {
+  Container,
+  CompassContainer,
+  CompassImage,
+  Inner,
+  Divider,
+  CompassPoint,
+  TopWrapper,
+  CompassDistribution
+} from './CompassLabStyle';
 import Input from 'shared/Input';
 import Select from 'shared/Select';
 
@@ -237,25 +246,34 @@ const CompassView: React.FC<CompassViewProps> = ({
   const Distribution: React.FC = () => {
     const { type, inRow, parliamentOnly, partyRadius, youthOrgRadius } = distribution;
     const radius = type === 'party' ? partyRadius : youthOrgRadius;
-    const elements = getOrganizationElements(
-      type,
-      inRow,
-      parliamentOnly,
-      radius,
-    );
+    const getElements = React.useCallback(() => (
+      getOrganizationElements(
+        type,
+        inRow,
+        parliamentOnly,
+        radius,
+      )
+    ), [type, inRow, parliamentOnly, radius]);
+
+    const elements = getElements();
+
     return (
       <>
-        {elements.map((el) => (el))}
+        {elements.map((el, index) => (
+          <React.Fragment key={index}>
+            {el}
+          </React.Fragment>
+        ))}
       </>
     );
   };
 
   const Point: React.FC = () => {
-    const correctPosition = (value: number): string => {
+    const correctPosition = React.useCallback((value: number): string => {
       const roundedValue = Math.round((value + Number.EPSILON) * 100) / 100;
       const correctValue = (roundedValue / 2 + 0.5) * 100;
       return `calc(${correctValue}% - 0.5rem - 2px)`;
-    };
+    }, [spheresResult]);
 
     const style: React.CSSProperties = {
       left: correctPosition(spheresResult.economics),
@@ -274,9 +292,11 @@ const CompassView: React.FC<CompassViewProps> = ({
       {showPosition && (
         <Point />
       )}
-      {showDistribution && (
-        <Distribution />
-      )}
+      <CompassDistribution>
+        {showDistribution && (
+          <Distribution />
+        )}
+      </CompassDistribution>
     </CompassContainer>
   );
 };

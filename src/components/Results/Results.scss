@@ -4,6 +4,9 @@
   padding: 1rem;
   max-width: 1200px;
   &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5rem;
     text-align: center;
     border-radius: 0.5rem;
@@ -13,6 +16,16 @@
     background: linear-gradient(to right, #00b4db, #0083b0);
     margin: 0;
     margin-bottom: 1.5rem;
+
+    &-generated {
+      margin-left: 1rem;
+      padding: 0.5rem;
+      background: #FFF;
+      color: #00b4db;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
   }
 
   &__inner {

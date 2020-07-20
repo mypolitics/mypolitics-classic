@@ -11,7 +11,8 @@ type Props = {
 };
 
 const YouthOrg: React.FC<Props> = ({ spheresResults }) => {
-  const youthOrg = findYouthOrg({
+  const getYouthOrg = React.useCallback(findYouthOrg, [spheresResults]);
+  const youthOrg = getYouthOrg({
     economics: spheresResults.economics,
     social: spheresResults.social,
   });

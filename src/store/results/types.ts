@@ -22,6 +22,7 @@ export interface Results {
   id?: string;
   axes: AxesResults;
   additionDate: string;
+  generated?: boolean;
 }
 
 export interface AxesResults {

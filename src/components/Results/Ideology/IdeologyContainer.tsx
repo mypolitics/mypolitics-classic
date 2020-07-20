@@ -10,7 +10,8 @@ interface Props {
 }
 
 const Ideology: React.FC<Props> = ({ spheresResults }) => {
-  const ideology = findIdeology(spheresResults);
+  const getIdeology = React.useCallback(findIdeology, [spheresResults]);
+  const ideology = getIdeology(spheresResults);
 
   return (
     <IdeologyView

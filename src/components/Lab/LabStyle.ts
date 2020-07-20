@@ -25,6 +25,12 @@ export const Title = styled.h2`
   }
 `;
 
+export const SubTitle = styled.h3`
+  color: #00b4db;
+  font-weight: 600;
+  text-align: center;
+`;
+
 export const Section = styled.section`
   margin-bottom: 2rem;
   background: #F8F8F8;

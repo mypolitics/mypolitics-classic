@@ -10,6 +10,8 @@ import axesConfig, { Sides, Widths } from 'utils/axesConfig';
 import Axis from 'components/Results/Axes/AxesAxis';
 import service from 'service';
 import { Container, ButtonGroup, Button } from './ResultsLabStyle';
+import ReactGA from 'react-ga';
+import ReactPixel from 'react-facebook-pixel';
 
 library.add(faRandom, faSave);
 
@@ -78,10 +80,23 @@ const ResultsLab: React.FC = () => {
     const data: Results = {
       axes: results,
       additionDate: new Date().toISOString(),
+      generated: true,
     };
 
     const result = await service.addResults(data);
-    (window as any).location.href = `/results/${result.addResults.id}`;
+    const resultsId = result.addResults.id;
+
+    ReactGA.event({
+      category: 'Lab',
+      action: 'ResultsGenerated',
+      value: resultsId,
+    });
+
+    ReactPixel.trackCustom('LabResultsGenerated', {
+      id: resultsId,
+    });
+
+    (window as any).location.href = `/results/${resultsId}`;
   };
 
   const getBuiltWidths = (sides: Sides): Widths => {

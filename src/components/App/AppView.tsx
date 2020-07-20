@@ -12,7 +12,9 @@ import ResultsHistory from 'components/ResultsHistory';
 import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
-import Lab from 'components/Lab';
+import LoadingInfo from '../LoadingInfo';
+
+const Lab = React.lazy(() => import('components/Lab'));
 
 library.add(faBars, faTimes);
 
@@ -33,7 +35,9 @@ const App: React.FC = () => (
         <Route path="/results/:id" component={Results} />
         <Route path="/history" component={ResultsHistory} />
         <Route path="/privacy" component={Privacy} />
-        <Route path="/lab" component={Lab} />
+        <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
+          <Route path="/lab" component={Lab} />
+        </React.Suspense>
         <Route path="/404" component={Error404} />
         <Route path="*" component={Error404} />
       </Switch>
