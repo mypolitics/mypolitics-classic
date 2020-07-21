@@ -87,7 +87,7 @@ export const parties: Party[] = [
     name: 'Koalicja Polska PSL-K\'15',
     logo: `${PARTIES_IMAGES_DIR}/kp.png`,
     spheresValues: {
-      economics: 0.275,
+      economics: 0.3,
       social: 0.0,
     },
     links: {
