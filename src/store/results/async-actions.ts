@@ -8,22 +8,24 @@ import service from '../../service';
 export async function getAndSetResultsById(
   dispatch: Dispatch<ResultsActions>,
   resultsId: string,
-) {
+): Promise<Results | undefined> {
   dispatch(actions.setLoadingValue(true));
 
-  await service
+  const result: Results | undefined = await service
     .getResultsById(resultsId)
     .then((response) => response.singleResultsById)
     .then((results) => {
       if (results) {
         dispatch(actions.setResults(results));
-      } else {
-        throw new Error('Results not found');
+        return results;
       }
+
+      return undefined;
     })
     .catch(console.error);
 
   dispatch(actions.setLoadingValue(false));
+  return result;
 }
 
 export async function addToResultsHistoryById(
