@@ -36,7 +36,7 @@ export default [
         name: 'Socjaldemokracja',
       },
       {
-        name: 'Socjalliberalizm',
+        name: 'Liberalny socjalizm',
       },
       {
         name: 'Socjalizm',
@@ -72,10 +72,10 @@ export default [
         name: 'Reformizm',
       },
       {
-        name: 'Liberalny socjalizm',
+        name: 'Socjalliberalizm',
       },
       {
-        name: 'Ekologizm',
+        name: 'Geolibertarianizm',
       },
       {
         name: 'Geolibertarianizm',
@@ -87,7 +87,7 @@ export default [
         name: 'Centryzm',
       },
       {
-        name: 'Liberalizm',
+        name: 'Centryzm',
       },
       {
         name: 'Frankizm',
@@ -102,7 +102,7 @@ export default [
         name: 'Konserwatyzm ewolucyjny',
       },
       {
-        name: 'Progresywizm',
+        name: 'Liberalizm',
       },
       {
         name: 'Aktywizm',

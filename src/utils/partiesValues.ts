@@ -20,8 +20,8 @@ export const parties: Party[] = [
     name: 'Nowoczesna',
     logo: `${PARTIES_IMAGES_DIR}/nowoczesna.png`,
     spheresValues: {
-      economics: 0.33,
-      social: -0.33,
+      economics: 0.4,
+      social: -0.35,
     },
     links: {
       www: 'https://nowoczesna.org/',
@@ -49,7 +49,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/korwin.png`,
     spheresValues: {
       economics: 0.9,
-      social: 0.4,
+      social: 0.35,
     },
     links: {
       www: 'https://wolnosc.pl/',
@@ -87,7 +87,7 @@ export const parties: Party[] = [
     name: 'Koalicja Polska PSL-K\'15',
     logo: `${PARTIES_IMAGES_DIR}/kp.png`,
     spheresValues: {
-      economics: 0.3,
+      economics: 0.25,
       social: 0.0,
     },
     links: {
@@ -154,7 +154,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/libertarianie.png`,
     spheresValues: {
       economics: 0.8,
-      social: -0.5,
+      social: -0.55,
     },
     links: {
       www: 'https://www.partialibertarianie.pl/',
@@ -166,8 +166,8 @@ export const parties: Party[] = [
     name: 'Partia Możemy',
     logo: `${PARTIES_IMAGES_DIR}/mozemy.png`,
     spheresValues: {
-      economics: 0.6,
-      social: -0.5,
+      economics: 0.65,
+      social: -0.55,
     },
     links: {
       www: 'https://partiamozemy.pl/',
