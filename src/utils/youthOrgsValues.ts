@@ -98,7 +98,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/MlodziK15/',
     spheresValues: {
       economics: 0.4,
-      social: -0.1,
+      social: -0.05,
     },
   },
   {

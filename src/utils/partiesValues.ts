@@ -49,7 +49,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/korwin.png`,
     spheresValues: {
       economics: 0.9,
-      social: 0.5,
+      social: 0.4,
     },
     links: {
       www: 'https://wolnosc.pl/',
@@ -84,14 +84,14 @@ export const parties: Party[] = [
     parliamentRepresentation: true,
   },
   {
-    name: 'Polskie Stronnictwo Ludowe',
-    logo: `${PARTIES_IMAGES_DIR}/psl.png`,
+    name: 'Koalicja Polska PSL-K\'15',
+    logo: `${PARTIES_IMAGES_DIR}/kp.png`,
     spheresValues: {
-      economics: 0.1,
-      social: 0.1,
+      economics: 0.275,
+      social: 0.0,
     },
     links: {
-      www: 'https://www.psl.pl/',
+      www: 'https://www.psl.pl/wp-content/uploads/2019/09/PROGRAM_PSL_2019.pdf',
       programme:
         'https://www.psl.pl/wp-content/uploads/2019/09/PROGRAM_PSL_2019.pdf',
     },
