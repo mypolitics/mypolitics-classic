@@ -1,11 +1,22 @@
 import * as React from 'react';
+import './Compass.scss';
 
-import { SpheresType } from 'utils/spheresCalculator';
+import { SpheresCalculatorMethod, SpheresType } from 'utils/spheresCalculator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-type Props = SpheresType;
+interface Props {
+  spheresResults: SpheresType
+  spheresCalcMethod: SpheresCalculatorMethod
+  onSpheresCalcMethod(method: SpheresCalculatorMethod): void
+}
 
-const CompassView: React.FC<Props> = (props) => {
-  const { economics, social } = props;
+const CompassView: React.FC<Props> = ({
+  spheresCalcMethod,
+  spheresResults,
+  onSpheresCalcMethod,
+}) => {
+  const { economics, social } = spheresResults;
+  const isOldMethod = spheresCalcMethod === SpheresCalculatorMethod.Old;
 
   const axisResultsInfo = (value: number): string => {
     let wing = '';
@@ -56,6 +67,33 @@ const CompassView: React.FC<Props> = (props) => {
               {axisResultsInfo(social)}
             </div>
           </div>
+        </div>
+        <div className="compass__method">
+          <span className="method__title">
+            Metoda
+            <a
+              className="method__button"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://l.orlow.me/mypolitics-metoda"
+            >
+              <FontAwesomeIcon icon="question" />
+            </a>
+          </span>
+          <button
+            type="button"
+            className={`method__button ${isOldMethod && 'selected'}`}
+            onClick={() => onSpheresCalcMethod(SpheresCalculatorMethod.Old)}
+          >
+            Stara
+          </button>
+          <button
+            type="button"
+            className={`method__button ${!isOldMethod && 'selected'}`}
+            onClick={() => onSpheresCalcMethod(SpheresCalculatorMethod.New)}
+          >
+            Nowa
+          </button>
         </div>
       </div>
     </div>

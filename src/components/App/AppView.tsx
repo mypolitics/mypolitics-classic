@@ -29,18 +29,18 @@ const App: React.FC = () => (
     </Helmet>
     <Router>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/quiz" component={Quiz} />
-        <Route path="/results/:id" component={Results} />
-        <Route path="/history" component={ResultsHistory} />
-        <Route path="/privacy" component={Privacy} />
-        <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
+      <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/results/:id" component={Results} />
+          <Route path="/history" component={ResultsHistory} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/404" component={Error404} />
           <Route path="/lab" component={Lab} />
-        </React.Suspense>
-        <Route path="/404" component={Error404} />
-        <Route path="*" component={Error404} />
-      </Switch>
+          <Route path="*" component={Error404} />
+        </Switch>
+      </React.Suspense>
     </Router>
   </div>
 );

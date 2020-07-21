@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import LoadingInfo from 'components/LoadingInfo';
 import { Results } from 'store/results/types';
-import { SpheresType } from 'utils/spheresCalculator';
+import { SpheresCalculatorMethod, SpheresType } from 'utils/spheresCalculator';
 import Axes from './Axes';
 import Ideology from './Ideology';
 import Compass from './Compass';
@@ -15,12 +15,20 @@ type Props = {
   loading: boolean
   results: Results
   spheresResults: SpheresType
+  spheresCalcMethod: SpheresCalculatorMethod
+  onSpheresCalcMethod(method: SpheresCalculatorMethod): void
 };
 
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
 const ResultsView: React.FC<Props> = (props) => {
-  const { loading, results, spheresResults } = props;
+  const {
+    loading,
+    results,
+    spheresResults,
+    spheresCalcMethod,
+    onSpheresCalcMethod,
+  } = props;
 
   const actions = (
     <Actions results={results} />
@@ -56,7 +64,11 @@ const ResultsView: React.FC<Props> = (props) => {
             </div>
             <div className="results__inner__column">
               <Ideology spheresResults={spheresResults} />
-              <Compass spheresResults={spheresResults} />
+              <Compass
+                spheresResults={spheresResults}
+                spheresCalcMethod={spheresCalcMethod}
+                onSpheresCalcMethod={onSpheresCalcMethod}
+              />
               <Party spheresResults={spheresResults} />
               <YoutOrg spheresResults={spheresResults} />
             </div>

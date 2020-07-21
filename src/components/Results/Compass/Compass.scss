@@ -2,12 +2,11 @@
   grid-template-columns: $height calc(100% - #{$height});
 
   &__chart {
+    grid-area: chart;
     position: relative;
     height: $height;
     width: $height;
     img {
-      border-top-left-radius: 0.5rem;
-      border-bottom-left-radius: 0.5rem;
       display: block;
       width: $height;
       height: $height;
@@ -30,6 +29,12 @@
   display: grid;
   margin: auto;
   width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  grid-template-areas:
+    "chart info"
+    "method method";
 
   &__point {
     width: 1rem;
@@ -43,11 +48,10 @@
   }
 
   &__info {
+    grid-area: info;
     display: grid;
     overflow: hidden;
     background: #f5f5f5;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
     &__el {
       display: flex;
       justify-content: left;
@@ -63,6 +67,54 @@
       font-weight: 700;
     }
   }
+
+  &__method {
+    display: grid;
+    grid-area: method;
+    grid-template-columns: repeat(3, 1fr);
+
+    .method__button {
+      background: #ececec;
+      border: 0;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      font-weight: 600;
+      text-decoration: none;
+      color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.selected {
+        background: #00b3da;
+        color: #FFF;
+      }
+
+      &:hover {
+        filter: brightness(95%);
+      }
+    }
+
+    .method__title {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      background: #ECECEC;
+
+      .method__button {
+        border-radius: 100%;
+        height: 1.5rem;
+        width: 1.5rem;
+        padding: 0;
+        background: #F5F5F5;
+        margin-left: 0.5em;
+        font-size: 0.75rem;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 400px) {
@@ -75,8 +127,13 @@
 
 @media only screen and (min-width: 768px) {
   .compass {
-    @include chart(10rem) &__info__el {
+    @include chart(10rem);
+    &__info__el {
       font-size: 1.2rem;
     }
+
+    grid-template-areas:
+      "chart info"
+      "chart method";
   }
 }

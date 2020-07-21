@@ -39,7 +39,7 @@ export default [
         name: 'Socjalliberalizm',
       },
       {
-        name: 'Zielony socjalizm',
+        name: 'Socjalizm',
       },
       {
         name: 'Nowa lewica',
@@ -123,7 +123,7 @@ export default [
         name: 'Minarchizm',
       },
       {
-        name: 'Zielony libertarianizm',
+        name: 'Libertarianizm',
       },
       {
         name: 'Agoryzm',

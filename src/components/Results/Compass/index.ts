@@ -1,1 +1,1 @@
-export { default } from './CompassContainer';
+export { default } from './CompassView';
