@@ -5,6 +5,7 @@ export const Container = styled.select`
   margin: 0;
   border: 0;
   border-radius: 0.5rem;
-  background: #ececec;
+  background: #00b4db;
+  color: #FFF;
   font-weight: 600;
 `;

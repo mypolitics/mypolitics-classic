@@ -8,7 +8,7 @@ import { DeepPartial } from 'redux';
 library.add(faCheck, faPlusCircle, faMinusCircle);
 
 interface Props {
-  label?: string
+  label?: string | React.ReactNode
   type: string
   name?: string
   defaultValue?: any

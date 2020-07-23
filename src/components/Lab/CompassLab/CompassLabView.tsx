@@ -9,7 +9,8 @@ import {
   Divider,
   CompassPoint,
   TopWrapper,
-  CompassDistribution
+  CompassDistribution,
+  QuestionLink,
 } from './CompassLabStyle';
 import Input from 'shared/Input';
 import Select from 'shared/Select';
@@ -18,6 +19,7 @@ import Party from '../../Results/Party';
 import YouthOrg from '../../Results/YouthOrg';
 import Ideology from '../../Results/Ideology';
 import { getOrganizationElements } from './CompassLabUtils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Show {
   party: boolean;
@@ -48,7 +50,7 @@ const CompassLab: React.FC = () => {
     social: 0.0,
   });
   const [distribution, setDistribution] = React.useState<Distribution>({
-    inRow: 10,
+    inRow: 20,
     type: 'party',
     parliamentOnly: false,
     partyRadius: 0.5,
@@ -162,7 +164,18 @@ const CompassLab: React.FC = () => {
         />
         <Divider />
         <Input
-          label="Rozkład organizacji"
+          label={(
+            <>
+              Rozkład organizacji
+              <QuestionLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://l.orlow.me/mypolitics-lab-zakres-organizacji"
+              >
+                <FontAwesomeIcon icon="question" />
+              </QuestionLink>
+            </>
+          )}
           type="checkbox"
           name="distribution"
           checked={show.distribution}

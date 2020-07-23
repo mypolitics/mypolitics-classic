@@ -5,4 +5,26 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__button-repair {
+    background: #00b4db;
+    color: #FFF;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding: 1rem;
+    border: 0;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    & > svg {
+      padding-right: 0.5em;
+    }
+  }
 }

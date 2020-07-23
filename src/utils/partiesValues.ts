@@ -34,7 +34,7 @@ export const parties: Party[] = [
     name: 'Platforma Obywatelska',
     logo: `${PARTIES_IMAGES_DIR}/po.png`,
     spheresValues: {
-      economics: -0.1,
+      economics: -0.05,
       social: -0.1,
     },
     links: {
@@ -74,7 +74,7 @@ export const parties: Party[] = [
     name: 'Prawo i Sprawiedliwość',
     logo: `${PARTIES_IMAGES_DIR}/pis.png`,
     spheresValues: {
-      economics: -0.33,
+      economics: -0.15,
       social: 0.33,
     },
     links: {
@@ -87,7 +87,7 @@ export const parties: Party[] = [
     name: 'Koalicja Polska PSL-K\'15',
     logo: `${PARTIES_IMAGES_DIR}/kp.png`,
     spheresValues: {
-      economics: 0.25,
+      economics: 0.3,
       social: 0.0,
     },
     links: {
@@ -115,7 +115,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/razem.png`,
     spheresValues: {
       economics: -0.66,
-      social: -0.66,
+      social: -0.5,
     },
     links: {
       www: 'https://partiarazem.pl/',
@@ -128,7 +128,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/sld.png`,
     spheresValues: {
       economics: -0.5,
-      social: -0.5,
+      social: -0.3,
     },
     links: {
       www: 'https://sld.org.pl/',
@@ -140,8 +140,8 @@ export const parties: Party[] = [
     name: 'Wiosna',
     logo: `${PARTIES_IMAGES_DIR}/wiosna.png`,
     spheresValues: {
-      economics: -0.5,
-      social: -0.66,
+      economics: -0.4,
+      social: -0.5,
     },
     links: {
       www: 'https://wiosnabiedronia.pl/',
@@ -167,7 +167,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/mozemy.png`,
     spheresValues: {
       economics: 0.65,
-      social: -0.55,
+      social: -0.5,
     },
     links: {
       www: 'https://partiamozemy.pl/',

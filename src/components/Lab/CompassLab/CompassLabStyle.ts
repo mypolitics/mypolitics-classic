@@ -75,3 +75,17 @@ export const CompassDistribution = styled.div`
   left: 0;
   position: absolute;
 `;
+
+export const QuestionLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  background: #F5F5F5;
+  color: #111;
+  margin-left: 0.5em;
+  font-size: 0.75rem;
+`;
