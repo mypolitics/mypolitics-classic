@@ -28,6 +28,25 @@ export const Wrapper = styled.div<WrapperProps>`
   )};
 `;
 
+export const MainButton = styled.button`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  background: #00B3DB;
+  color: #FFF;
+  border-radius: 0.5rem;
+  border: 0;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+
+  span {
+    font-weight: 700;
+  }
+`;
+
 export const Container = styled.article`
   display: grid;
   grid-template-columns: 100%;

@@ -8,6 +8,7 @@ import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 import { Results } from 'store/results/types';
 import {
+  MainButton,
   BottomContainer,
   Container,
   Link,
@@ -26,11 +27,12 @@ library.add(faTimes, faFacebookF, faDiscord);
 
 interface Props {
   results: Results
+  loading: boolean
 }
 
 const defaultShow = getShowValue();
 
-const ModalAd: React.FC<Props> = ({ results }: Props) => {
+const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
   const [show, setShow] = React.useState<boolean>(defaultShow);
 
   const handleCloseClick = () => {
@@ -39,7 +41,7 @@ const ModalAd: React.FC<Props> = ({ results }: Props) => {
     setShow(false);
   };
 
-  const handleLinkClick = (type: 'Join' | 'Facebook' | 'Discord') => {
+  const handleActionClick = (type: 'Join' | 'Facebook' | 'Discord' | 'Open') => {
     const resultsId = results ? results.id : 'LOADING';
 
     ReactGA.event({
@@ -53,61 +55,74 @@ const ModalAd: React.FC<Props> = ({ results }: Props) => {
     });
   };
 
+  const handleOpenClick = () => {
+    handleActionClick('Open');
+    setShow(true);
+  };
+
   return (
-    <Wrapper show={show}>
-      <Container>
-        <TopContainer>
-          <TopTitle>
-            Polityczny serwer Minecraft
-          </TopTitle>
-          <TopButton onClick={handleCloseClick}>
-            <FontAwesomeIcon icon={faTimes} />
-          </TopButton>
-        </TopContainer>
-        <MiddleContainer>
-          <MiddleTitle>
-            myPolitics jest partnerem medialnym <span>Minecraft4Politics</span>,
-            symulacji politycznej opartej na&nbsp;serwerze Minecraft!
-          </MiddleTitle>
-          <MiddleList>
-            <MiddleListElement>
-              Świat podzielony na&nbsp;<span>ćwiartki kompasu politycznego</span>
-            </MiddleListElement>
-            <MiddleListElement>
-              Rozwinięta&nbsp;<span>ekonomia</span>
-            </MiddleListElement>
-            <MiddleListElement>
-              Możliwość tworzenia <span>prawa</span>
-            </MiddleListElement>
-          </MiddleList>
-        </MiddleContainer>
-        <BottomContainer>
-          <Link
-            href="https://forms.gle/gsp1kJPknLQwz3v5A"
-            target="_blank"
-            onClick={() => handleLinkClick('Join')}
-          >
-            Super, dołączam!
-          </Link>
-          <Link
-            href="https://discord.gg/4Czawyz"
-            target="_blank"
-            type="discord"
-            onClick={() => handleLinkClick('Discord')}
-          >
-            <FontAwesomeIcon icon={faDiscord} />
-          </Link>
-          <Link
-            href="https://www.facebook.com/minecraft4politics"
-            target="_blank"
-            type="facebook"
-            onClick={() => handleLinkClick('Facebook')}
-          >
-            <FontAwesomeIcon icon={faFacebookF} />
-          </Link>
-        </BottomContainer>
-      </Container>
-    </Wrapper>
+    <>
+      {!loading && (
+        <MainButton onClick={handleOpenClick}>
+          <span>Polityczny serwer Minecraft.</span>
+          &nbsp;Brzmi fajnie? Kliknij i dowiedz się więcej!
+        </MainButton>
+      )}
+      <Wrapper show={show}>
+        <Container>
+          <TopContainer>
+            <TopTitle>
+              Polityczny serwer Minecraft
+            </TopTitle>
+            <TopButton onClick={handleCloseClick}>
+              <FontAwesomeIcon icon={faTimes} />
+            </TopButton>
+          </TopContainer>
+          <MiddleContainer>
+            <MiddleTitle>
+              myPolitics jest partnerem medialnym <span>Minecraft4Politics</span>,
+              symulacji politycznej opartej na&nbsp;serwerze Minecraft!
+            </MiddleTitle>
+            <MiddleList>
+              <MiddleListElement>
+                Świat podzielony na&nbsp;<span>ćwiartki kompasu politycznego</span>
+              </MiddleListElement>
+              <MiddleListElement>
+                Rozwinięta&nbsp;<span>ekonomia</span>
+              </MiddleListElement>
+              <MiddleListElement>
+                Możliwość tworzenia <span>prawa</span>
+              </MiddleListElement>
+            </MiddleList>
+          </MiddleContainer>
+          <BottomContainer>
+            <Link
+              href="https://forms.gle/gsp1kJPknLQwz3v5A"
+              target="_blank"
+              onClick={() => handleActionClick('Join')}
+            >
+              Super, dołączam!
+            </Link>
+            <Link
+              href="https://discord.gg/4Czawyz"
+              target="_blank"
+              type="discord"
+              onClick={() => handleActionClick('Discord')}
+            >
+              <FontAwesomeIcon icon={faDiscord} />
+            </Link>
+            <Link
+              href="https://www.facebook.com/minecraft4politics"
+              target="_blank"
+              type="facebook"
+              onClick={() => handleActionClick('Facebook')}
+            >
+              <FontAwesomeIcon icon={faFacebookF} />
+            </Link>
+          </BottomContainer>
+        </Container>
+      </Wrapper>
+    </>
   );
 };
 
