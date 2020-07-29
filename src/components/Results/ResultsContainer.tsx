@@ -7,8 +7,8 @@ import ReactPixel from 'react-facebook-pixel';
 import './Results.scss';
 import calcSpheresResults, { SpheresCalculatorMethod } from 'utils/spheresCalculator';
 import { mapDispatcherToProps, mapStateToProps } from './ResultsRedux';
-import ResultsView from './ResultsView';
 import LoadingInfo from '../LoadingInfo';
+import ResultsView from './ResultsView';
 
 type ReduxType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatcherToProps>;
 type MatchProps = RouteComponentProps<{ id: string }>;

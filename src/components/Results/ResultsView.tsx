@@ -10,6 +10,7 @@ import Compass from './Compass';
 import Party from './Party';
 import Actions from './Actions';
 import YoutOrg from './YouthOrg';
+import ModalAd from './ModalAd';
 
 type Props = {
   loading: boolean
@@ -77,6 +78,9 @@ const ResultsView: React.FC<Props> = (props) => {
         </div>
       )}
       {loading && <LoadingInfo colorHEX="#111" />}
+      <ModalAd
+        results={results}
+      />
     </main>
   );
 };
