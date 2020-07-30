@@ -35,7 +35,7 @@ const ResultsView: React.FC<Props> = (props) => {
     if (!loading) {
       // @ts-ignore
       // eslint-disable-next-line no-undef
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
   }, [loading]);
 

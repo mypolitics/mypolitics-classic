@@ -18,7 +18,7 @@ const LabView: React.FC = () => {
   React.useEffect(() => {
     // @ts-ignore
     // eslint-disable-next-line no-undef
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
   return (
