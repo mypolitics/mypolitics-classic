@@ -32,10 +32,12 @@ const ResultsView: React.FC<Props> = (props) => {
   } = props;
 
   React.useEffect(() => {
-    // @ts-ignore
-    // eslint-disable-next-line no-undef
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  }, []);
+    if (!loading) {
+      // @ts-ignore
+      // eslint-disable-next-line no-undef
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }, [loading]);
 
   const actions = (
     <Actions results={results} />
@@ -84,13 +86,17 @@ const ResultsView: React.FC<Props> = (props) => {
         </div>
       )}
       {loading && <LoadingInfo colorHEX="#111" />}
+      <ModalAd
+        results={results}
+        loading={loading}
+      />
       {!loading && (
         <ins
           className="adsbygoogle"
           style={{
             display: 'block',
             width: '100%',
-            marginTop: '1rem',
+            marginTop: '2rem',
           }}
           data-ad-client="ca-pub-2006154132998057"
           data-ad-slot="6938351477"
@@ -98,10 +104,6 @@ const ResultsView: React.FC<Props> = (props) => {
           data-full-width-responsive="true"
         />
       )}
-      <ModalAd
-        results={results}
-        loading={loading}
-      />
     </main>
   );
 };
