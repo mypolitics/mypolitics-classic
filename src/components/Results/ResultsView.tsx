@@ -12,6 +12,8 @@ import Actions from './Actions';
 import YoutOrg from './YouthOrg';
 import ModalAd from './ModalAd';
 
+const AdSense = require('react-adsense');
+
 type Props = {
   loading: boolean
   results: Results
@@ -79,17 +81,16 @@ const ResultsView: React.FC<Props> = (props) => {
       )}
       {loading && <LoadingInfo colorHEX="#111" />}
       {!loading && (
-        <ins
-          className="adsbygoogle"
+        <AdSense.Google
+          client="ca-pub-2006154132998057"
+          slot="6938351477"
+          format="auto"
+          responsive="true"
           style={{
             display: 'block',
             width: '100%',
             marginTop: '1rem',
           }}
-          data-ad-client="ca-pub-2006154132998057"
-          data-ad-slot="6938351477"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
         />
       )}
       <ModalAd

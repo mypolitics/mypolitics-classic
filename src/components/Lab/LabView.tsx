@@ -9,6 +9,7 @@ import {
 } from './LabStyle';
 import LoadingInfo from '../LoadingInfo';
 
+const AdSense = require('react-adsense');
 const CompassLab = React.lazy(() => import('./CompassLab'));
 const ResultsLab = React.lazy(() => import('./ResultsLab'));
 
@@ -40,17 +41,16 @@ const LabView: React.FC = () => (
       title="Wyniki"
       content={<ResultsLab />}
     />
-    <ins
-      className="adsbygoogle"
+    <AdSense.Google
+      client="ca-pub-2006154132998057"
+      slot="3382249847"
+      format="auto"
+      responsive="true"
       style={{
         display: 'block',
         width: '100%',
         marginTop: '1rem',
       }}
-      data-ad-client="ca-pub-2006154132998057"
-      data-ad-slot="3382249847"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
     />
   </Container>
 );
