@@ -40,6 +40,12 @@ const TestView: React.FC<Props> = (props) => {
     return () => clearInterval(interval);
   }, [loading]);
 
+  React.useEffect(() => {
+    // @ts-ignore
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
+
   return (
     <div className="test">
       <div>
@@ -61,6 +67,18 @@ const TestView: React.FC<Props> = (props) => {
         )}
         <Actions question={question} loading={loading} />
       </div>
+      <ins
+        className="adsbygoogle"
+        style={{
+          display: 'block',
+          width: '100%',
+          marginTop: '1rem',
+        }}
+        data-ad-client="ca-pub-2006154132998057"
+        data-ad-slot="4587520303"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
     </div>
   );
 };

@@ -14,34 +14,54 @@ const ResultsLab = React.lazy(() => import('./ResultsLab'));
 
 library.add(faFlask, faChevronDown, faChevronUp);
 
-const LabView: React.FC = () => (
-  <Container>
-    <Helmet>
-      <title>myPolitics – Lab</title>
-      <meta property="og:title" content="myPolitics – Lab" />
-      <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
-    </Helmet>
-    <Title>
-      Lab
-      <FontAwesomeIcon icon="flask" />
-    </Title>
-    <Section>
-      <SubTitle>
-        Lab to środowisko testowe myPolitics, możesz tutaj przetestować główne funkcje testu.
-        <br />
-        Uwaga! Mogą wystąpić problemy z wydajnością.
-      </SubTitle>
-    </Section>
-    <LabSection
-      title="Kompas"
-      content={<CompassLab />}
-    />
-    <LabSection
-      title="Wyniki"
-      content={<ResultsLab />}
-    />
-  </Container>
-);
+const LabView: React.FC = () => {
+  React.useEffect(() => {
+    // @ts-ignore
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
+
+  return (
+    <Container>
+      <Helmet>
+        <title>myPolitics – Lab</title>
+        <meta property="og:title" content="myPolitics – Lab" />
+        <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
+      </Helmet>
+      <Title>
+        Lab
+        <FontAwesomeIcon icon="flask" />
+      </Title>
+      <Section>
+        <SubTitle>
+          Lab to środowisko testowe myPolitics, możesz tutaj przetestować główne funkcje testu.
+          <br />
+          Uwaga! Mogą wystąpić problemy z wydajnością.
+        </SubTitle>
+      </Section>
+      <LabSection
+        title="Kompas"
+        content={<CompassLab />}
+      />
+      <LabSection
+        title="Wyniki"
+        content={<ResultsLab />}
+      />
+      <ins
+        className="adsbygoogle"
+        style={{
+          display: 'block',
+          width: '100%',
+          marginTop: '1rem',
+        }}
+        data-ad-client="ca-pub-2006154132998057"
+        data-ad-slot="3382249847"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </Container>
+  );
+};
 
 interface LabSectionProps {
   title: string;

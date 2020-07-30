@@ -31,6 +31,12 @@ const ResultsView: React.FC<Props> = (props) => {
     onSpheresCalcMethod,
   } = props;
 
+  React.useEffect(() => {
+    // @ts-ignore
+    // eslint-disable-next-line no-undef
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
+
   const actions = (
     <Actions results={results} />
   );
@@ -78,6 +84,20 @@ const ResultsView: React.FC<Props> = (props) => {
         </div>
       )}
       {loading && <LoadingInfo colorHEX="#111" />}
+      {!loading && (
+        <ins
+          className="adsbygoogle"
+          style={{
+            display: 'block',
+            width: '100%',
+            marginTop: '1rem',
+          }}
+          data-ad-client="ca-pub-2006154132998057"
+          data-ad-slot="6938351477"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      )}
       <ModalAd
         results={results}
         loading={loading}
