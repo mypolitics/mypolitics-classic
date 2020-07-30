@@ -2,14 +2,3 @@
   max-width: 40rem;
   margin: auto;
 }
-
-@media only screen and (min-width: 40rem) and (min-height: 900px) {
-  .quiz {
-    height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    .test {
-      width: 100%;
-    }
-  }
-}

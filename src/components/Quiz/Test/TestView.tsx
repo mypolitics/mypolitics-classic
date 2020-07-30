@@ -10,8 +10,6 @@ import Question from './Question';
 import Actions from './Actions';
 import { mapStateToProps, mapDispatcherToProps } from './TestRedux';
 
-const AdSense = require('react-adsense');
-
 library.add(faTools);
 
 type ReduxType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatcherToProps>;
@@ -63,17 +61,6 @@ const TestView: React.FC<Props> = (props) => {
         )}
         <Actions question={question} loading={loading} />
       </div>
-      <AdSense.Google
-        client="ca-pub-2006154132998057"
-        slot="4587520303"
-        format="auto"
-        responsive="true"
-        style={{
-          display: 'block',
-          width: '100%',
-          marginTop: '1rem',
-        }}
-      />
     </div>
   );
 };
