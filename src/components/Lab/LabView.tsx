@@ -40,6 +40,18 @@ const LabView: React.FC = () => (
       title="Wyniki"
       content={<ResultsLab />}
     />
+    <ins
+      className="adsbygoogle"
+      style={{
+        display: 'block',
+        width: '100%',
+        marginTop: '1rem',
+      }}
+      data-ad-client="ca-pub-2006154132998057"
+      data-ad-slot="3382249847"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
   </Container>
 );
 
