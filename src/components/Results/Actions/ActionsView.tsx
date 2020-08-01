@@ -6,7 +6,6 @@ import ReactPixel from 'react-facebook-pixel';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Actions.scss';
-import KoFi from '../../KoFi';
 
 library.add(faShare);
 
@@ -32,21 +31,35 @@ const ActionsView: React.FC<Props> = (props) => {
     });
   };
 
-  const handleKoFiClick = () => (
+  const handleLikeClick = () => {
     ReactGA.event({
-      category: 'KoFi',
-      action: 'Donate Button Clicked',
-    })
-  );
+      category: 'Like',
+      action: 'Like Button Clicked',
+      label: results.id,
+    });
+
+    ReactPixel.trackCustom('ResultsLikeButtonClick', {
+      id: results.id,
+    });
+  };
 
   return (
     <div className="results__actions">
-      <KoFi
-        color="#29abe0"
-        id="R5R11NV4G"
-        label="Wspomóż autora :)"
-        onClick={handleKoFiClick}
-      />
+      <div
+        className="results__actions__like"
+        onClick={handleLikeClick}
+      >
+        <iframe
+          title="fb-like"
+          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FmyPoliticsTest%2F&width=143&layout=button_count&action=like&size=large&share=false&height=28&appId=4144384798967211"
+          width="143"
+          height="28"
+          scrolling="no"
+          frameBorder="0"
+          allow="encrypted-media"
+          allowTransparency
+        />
+      </div>
       <div className="results__actions__share">
         <span>
           <FaIcon icon="share" />
