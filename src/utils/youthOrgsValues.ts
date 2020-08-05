@@ -37,8 +37,8 @@ export const youthOrgs: YouthOrg[] = [
     logo: `${YOUTHORGS_IMAGES_DIR}/mdw.png`,
     link: 'https://www.facebook.com/MlodzidlaWolnosci/',
     spheresValues: {
-      economics: 0.9,
-      social: 0.3,
+      economics: 0.95,
+      social: 0.15,
     },
   },
   {
@@ -58,7 +58,7 @@ export const youthOrgs: YouthOrg[] = [
     link: 'https://www.facebook.com/MlodziLibertarianie/',
     spheresValues: {
       economics: 0.8,
-      social: -0.6,
+      social: -0.7,
     },
   },
   {

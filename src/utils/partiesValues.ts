@@ -49,7 +49,7 @@ export const parties: Party[] = [
     logo: `${PARTIES_IMAGES_DIR}/korwin.png`,
     spheresValues: {
       economics: 0.9,
-      social: 0.35,
+      social: 0.15,
     },
     links: {
       www: 'https://wolnosc.pl/',
