@@ -93,6 +93,12 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
               <MiddleListElement>
                 Możliwość tworzenia <span>prawa</span>
               </MiddleListElement>
+              <MiddleListElement>
+                Adres IP: <span>mc4politics.pl</span>
+              </MiddleListElement>
+              <MiddleListElement>
+                Wersja: <span>1.12.2 do 1.16.2</span>
+              </MiddleListElement>
             </MiddleList>
           </MiddleContainer>
           <BottomContainer>
