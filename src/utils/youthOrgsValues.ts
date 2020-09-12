@@ -105,7 +105,7 @@ export const youthOrgs: YouthOrg[] = [
     name: 'Federacja Młodych Socjaldemokratów',
     color: '#E61005',
     logo: `${YOUTHORGS_IMAGES_DIR}/fms.png`,
-    link: 'https://www.facebook.com/fms.kraj/',
+    link: 'https://www.facebook.com/nowyFMS/',
     spheresValues: {
       economics: -0.5,
       social: -0.5,
