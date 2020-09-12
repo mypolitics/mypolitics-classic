@@ -28,6 +28,18 @@ const LabView: React.FC = () => {
         <meta property="og:title" content="myPolitics – Lab" />
         <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
       </Helmet>
+      <ins
+        className="adsbygoogle"
+        style={{
+          display: 'block',
+          width: '100%',
+          marginBottom: '1rem',
+        }}
+        data-ad-client="ca-pub-2006154132998057"
+        data-ad-slot="3382249847"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
       <Title>
         Lab
         <FontAwesomeIcon icon="flask" />
@@ -46,18 +58,6 @@ const LabView: React.FC = () => {
       <LabSection
         title="Wyniki"
         content={<ResultsLab />}
-      />
-      <ins
-        className="adsbygoogle"
-        style={{
-          display: 'block',
-          width: '100%',
-          marginTop: '1rem',
-        }}
-        data-ad-client="ca-pub-2006154132998057"
-        data-ad-slot="3382249847"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
       />
     </Container>
   );

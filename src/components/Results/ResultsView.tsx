@@ -52,6 +52,20 @@ const ResultsView: React.FC<Props> = (props) => {
         <meta property="og:description" content="Sprawdź moje wyniki w teście politycznym myPolitics!" />
         <meta property="og:image" content="/images/thumbnails/mypolitics-results.png" />
       </Helmet>
+      {!loading && (
+        <ins
+          className="adsbygoogle"
+          style={{
+            display: 'block',
+            width: '100%',
+            marginBottom: '2rem',
+          }}
+          data-ad-client="ca-pub-2006154132998057"
+          data-ad-slot="6938351477"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      )}
       {!loading && spheresResults && (
         <div>
           <h1 className="results__title">
@@ -90,20 +104,6 @@ const ResultsView: React.FC<Props> = (props) => {
         results={results}
         loading={loading}
       />
-      {!loading && (
-        <ins
-          className="adsbygoogle"
-          style={{
-            display: 'block',
-            width: '100%',
-            marginTop: '2rem',
-          }}
-          data-ad-client="ca-pub-2006154132998057"
-          data-ad-slot="6938351477"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-      )}
     </main>
   );
 };
