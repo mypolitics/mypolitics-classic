@@ -85,39 +85,31 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
             </MiddleTitle>
             <MiddleList>
               <MiddleListElement>
-                Świat podzielony na&nbsp;<span>ćwiartki kompasu politycznego</span>
-              </MiddleListElement>
-              <MiddleListElement>
-                Rozwinięta&nbsp;<span>ekonomia</span>
-              </MiddleListElement>
-              <MiddleListElement>
-                Możliwość tworzenia <span>prawa</span>
-              </MiddleListElement>
-              <MiddleListElement>
-                Adres IP: <span>mc4politics.pl</span>
-              </MiddleListElement>
-              <MiddleListElement>
-                Wersja: <span>1.12.2 do 1.16.2</span>
-              </MiddleListElement>
-            </MiddleList>
-          </MiddleContainer>
-          <BottomContainer>
-            <Link
-              href="https://forms.gle/gsp1kJPknLQwz3v5A"
+            Świat podzielony na&nbsp;<span>ćwiartki kompasu politycznego</span>
+          </MiddleListElement>
+            <MiddleListElement>
+              Rozwinięta&nbsp;<span>ekonomia</span>
+            </MiddleListElement>
+            <MiddleListElement>
+              Możliwość tworzenia <span>prawa</span>
+            </MiddleListElement>
+            <MiddleListElement>
+              Adres IP: <span>mc4politics.pl</span>
+            </MiddleListElement>
+            <MiddleListElement>
+              Wersja: <span>1.12.2 do 1.16.2</span>
+            </MiddleListElement>
+          </MiddleList>
+        </MiddleContainer>
+        <BottomContainer>
+          <Link
+              href="https://discord.gg/nYUzJq9"
               target="_blank"
               onClick={() => handleActionClick('Join')}
-            >
-              Super, dołączam!
-            </Link>
-            <Link
-              href="https://discord.gg/4Czawyz"
-              target="_blank"
-              type="discord"
-              onClick={() => handleActionClick('Discord')}
-            >
-              <FontAwesomeIcon icon={faDiscord} />
-            </Link>
-            <Link
+          >
+            Super, dołączam!
+          </Link>
+          <Link
               href="https://www.facebook.com/minecraft4politics"
               target="_blank"
               type="facebook"

@@ -162,7 +162,7 @@ export const MiddleListElement = styled.li`
 
 export const BottomContainer = styled.footer`
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
 `;
 
 interface LinkProps {
