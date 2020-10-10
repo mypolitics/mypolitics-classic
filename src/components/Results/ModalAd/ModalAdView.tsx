@@ -33,7 +33,7 @@ interface Props {
 const defaultShow = getShowValue();
 
 const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
-  const [show, setShow] = React.useState<boolean>(defaultShow);
+  const [show, setShow] = React.useState<boolean>(false);
 
   const handleCloseClick = () => {
     const currentTime = new Date().getTime();

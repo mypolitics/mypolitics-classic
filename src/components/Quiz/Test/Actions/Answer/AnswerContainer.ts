@@ -8,6 +8,10 @@ import './Answer.scss';
 import { calcResults } from 'utils/resultsCalculator';
 import { mapStateToProps, mapDispatcherToProps } from './AnswerRedux';
 import AnswerView, { Props as AnswerProps } from './AnswerView';
+import calcSpheresResults, { SpheresCalculatorMethod } from '../../../../../utils/spheresCalculator';
+import findIdeology from '../../../../../utils/ideologyFinder';
+import findParty from '../../../../../utils/partyFinder';
+import findYouthOrg from '../../../../../utils/youthOrgFinder';
 
 
 type ReduxType = ReturnType<typeof mapDispatcherToProps> & ReturnType<typeof mapStateToProps>;
@@ -54,6 +58,22 @@ class Answer extends React.Component<Props> {
 
     if (nextQuestionIndex === question.totalCount) {
       const results = calcResults(this.props.answers);
+      const spheresResults = calcSpheresResults(
+        results,
+        SpheresCalculatorMethod.New,
+      );
+      const { economics, social } = spheresResults;
+      const quarter: string = {
+        [(economics >= 0) && (social >= 0) ? 'true' : 'false']: 'blue',
+        [(economics >= 0) && (social <= 0) ? 'true' : 'false']: 'violet',
+        [(economics <= 0) && (social <= 0) ? 'true' : 'false']: 'green',
+        [(economics <= 0) && (social >= 0) ? 'true' : 'false']: 'red',
+        [(economics === 0) && (social === 0) ? 'true' : 'false']: 'center',
+      }.true || 'center';
+      const ideology = findIdeology(spheresResults);
+      const partyAll = findParty(spheresResults, false);
+      const partyParliament = findParty(spheresResults, true);
+      const youthOrg = findYouthOrg(spheresResults);
       const resultsId = await addAndSetResults(results);
       await addToResultsHistoryById(resultsId);
 
@@ -62,7 +82,16 @@ class Answer extends React.Component<Props> {
         action: 'Finished',
       });
 
-      ReactPixel.trackCustom('QuizAddResults', results.axes);
+      ReactPixel.trackCustom('QuizAddResults', {
+        ...results.axes,
+        economics,
+        social,
+        quarter,
+        ideology,
+        partyAll,
+        partyParliament,
+        youthOrg,
+      });
 
       clearQuizData();
       this.props.history.push(`/results/${resultsId}`);
