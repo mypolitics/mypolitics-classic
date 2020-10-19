@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface WrapperProps {
   show: boolean;
@@ -28,7 +28,18 @@ export const Wrapper = styled.div<WrapperProps>`
   )};
 `;
 
-export const MainButton = styled.button`
+export const ButtonsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+  
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 2fr;
+  }
+`;
+
+const button = css`
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem;
@@ -39,12 +50,26 @@ export const MainButton = styled.button`
   color: #FFF;
   border-radius: 0.5rem;
   border: 0;
-  margin-top: 1rem;
   font-size: 1.1rem;
+  transition: 0.2s ease-in-out;
 
   span {
     font-weight: 700;
   }
+  
+  &:hover {
+    filter: brightness(95%);
+  }
+`;
+
+export const MainButton = styled.button`
+  ${button};
+`;
+
+export const MainButtonLink = styled.a`
+  ${button};
+  background: #1B76F2;
+  text-decoration: none;
 `;
 
 export const Container = styled.article`

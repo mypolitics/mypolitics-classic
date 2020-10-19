@@ -19,7 +19,7 @@ import {
   TopButton,
   TopContainer,
   TopTitle,
-  Wrapper,
+  Wrapper, ButtonsContainer, MainButtonLink,
 } from './ModalAdStyle';
 import { getShowValue, setShowValue } from './ModalAdUtilts';
 
@@ -63,10 +63,19 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
   return (
     <>
       {!loading && (
-        <MainButton onClick={handleOpenClick}>
-          <span>Polityczny serwer Minecraft.</span>
-          &nbsp;Brzmi fajnie? Kliknij i dowiedz się więcej!
-        </MainButton>
+        <ButtonsContainer>
+          <MainButtonLink
+            as="a"
+            target="_blank"
+            href="https://l.orlow.me/sztabmypolitics"
+          >
+            Kliknij i dołącz na naszą grupę!
+          </MainButtonLink>
+          <MainButton onClick={handleOpenClick}>
+            <span>Polityczny serwer Minecraft.</span>
+            &nbsp;Brzmi fajnie? Kliknij i dowiedz się więcej!
+          </MainButton>
+        </ButtonsContainer>
       )}
       <Wrapper show={show}>
         <Container>
