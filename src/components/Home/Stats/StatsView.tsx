@@ -7,7 +7,7 @@ const Stats: React.FC = () => (
     <div className="home__stats__container">
       <h1 className="home__stats__title">Statystyki</h1>
       <div className="home__stats__list">
-        <StatsElement value="562 537" info="sesji na stronie" />
+        <StatsElement value="854 537" info="sesji na stronie" />
         <StatsElement value="351 235" info="wykonanych testów" />
         <StatsElement value="100%" info="otwarty kod" />
       </div>
