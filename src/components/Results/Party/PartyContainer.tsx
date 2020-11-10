@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 
 import { SpheresType } from 'utils/spheresCalculator';
-import { findParty } from 'utils/partyFinder';
+import { findParty, findAllPartiesDistances } from 'utils/partyFinder';
 import PartyView from './PartyView';
 
 type Props = {
@@ -12,8 +12,14 @@ type Props = {
 
 const Party: React.FC<Props> = ({ spheresResults }) => {
   const [parliamentOnly, setParliamentOnly] = React.useState<boolean>(true);
+  const [asList, setAsList] = React.useState<boolean>(false);
+  const getPartiesDistances = React.useCallback(findAllPartiesDistances, [spheresResults, parliamentOnly]);
   const getParty = React.useCallback(findParty, [spheresResults, parliamentOnly]);
   const party = getParty({
+    economics: spheresResults.economics,
+    social: spheresResults.social,
+  }, parliamentOnly);
+  const partiesDistances = getPartiesDistances({
     economics: spheresResults.economics,
     social: spheresResults.social,
   }, parliamentOnly);
@@ -45,8 +51,11 @@ const Party: React.FC<Props> = ({ spheresResults }) => {
   return (
     <PartyView
       party={party}
+      asList={asList}
+      partiesDistances={partiesDistances}
       parliamentOnly={parliamentOnly}
       onParliamentOnlyChange={setParliamentOnly}
+      onAsListChange={setAsList}
       onPartyProgrammeButtonClick={handlePartyProgrammeButtonClick}
       onPartyWebsiteButtonClick={handlePartyWebsiteButtonClick}
     />

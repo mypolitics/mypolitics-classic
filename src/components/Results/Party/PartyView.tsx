@@ -7,47 +7,98 @@ import {
   Title,
   InfoContainer,
   Name,
-  Links, ButtonGroup, Button,
+  Links,
+  ButtonGroup,
+  Button,
+  Actions,
+  ListParty,
+  ListPartyImage,
+  ListPartyTitle,
+  ListPartyValue,
 } from './PartyStyle';
+import { PartyDistance } from '../../../utils/partyFinder';
 
 type Props = {
   party: PartyType | null,
+  partiesDistances: PartyDistance[];
   parliamentOnly: boolean;
   onParliamentOnlyChange(value: boolean): void;
+  asList: boolean;
+  onAsListChange(value: boolean): void;
   onPartyWebsiteButtonClick: Function,
   onPartyProgrammeButtonClick: Function
 };
 
-const Party: React.FC<Props> = (props) => {
-  const {
-    party,
-    parliamentOnly,
-    onParliamentOnlyChange,
-    onPartyWebsiteButtonClick,
-    onPartyProgrammeButtonClick,
-  } = props;
-
+const Party: React.FC<Props> = ({
+  party,
+  parliamentOnly,
+  partiesDistances,
+  onParliamentOnlyChange,
+  asList,
+  onAsListChange,
+  onPartyWebsiteButtonClick,
+  onPartyProgrammeButtonClick,
+}) => {
   const title = (
     <Title>
       <span>
         Najbliższa partia
       </span>
-      <ButtonGroup>
+      <Actions>
+        <ButtonGroup>
+          <Button
+            onClick={() => onParliamentOnlyChange(true)}
+            selected={parliamentOnly}
+          >
+            w sejmie
+          </Button>
+          <Button
+            onClick={() => onParliamentOnlyChange(false)}
+            selected={!parliamentOnly}
+          >
+            wszystkie
+          </Button>
+        </ButtonGroup>
         <Button
-          onClick={() => onParliamentOnlyChange(true)}
-          selected={parliamentOnly}
+          onClick={() => onAsListChange(!asList)}
+          selected={asList}
+          alone
         >
-          w sejmie
+          lista
         </Button>
-        <Button
-          onClick={() => onParliamentOnlyChange(false)}
-          selected={!parliamentOnly}
-        >
-          wszystkie
-        </Button>
-      </ButtonGroup>
+      </Actions>
     </Title>
   );
+
+  if (asList) {
+    return (
+      <Container>
+        <Inner>
+          {title}
+          <InfoContainer list>
+            {console.log(partiesDistances)}
+            {partiesDistances.map(({ party: listParty, distance }) => {
+              const value = ((2 * Math.sqrt(2) - distance) / (2 * Math.sqrt(2))) * 100;
+              return (
+                <ListParty>
+                  <ListPartyImage
+                    src={listParty.logo}
+                    alt={listParty.name}
+                  />
+                  <ListPartyTitle>
+                    {listParty.name}
+                  </ListPartyTitle>
+                  <ListPartyValue value={value}>
+                    {value.toFixed(0)}%
+                  </ListPartyValue>
+                </ListParty>
+              )
+            })}
+          </InfoContainer>
+        </Inner>
+      </Container>
+    )
+  }
 
   if (party) {
     return (

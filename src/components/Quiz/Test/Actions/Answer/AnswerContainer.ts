@@ -12,6 +12,7 @@ import calcSpheresResults, { SpheresCalculatorMethod } from '../../../../../util
 import findIdeology from '../../../../../utils/ideologyFinder';
 import findParty from '../../../../../utils/partyFinder';
 import findYouthOrg from '../../../../../utils/youthOrgFinder';
+import { getQuarterName } from '../../../../../utils/getQuarterName';
 
 
 type ReduxType = ReturnType<typeof mapDispatcherToProps> & ReturnType<typeof mapStateToProps>;
@@ -63,13 +64,7 @@ class Answer extends React.Component<Props> {
         SpheresCalculatorMethod.New,
       );
       const { economics, social } = spheresResults;
-      const quarter: string = {
-        [(economics >= 0) && (social >= 0) ? 'true' : 'false']: 'blue',
-        [(economics >= 0) && (social <= 0) ? 'true' : 'false']: 'violet',
-        [(economics <= 0) && (social <= 0) ? 'true' : 'false']: 'green',
-        [(economics <= 0) && (social >= 0) ? 'true' : 'false']: 'red',
-        [(economics === 0) && (social === 0) ? 'true' : 'false']: 'center',
-      }.true || 'center';
+      const quarter: string = getQuarterName(spheresResults);
       const ideology = findIdeology(spheresResults);
       const partyAll = findParty(spheresResults, false);
       const partyParliament = findParty(spheresResults, true);
@@ -88,9 +83,9 @@ class Answer extends React.Component<Props> {
         social,
         quarter,
         ideology,
-        partyAll,
-        partyParliament,
-        youthOrg,
+        partyAll: partyAll ? partyAll.name : 'NONE',
+        partyParliament: partyParliament ? partyParliament.name : 'NONE',
+        youthOrg: youthOrg ? youthOrg.name : 'NONE',
       });
 
       clearQuizData();

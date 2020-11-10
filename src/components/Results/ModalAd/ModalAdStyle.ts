@@ -35,7 +35,7 @@ export const ButtonsContainer = styled.div`
   margin-top: 1rem;
   
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
   }
 `;
 
@@ -70,6 +70,10 @@ export const MainButtonLink = styled.a`
   ${button};
   background: #1B76F2;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;
 
 export const Container = styled.article`

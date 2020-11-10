@@ -1,6 +1,5 @@
 .results {
-  margin: auto;
-  margin-top: 80px;
+  margin: 80px auto 4rem;
   padding: 1rem;
   max-width: 1200px;
   &__title {
@@ -12,8 +11,7 @@
     border-radius: 0.5rem;
     color: #fafafa;
     padding: 1rem;
-    background: #00b4db;
-    background: linear-gradient(to right, #00b4db, #0083b0);
+    background: #00A6CB;
     margin: 0;
     margin-bottom: 1.5rem;
 
@@ -25,6 +23,64 @@
       font-size: 1rem;
       border-radius: 0.5rem;
       display: inline-block;
+    }
+  }
+
+  &__politicians-results {
+    padding: 1rem;
+    background: #00B3DB;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+
+    @media only screen and (min-width: 768px) {
+      padding: 3rem;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      text-align: center;
+      color: #F9FAFB;
+      font-size: 1.5rem;
+      line-height: 1.2;
+
+      @media only screen and (min-width: 768px) {
+        font-size: 2em;
+        margin: 0 0 3rem;
+      }
+    }
+  }
+
+  &__politician {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &__image {
+      border-radius: 0.5rem;
+      object-fit: cover;
+      min-height: 10rem;
+      width: 100%;
+    }
+
+    &__description {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: #f5f5f5;
+      color: #001E24;
+      font-weight: 600;
+      text-align: left;
+      border-radius: 0.5rem;
+      opacity: 0.9;
+      line-height: 1.5;
+      @media only screen and (min-width: 768px) {
+        font-size: 1.1rem;
+      }
     }
   }
 

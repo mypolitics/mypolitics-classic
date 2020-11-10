@@ -13,6 +13,8 @@ import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
 import LoadingInfo from '../LoadingInfo';
+import Footer from '../Footer';
+import { Content } from './AppStyle';
 
 const Lab = React.lazy(() => import('components/Lab'));
 
@@ -29,18 +31,21 @@ const App: React.FC = () => (
     </Helmet>
     <Router>
       <Header />
-      <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/quiz" component={Quiz} />
-          <Route path="/results/:id" component={Results} />
-          <Route path="/history" component={ResultsHistory} />
-          <Route path="/privacy" component={Privacy} />
-          <Route path="/404" component={Error404} />
-          <Route path="/lab" component={Lab} />
-          <Route path="*" component={Error404} />
-        </Switch>
-      </React.Suspense>
+      <Content>
+        <React.Suspense fallback={null}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/quiz" component={Quiz} />
+              <Route path="/results/:id" component={Results} />
+              <Route path="/history" component={ResultsHistory} />
+              <Route path="/privacy" component={Privacy} />
+              <Route path="/404" component={Error404} />
+              <Route path="/lab" component={Lab} />
+              <Route path="*" component={Error404} />
+            </Switch>
+        </React.Suspense>
+      </Content>
+      <Footer />
     </Router>
   </div>
 );

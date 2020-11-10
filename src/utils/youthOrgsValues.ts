@@ -62,10 +62,10 @@ export const youthOrgs: YouthOrg[] = [
     },
   },
   {
-    name: 'Przedwiośnie',
-    color: '#522780',
-    logo: `${YOUTHORGS_IMAGES_DIR}/przedwiosnie.jpg`,
-    link: 'https://www.facebook.com/przedwiosnie.org/',
+    name: 'Młoda Lewica',
+    color: '#392153',
+    logo: `${YOUTHORGS_IMAGES_DIR}/mlew.png`,
+    link: 'https://www.facebook.com/mlodalewicapl/',
     spheresValues: {
       economics: -0.3,
       social: -0.6,

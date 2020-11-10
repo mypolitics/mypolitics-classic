@@ -27,9 +27,14 @@ export const Title = styled.div`
   }
 `;
 
+export const Actions = styled.div`
+  display: flex;
+`;
+
 export const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 0.5rem;
   
   @media only screen and (min-width: 500px) {
     flex-direction: row;
@@ -38,6 +43,7 @@ export const ButtonGroup = styled.div`
 
 interface ButtonProps {
   selected: boolean;
+  alone?: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -66,6 +72,19 @@ export const Button = styled.button<ButtonProps>`
     border-bottom-left-radius: 0.5rem;
   }
   
+  ${({ alone, selected }) => alone && `
+    border-radius: 0.5rem !important;
+    cursor: pointer !important;
+    
+    &:hover {
+      filter: brightness(95%);
+      ${!selected && `
+        color: #00b3da;
+        background: #ececec;
+      `}
+    }
+  `}
+  
   ${({ selected }: ButtonProps) => (
     selected && `
       color: #ececec;
@@ -89,6 +108,7 @@ export const Button = styled.button<ButtonProps>`
 
 interface InfoContainerProps {
   notFound?: boolean;
+  list?: boolean;
 }
 
 export const InfoContainer = styled.div<InfoContainerProps>`
@@ -98,7 +118,7 @@ export const InfoContainer = styled.div<InfoContainerProps>`
     "Image Name"
     "Links Links";
   
-  img {
+  & > img {
     grid-area: Image;
     display: block;
     width: 6rem;
@@ -111,28 +131,79 @@ export const InfoContainer = styled.div<InfoContainerProps>`
     grid-template-areas:
       "Image Name"
       "Image Links";
-    img {
+    & > img {
       width: 10rem;
       height: 10rem;
     }
   }
   
-  ${({ notFound = false }: InfoContainerProps) => (
-    notFound && `
+  ${({ notFound, list }: InfoContainerProps) => (
+    (notFound || list) && `
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 3rem 1rem;
       background: #ececec;
       font-weight: 600;
+      padding: 1rem;
       
-      @media only screen and (min-width: 768px) {
-        padding: 4.5rem 1rem;
-        font-size: 1.2rem;
-      }
+      ${list && `
+        overflow-y: scroll;
+        max-height: 9rem;
+        display: block;
+        
+        & > div {
+          margin-bottom: 0.5rem;
+        }
+      `}
+      
+      ${notFound && `
+        padding: 3rem 1rem;
+        
+        @media only screen and (min-width: 768px) {
+          padding: 4.5rem 1rem;
+          font-size: 1.2rem;
+        }
+      `}
     `
   )}
+`;
+
+export const ListParty = styled.div`
+  display: grid;
+  grid-template-columns: 3rem 1fr 4rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+`;
+
+export const ListPartyImage = styled.img`
+  height: 100%;
+  width: 3rem;
+  object-fit: cover;
+  display: block;
+`;
+
+export const ListPartyTitle = styled.div`
+  padding: 1rem;
+  font-size: 1rem;
+  background: #F5F5F5;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+`;
+
+export const ListPartyValue = styled(ListPartyTitle)<{ value: number }>`
+  color: #FFF;
+  ${({ value }) => {
+    switch (true) {
+      case (value > 75):
+        return 'background: #27AE60;';
+      case (value > 50):
+        return 'background: #F2994A;';
+      default:
+        return 'background: #EB5757;';
+    }
+  }};
 `;
 
 export const Name = styled.div`

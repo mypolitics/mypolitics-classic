@@ -1,6 +1,10 @@
 .app {
   font-family: Montserrat;
   color: #111;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
 
   &__router {
     transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

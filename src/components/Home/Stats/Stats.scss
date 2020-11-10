@@ -28,14 +28,13 @@
       font-weight: 600;
       font-size: 1.25rem;
       color: #fafafa;
-      background: #00b4db;
-      background: linear-gradient(to right, #00b4db, #0083b0);
+      background: #00B3DB;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
   .home__stats {
-    padding: 2rem;
+    padding: 4rem 2rem;
   }
 }

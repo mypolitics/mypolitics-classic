@@ -30,6 +30,24 @@ Facebook
         </li>
         <li>
           <a
+            href="https://twitter.com/myPolitics__"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/mypolitics_/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a
             href="https://github.com/myPolitics"
             target="_blank"
             rel="noopener noreferrer"

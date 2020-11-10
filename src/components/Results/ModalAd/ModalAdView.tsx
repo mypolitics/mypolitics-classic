@@ -30,8 +30,6 @@ interface Props {
   loading: boolean
 }
 
-const defaultShow = getShowValue();
-
 const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
   const [show, setShow] = React.useState<boolean>(false);
 
@@ -71,9 +69,16 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
           >
             Kliknij i dołącz na naszą grupę!
           </MainButtonLink>
+          <MainButtonLink
+            as="a"
+            target="_blank"
+            href="https://l.orlow.me/discord-mypolitics"
+            style={{ background: '#6F87E3' }}
+          >
+            Discord myPolitics
+          </MainButtonLink>
           <MainButton onClick={handleOpenClick}>
-            <span>Polityczny serwer Minecraft.</span>
-            &nbsp;Brzmi fajnie? Kliknij i dowiedz się więcej!
+            <span>Polityczny serwer Minecraft?</span>
           </MainButton>
         </ButtonsContainer>
       )}
@@ -89,36 +94,47 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
           </TopContainer>
           <MiddleContainer>
             <MiddleTitle>
-              myPolitics jest partnerem medialnym <span>Minecraft4Politics</span>,
+              myPolitics jest partnerem medialnym
+              {' '}
+              <span>Minecraft4Politics</span>
+,
               symulacji politycznej opartej na&nbsp;serwerze Minecraft!
             </MiddleTitle>
             <MiddleList>
               <MiddleListElement>
-            Świat podzielony na&nbsp;<span>ćwiartki kompasu politycznego</span>
-          </MiddleListElement>
-            <MiddleListElement>
-              Rozwinięta&nbsp;<span>ekonomia</span>
-            </MiddleListElement>
-            <MiddleListElement>
-              Możliwość tworzenia <span>prawa</span>
-            </MiddleListElement>
-            <MiddleListElement>
-              Adres IP: <span>mc4politics.pl</span>
-            </MiddleListElement>
-            <MiddleListElement>
-              Wersja: <span>1.12.2 do 1.16.2</span>
-            </MiddleListElement>
-          </MiddleList>
-        </MiddleContainer>
-        <BottomContainer>
-          <Link
+            Świat podzielony na&nbsp;
+                <span>ćwiartki kompasu politycznego</span>
+              </MiddleListElement>
+              <MiddleListElement>
+              Rozwinięta&nbsp;
+                <span>ekonomia</span>
+              </MiddleListElement>
+              <MiddleListElement>
+              Możliwość tworzenia
+                {' '}
+                <span>prawa</span>
+              </MiddleListElement>
+              <MiddleListElement>
+              Adres IP:
+                {' '}
+                <span>mc4politics.pl</span>
+              </MiddleListElement>
+              <MiddleListElement>
+              Wersja:
+                {' '}
+                <span>1.12.2 do 1.16.2</span>
+              </MiddleListElement>
+            </MiddleList>
+          </MiddleContainer>
+          <BottomContainer>
+            <Link
               href="https://discord.gg/nYUzJq9"
               target="_blank"
               onClick={() => handleActionClick('Join')}
-          >
+            >
             Super, dołączam!
-          </Link>
-          <Link
+            </Link>
+            <Link
               href="https://www.facebook.com/minecraft4politics"
               target="_blank"
               type="facebook"

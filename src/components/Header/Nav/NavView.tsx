@@ -8,12 +8,13 @@ import {
   faHistory,
   faBug,
   faFlask,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import { mapStateToProps } from './NavRedux';
 
-library.add(faHome, faTasks, faFlask, faHistory, faBug);
+library.add(faHome, faTasks, faPlus, faFlask, faHistory, faBug);
 
 type ReduxType = ReturnType<typeof mapStateToProps>;
 type NavProps = {
@@ -68,7 +69,16 @@ export const NavView: React.FC<Props> = (props) => {
       </NavLink>
       <hr />
       <a
-        href="https://github.com/myPolitics/myPolitics/issues"
+        href="https://forms.gle/U7MQzPKHJt2wb8SM6"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="header__nav__el"
+      >
+        <FaIcon icon={faPlus} />
+        <span>Dodaj pytanie</span>
+      </a>
+      <a
+        href="https://forms.gle/nm9uCyCnuVaComyS9"
         target="_blank"
         rel="noopener noreferrer"
         className="header__nav__el"

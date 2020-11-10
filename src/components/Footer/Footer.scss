@@ -4,6 +4,7 @@
   text-align: center;
   font-weight: 600;
   padding: 2rem;
+  margin-top: auto;
 
   &__section {
     display: flex;
@@ -41,15 +42,19 @@
   }
 
   &__list {
-    margin: 0;
     list-style: none;
-    display: flex;
+    display: inline-block;
     align-items: center;
     padding-left: 0;
     justify-content: space-around;
+    margin: auto 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
 
     a, li {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       &:not(:first-child) {
         padding-left: 1rem;

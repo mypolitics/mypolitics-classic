@@ -11,6 +11,9 @@ import Party from './Party';
 import Actions from './Actions';
 import YoutOrg from './YouthOrg';
 import ModalAd from './ModalAd';
+import PolitykawkaAdView from './PolitykawkaAd';
+import { politicansResults } from '../../utils/politicansResults';
+import PoliticiansResultsList from '../PoliticiansResultsList/PoliticiansResultsListView';
 
 type Props = {
   loading: boolean
@@ -22,20 +25,22 @@ type Props = {
 
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
-const ResultsView: React.FC<Props> = (props) => {
-  const {
-    loading,
-    results,
-    spheresResults,
-    spheresCalcMethod,
-    onSpheresCalcMethod,
-  } = props;
+const ResultsView: React.FC<Props> = ({
+  loading,
+  results,
+  spheresResults,
+  spheresCalcMethod,
+  onSpheresCalcMethod,
+}) => {
+  const isPolitician = !loading && results.id && politicansResults.map((r) => r.id).includes(results.id);
+  const politician = isPolitician ? politicansResults.find((r) => r.id === results.id) : false;
 
   React.useEffect(() => {
     if (!loading) {
       // @ts-ignore
       // eslint-disable-next-line no-undef
       (window.adsbygoogle = window.adsbygoogle || []).push({});
+      (window as any).scrollTo && window.scrollTo(0, 0);
     }
   }, [loading]);
 
@@ -69,16 +74,36 @@ const ResultsView: React.FC<Props> = (props) => {
       {!loading && spheresResults && (
         <div>
           <h1 className="results__title">
-            Wyniki z
-            {' '}
-            {new Date(results.additionDate).toLocaleDateString(
-              'pl-PL',
-              dateOptions,
+            {!isPolitician && (
+              <>
+                Wyniki z
+                {' '}
+                {new Date(results.additionDate).toLocaleDateString(
+                  'pl-PL',
+                  dateOptions,
+                )}
+                {results.generated && (
+                  <span className="results__title-generated">Wygenerowane</span>
+                )}
+              </>
             )}
-            {results.generated && (
-              <span className="results__title-generated">Wygenerowane</span>
+            {politician && (
+              politician.person.name
             )}
           </h1>
+
+          {politician && (
+            <div className="results__politician">
+              <img
+                className="results__politician__image"
+                src={`/images/politicians/${politician.person.imgName}`}
+                alt={politician.person.name}
+              />
+              <div className="results__politician__description">
+                {politician.person.description}
+              </div>
+            </div>
+          )}
 
           <div className="results__inner">
             <div className="results__inner__column">
@@ -104,6 +129,17 @@ const ResultsView: React.FC<Props> = (props) => {
         results={results}
         loading={loading}
       />
+      {!loading && spheresResults && (
+        <PolitykawkaAdView spheresResults={spheresResults}/>
+      )}
+      {!loading && (
+        <div className="results__politicians-results">
+          <h1>
+            Sprawdź wyniki polityków!
+          </h1>
+          <PoliticiansResultsList />
+        </div>
+      )}
     </main>
   );
 };
