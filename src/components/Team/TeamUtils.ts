@@ -5,7 +5,7 @@ interface Team {
 
 export const teams: Team[] = [
   {
-    name: 'PR & Development',
+    name: 'PR & Marketing',
     people: [
       'Mateusz Klas',
       'Antoni Kalarus',
@@ -26,7 +26,7 @@ export const teams: Team[] = [
     ],
   },
   {
-    name: 'PR & Marketing',
+    name: 'Research & Development',
     people: [
       'Oliwier Grzegorczyk',
       'Alan Waligórski',
