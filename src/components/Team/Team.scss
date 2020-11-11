@@ -1,0 +1,50 @@
+.team {
+  margin: 80px auto 4rem;
+  padding: 1rem;
+  max-width: 40rem;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    background: #ececec;
+    border-radius: 0.5rem;
+  }
+
+  &__list {
+    margin-top: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    &__title {
+      text-align: center;
+      margin: 1rem 0 0;
+      padding: 1rem;
+      background: #00B3DB;
+      color: #FFF;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+
+    &__element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+      background: #f5f5f5;
+      border-radius: 0.5rem;
+      font-weight: 700;
+
+      span {
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        background: #00B3DB;
+        color: #FFF;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

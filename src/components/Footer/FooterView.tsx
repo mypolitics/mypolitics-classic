@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHeart, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
@@ -48,6 +48,15 @@ Facebook
         </li>
         <li>
           <a
+            href="https://t.me/mypoliticsofficial"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Telegram
+          </a>
+        </li>
+        <li>
+          <a
             href="https://github.com/myPolitics"
             target="_blank"
             rel="noopener noreferrer"
@@ -69,6 +78,10 @@ GitHub
         >
           {'Adrian Orłów'}
         </a>
+        {' & '}
+        <Link to="/team">
+          Team
+        </Link>
       </span>
     </section>
   </footer>

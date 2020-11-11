@@ -1,4 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { ReactComponent as roseIcon } from '../assets/vectors/rose.svg';
 import {
   faDollarSign,
   faBalanceScale,
@@ -43,7 +44,7 @@ export interface AxisSide {
   title: string;
   iconColor: string;
   barColor: string;
-  iconType: 'font-awesome' | 'symbol';
+  iconType: 'font-awesome' | 'symbol' | 'vector';
   icon: any;
   meta: AxisSlideMetaTranslations;
 }
@@ -71,12 +72,12 @@ const axesConfig: Axis[] = [
         title: 'communism',
         iconColor: '#e74c3c',
         barColor: '#c0392b',
-        iconType: 'symbol',
-        icon: '☭',
+        iconType: 'vector',
+        icon: roseIcon,
         meta: {
           'pl-PL': {
-            title: 'Komunizm',
-            description: 'Ideologia i doktryna społeczna głosząca zniesienie własności prywatnej i różnic klasowych, uspołecznienie środków produkcji i równy podział dóbr.',
+            title: 'Socjalizm',
+            description: 'Ideologia głosząca dążenie do zniesienia prywatnej własności środków produkcji oraz podziałów klasowych.',
           },
         },
       },

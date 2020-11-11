@@ -37,9 +37,15 @@ const ResultsView: React.FC<Props> = ({
 
   React.useEffect(() => {
     if (!loading) {
-      // @ts-ignore
-      // eslint-disable-next-line no-undef
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      try {
+        document.querySelectorAll('.adsbygoogle').forEach(() => {
+          // @ts-ignore
+          // eslint-disable-next-line no-undef
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        });
+      } catch (e) {
+        console.error(e);
+      }
       (window as any).scrollTo && window.scrollTo(0, 0);
     }
   }, [loading]);
@@ -133,12 +139,26 @@ const ResultsView: React.FC<Props> = ({
         <PolitykawkaAdView spheresResults={spheresResults}/>
       )}
       {!loading && (
-        <div className="results__politicians-results">
-          <h1>
-            Sprawdź wyniki polityków!
-          </h1>
-          <PoliticiansResultsList />
-        </div>
+        <>
+          <ins
+            className="adsbygoogle"
+            style={{
+              display: 'block',
+              width: '100%',
+              marginBottom: '1rem',
+            }}
+            data-ad-client="ca-pub-2006154132998057"
+            data-ad-slot="2610433460"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+          <div className="results__politicians-results">
+            <h1>
+              Sprawdź wyniki polityków!
+            </h1>
+            <PoliticiansResultsList />
+          </div>
+        </>
       )}
     </main>
   );

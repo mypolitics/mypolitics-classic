@@ -76,7 +76,6 @@ const Party: React.FC<Props> = ({
         <Inner>
           {title}
           <InfoContainer list>
-            {console.log(partiesDistances)}
             {partiesDistances.map(({ party: listParty, distance }) => {
               const value = ((2 * Math.sqrt(2) - distance) / (2 * Math.sqrt(2))) * 100;
               return (

@@ -16,8 +16,6 @@ const Axis: React.FC<Props> = (props) => {
   const { config, widths, editable, onChange } = props;
   const { left } = config;
   const { right } = config;
-  const isLeftFontAwesome = left.iconType === 'font-awesome';
-  const isRightFontAwesome = right.iconType === 'font-awesome';
 
   const handlePopoverToggle = (type: ShowPopover): void => {
     if (showPopover === type) {
@@ -51,13 +49,14 @@ const Axis: React.FC<Props> = (props) => {
       {popoverLeft}
       {popoverRight}
       <div
-        className={`axis__icon left ${!isLeftFontAwesome ? 'big' : ''}`}
+        className={`axis__icon left ${left.iconType === 'symbol' ? 'big' : ''}`}
         style={{ background: left.iconColor }}
         onClick={handleLeftIconClick}
         role="button"
       >
-        {isLeftFontAwesome && <FaIcon icon={left.icon} />}
-        {!isLeftFontAwesome && left.icon}
+        {left.iconType === 'font-awesome' && <FaIcon icon={left.icon} />}
+        {left.iconType === 'symbol' && left.icon}
+        {left.iconType === 'vector' && <left.icon />}
       </div>
       <div className="axis__bars">
         <div
@@ -123,13 +122,14 @@ const Axis: React.FC<Props> = (props) => {
         </div>
       </div>
       <div
-        className={`axis__icon right ${!isRightFontAwesome ? 'big' : ''}`}
+        className={`axis__icon right ${right.iconType === 'symbol' ? 'big' : ''}`}
         style={{ background: right.iconColor }}
         onClick={handlRightIconClick}
         role="button"
       >
-        {isRightFontAwesome && <FaIcon icon={right.icon} />}
-        {!isRightFontAwesome && right.icon}
+        {right.iconType === 'font-awesome' && <FaIcon icon={right.icon} />}
+        {right.iconType === 'symbol' && right.icon}
+        {right.iconType === 'vector' && <right.icon />}
       </div>
     </div>
   );

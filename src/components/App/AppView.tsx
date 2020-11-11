@@ -12,7 +12,7 @@ import ResultsHistory from 'components/ResultsHistory';
 import Results from 'components/Results';
 import Privacy from 'components/Privacy';
 import Error404 from 'components/Error404';
-import LoadingInfo from '../LoadingInfo';
+import Team from 'components/Team';
 import Footer from '../Footer';
 import { Content } from './AppStyle';
 
@@ -41,6 +41,7 @@ const App: React.FC = () => (
               <Route path="/privacy" component={Privacy} />
               <Route path="/404" component={Error404} />
               <Route path="/lab" component={Lab} />
+              <Route path="/team" component={Team} />
               <Route path="*" component={Error404} />
             </Switch>
         </React.Suspense>

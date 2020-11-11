@@ -34,7 +34,7 @@ const translations: Translations = [
   {
     locale: 'pl-PL',
     effects: [
-      { name: 'communism', text: 'komunizm' },
+      { name: 'communism', text: 'socjalizm' },
       {
         name: 'capitalism',
         text: 'kapitalizm',
