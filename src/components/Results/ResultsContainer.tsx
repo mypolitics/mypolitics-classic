@@ -62,7 +62,7 @@ const Results: React.FC<Props> = ({
 
   if (!resultsData || !spheresResults) {
     return (
-      <LoadingInfo colorHEX="#111" />
+      <LoadingInfo colorHEX="var(--black-1)" />
     );
   }
 

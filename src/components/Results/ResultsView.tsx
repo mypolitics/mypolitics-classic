@@ -130,7 +130,7 @@ const ResultsView: React.FC<Props> = ({
           </div>
         </div>
       )}
-      {loading && <LoadingInfo colorHEX="#111" />}
+      {loading && <LoadingInfo colorHEX="var(--black-1)" />}
       <ModalAd
         results={results}
         loading={loading}

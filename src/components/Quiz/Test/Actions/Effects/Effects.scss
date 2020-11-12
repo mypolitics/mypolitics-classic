@@ -6,7 +6,8 @@
     border: 0;
     padding: 1rem;
     width: 100%;
-    background: #ececec;
+    background: var(--gray-3);
+    color: var(--black-1);
     font-weight: 600;
     cursor: pointer;
     svg {
@@ -28,12 +29,12 @@
     flex-direction: column;
     width: 100%;
     &--green {
-      color: #fafafa;
+      color: var(--gray-1);
       background: #2abb9b;
     }
 
     &--red {
-      color: #fafafa;
+      color: var(--gray-1);
       background: #d24d57;
     }
     &__type {
@@ -44,12 +45,12 @@
       text-transform: uppercase;
 
       &--green {
-        color: #fafafa;
+        color: var(--gray-1);
         background: #16a085;
       }
 
       &--red {
-        color: #fafafa;
+        color: var(--gray-1);
         background: #d64541;
       }
     }
@@ -58,11 +59,11 @@
   &__list {
     width: 100%;
     &--green {
-      color: #fafafa;
+      color: var(--gray-1);
       background: #2abb9b;
     }
     &--red {
-      color: #fafafa;
+      color: var(--gray-1);
       background: #d24d57;
     }
   }

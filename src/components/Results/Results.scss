@@ -9,8 +9,9 @@
     font-size: 1.5rem;
     text-align: center;
     border-radius: 0.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
     padding: 1rem;
+    background: #00A6CB;
     background: #00A6CB;
     margin: 0;
     margin-bottom: 1.5rem;
@@ -18,8 +19,8 @@
     &-generated {
       margin-left: 1rem;
       padding: 0.5rem;
-      background: #FFF;
-      color: #00b4db;
+      background: var(--white);
+      color: var(--blue-3);
       font-size: 1rem;
       border-radius: 0.5rem;
       display: inline-block;
@@ -28,7 +29,7 @@
 
   &__politicians-results {
     padding: 1rem;
-    background: #00B3DB;
+    background: var(--blue-1);
     border-radius: 0.5rem;
     margin-top: 1.5rem;
 
@@ -71,8 +72,8 @@
       display: flex;
       align-items: center;
       padding: 1rem;
-      background: #f5f5f5;
-      color: #001E24;
+      background: var(--gray-2);
+      color: var(--black-1);
       font-weight: 600;
       text-align: left;
       border-radius: 0.5rem;

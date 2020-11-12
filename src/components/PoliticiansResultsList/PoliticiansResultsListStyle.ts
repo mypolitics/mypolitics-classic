@@ -43,7 +43,7 @@ export const ListElementTitle = styled.div`
   font-weight: 600;
   font-size: 1rem;
   color: #F9FAFB;
-  background: #00A1C6;
+  background: var(--blue-2);
   
   @media only screen and (min-width: 500px) {
     padding: 1.25rem;

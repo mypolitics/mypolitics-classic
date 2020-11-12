@@ -15,7 +15,7 @@ export const Title = styled.div`
   font-weight: 600;
   box-sizing: border-box;
   width: 100%;
-  background: #f5f5f5;
+  background: var(--gray-2);
   display: grid;
   grid-template-columns: 1fr auto;
   
@@ -49,7 +49,7 @@ interface ButtonProps {
 export const Button = styled.button<ButtonProps>`
   border: 0;
   color: #00b3da;
-  background: #ececec;
+  background: var(--gray-3);
   transition: 0.2s ease-in-out;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -59,7 +59,7 @@ export const Button = styled.button<ButtonProps>`
   
   &:hover {
     background: #00b3da;
-    color: #f5f5f5;
+    color: var(--gray-2);
   }
   
   &:first-child {
@@ -80,14 +80,14 @@ export const Button = styled.button<ButtonProps>`
       filter: brightness(95%);
       ${!selected && `
         color: #00b3da;
-        background: #ececec;
+        background: var(--gray-3);
       `}
     }
   `}
   
   ${({ selected }: ButtonProps) => (
     selected && `
-      color: #ececec;
+      color: var(--gray-3);
       background: #00b3da;
       cursor: unset;
     `
@@ -143,7 +143,7 @@ export const InfoContainer = styled.div<InfoContainerProps>`
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: #ececec;
+      background: var(--gray-3);
       font-weight: 600;
       padding: 1rem;
       
@@ -186,14 +186,14 @@ export const ListPartyImage = styled.img`
 export const ListPartyTitle = styled.div`
   padding: 1rem;
   font-size: 1rem;
-  background: #F5F5F5;
+  background: var(--gray-2);
   font-weight: 600;
   text-align: center;
-  color: #111;
+  color: var(--black-1);
 `;
 
 export const ListPartyValue = styled(ListPartyTitle)<{ value: number }>`
-  color: #FFF;
+  color: var(--white);
   ${({ value }) => {
     switch (true) {
       case (value > 75):
@@ -207,7 +207,7 @@ export const ListPartyValue = styled(ListPartyTitle)<{ value: number }>`
 `;
 
 export const Name = styled.div`
-  background: #ececec;
+  background: var(--gray-3);
   font-size: 1rem;
   text-align: center;
   grid-area: Name;
@@ -222,7 +222,7 @@ export const Name = styled.div`
 `;
 
 export const Links = styled.div`
-  background: #ececec;
+  background: var(--gray-3);
   font-weight: 600;
   font-size: 1rem;
   text-align: center;
@@ -244,12 +244,12 @@ export const Links = styled.div`
     text-decoration: none;
     border-radius: 0.5rem;
     color: #00b3da;
-    background: #f5f5f5;
+    background: var(--gray-2);
     transition: 0.2s ease-in-out;
     
     &:hover {
       background: #00b3da;
-      color: #f5f5f5;
+      color: var(--gray-2);
     }
   }
 `;

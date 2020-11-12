@@ -5,17 +5,17 @@
   max-width: 1200px;
   width: calc(100% - 2rem);
   &__title {
-    background: #00b4db;
-    background: linear-gradient(to right, #00b4db, #0083b0);
+    background: var(--blue-3);
+    background: #0083b0;
     padding: 1rem;
     font-weight: 600;
     border-radius: 0.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
   }
 
   &__content {
     font-weight: 600;
-    background: #fafafa;
+    background: var(--gray-1);
     padding: 1rem;
     border-radius: 0.5rem;
     color: #363636;

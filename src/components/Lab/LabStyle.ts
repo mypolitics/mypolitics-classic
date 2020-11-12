@@ -7,14 +7,12 @@ export const Container = styled.main`
 `;
 
 export const Title = styled.h2`
-  background: #00b4db;
-  background: -webkit-linear-gradient(to right, #00b4db, #0083b0);
-  background: linear-gradient(to right, #00b4db, #0083b0);
+  background: #0083b0;
   padding: 1rem;
   font-weight: 600;
   border: 0;
   border-radius: 0.5rem;
-  color: #fafafa;
+  color: var(--gray-1);
   box-sizing: border-box;
   text-align: center;
   text-decoration: none;
@@ -26,20 +24,20 @@ export const Title = styled.h2`
 `;
 
 export const SubTitle = styled.h3`
-  color: #00b4db;
+  color: var(--blue-3);
   font-weight: 600;
   text-align: center;
 `;
 
 export const Section = styled.section`
   margin-bottom: 2rem;
-  background: #F8F8F8;
+  background: var(--gray-2);
   border-radius: 0.5rem;
   padding: 1rem;  
 `;
 
 export const SectionTitle = styled.h3`
-  color: #00b4db;
+  color: var(--blue-3);
   font-weight: 600;
   font-size: 1.25rem;
   margin: 0;

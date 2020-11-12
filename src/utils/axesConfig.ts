@@ -13,6 +13,7 @@ import {
   faHourglass,
   faGlobe,
   faFlag,
+  faIndustry,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add({
@@ -28,6 +29,7 @@ library.add({
   faHourglass,
   faGlobe,
   faFlag,
+  faIndustry,
 });
 
 export interface Axis {
@@ -210,11 +212,11 @@ const axesConfig: Axis[] = [
         iconColor: '#FFA631',
         barColor: '#e5952c',
         iconType: 'font-awesome',
-        icon: faMale,
+        icon: faIndustry,
         meta: {
           'pl-PL': {
-            title: 'Antropocentryzm',
-            description: 'Pogląd stawiający w centrum zainteresowań i badań człowieka, głoszący go miarą wszystkiego.',
+            title: 'Industrializm',
+            description: 'System społeczno-gospodarczy oparty na rozwoju wielkich gałęzi przemysłu, szczególnie tanich towarów przemysłowych i zmechanizowanej produkcji żywności skoncentrowanej w obszarach miejskich.',
           },
         },
       },

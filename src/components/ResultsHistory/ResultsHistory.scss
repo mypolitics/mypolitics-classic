@@ -7,7 +7,7 @@
     text-align: center;
     margin: 0;
     padding: 1rem;
-    background: #ececec;
+    background: var(--gray-3);
     border-radius: 0.5rem;
   }
 
@@ -20,7 +20,7 @@
       text-align: center;
       font-weight: 600;
       font-size: 1.2rem;
-      background: #f5f5f5;
+      background: var(--gray-2);
       border-radius: 0.5rem;
     }
   }
@@ -32,14 +32,14 @@
     border-radius: 0.5rem;
     overflow: hidden;
     &__info {
-      background: #f5f5f5;
+      background: var(--gray-2);
       text-decoration: none;
       width: 100%;
       padding: 1rem;
-      color: #00b4db;
+      color: var(--blue-3);
     }
     &__btn {
-      background: #ececec;
+      background: var(--gray-3);
       border: 0;
       padding: 1rem;
       cursor: pointer;
@@ -50,7 +50,7 @@
       &:hover {
         background: #cd3944;
         svg {
-          color: #ececec;
+          color: var(--gray-3);
         }
       }
     }
@@ -64,7 +64,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     input {
-      background: #f5f5f5;
+      background: var(--gray-2);
       border: 0;
       padding: 1rem;
       width: 100%;
@@ -74,7 +74,7 @@
     button {
       padding: 1rem;
       border: 0;
-      color: #fafafa;
+      color: var(--gray-1);
       background: #2abb9b;
       cursor: pointer;
       transition: 0.2s ease-in-out;

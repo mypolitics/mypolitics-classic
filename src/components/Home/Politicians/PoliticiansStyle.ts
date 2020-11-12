@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   padding: 2rem 1rem;
-  background: #00B3DB;
+  background: var(--blue-1);
   
   @media only screen and (min-width: 768px) {
     padding: 4rem 2rem;

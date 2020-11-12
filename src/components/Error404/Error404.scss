@@ -9,7 +9,7 @@
     text-align: center;
     margin: 0;
     padding: 1rem;
-    background: #ececec;
+    background: var(--gray-3);
     border-radius: 0.5rem;
   }
 
@@ -19,14 +19,14 @@
   }
 
   &__link {
-    background: #00b4db;
-    background: -webkit-linear-gradient(to right, #00b4db, #0083b0);
-    background: linear-gradient(to right, #00b4db, #0083b0);
+    background: var(--blue-3);
+    background: -webkit-linear-gradient(to right, var(--blue-3), #0083b0);
+    background: #0083b0;
     padding: 1rem;
     font-weight: 600;
     border: 0;
     border-radius: 0.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
     width: calc(100% - 2rem);
     text-align: center;
     text-decoration: none;

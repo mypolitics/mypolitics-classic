@@ -23,7 +23,7 @@ export const Label = styled.span`
   align-items: center;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  background: #ececec;
+  background: var(--gray-3);
   font-weight: 600;
   text-align: center;
 `;
@@ -34,11 +34,12 @@ export const StyledInput = styled.input`
   border: 0;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  background: #f5f5f5;
+  background: var(--gray-2);
   font-weight: 600;
   box-sizing: border-box;
   min-width: 100%;
   max-width: 100%;
+  color: var(--black);
   
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -71,7 +72,7 @@ export const Checkbox = styled.div`
   svg {
     opacity: 0;
     transition: 0.2s ease-in-out;
-    color: #FFF;
+    color: var(--white);
   }
 
   ${StyledInput}:checked ~ & svg {

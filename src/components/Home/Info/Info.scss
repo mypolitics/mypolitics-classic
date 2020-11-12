@@ -1,12 +1,12 @@
 .home__info {
   padding: 2rem 1rem;
-  background: #F5F5F5;
+  background: var(--gray-2);
   &__container {
     width: 100%;
   }
 
   &__title {
-    color: #111;
+    color: var(--black-1);
     margin: 0;
     padding-bottom: 2rem;
     line-height: 1.2;
@@ -41,7 +41,7 @@
 
     &--green {
       background: #27ae60;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #2ecc71;
       }
@@ -49,7 +49,7 @@
 
     &--violet {
       background: #703688;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #8e44ad;
       }
@@ -57,7 +57,7 @@
 
     &--blue {
       background: #2980b9;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #3498db;
       }
@@ -65,7 +65,7 @@
 
     &--red {
       background: #ae2326;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #c3272b;
       }
@@ -73,7 +73,7 @@
 
     &--orange {
       background: #f39c12;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #fdaf35;
       }
@@ -81,7 +81,7 @@
 
     &--turquoise {
       background: #16a085;
-      color: #fafafa;
+      color: var(--gray-1);
       .home__info__card__value {
         background: #1abc9c;
       }

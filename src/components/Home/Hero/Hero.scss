@@ -33,22 +33,22 @@
   }
   &__btn {
     border: 0;
-    background: #fafafa;
+    background: var(--gray-1);
     border-radius: 0.5rem;
     padding: 1rem;
     font-size: 1.2rem;
     cursor: pointer;
     font-weight: 700;
-    color: #111;
+    color: var(--black-1);
     text-decoration: none;
     display: inline-block;
     transition: 0.2s ease-in-out;
     &:hover {
-      color: #00b4db;
+      color: var(--blue-3);
       transform: scale(1.05);
     }
     &:active {
-      color: #00b4db;
+      color: var(--blue-3);
       transform: scale(1.025);
     }
   }

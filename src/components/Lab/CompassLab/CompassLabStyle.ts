@@ -14,6 +14,7 @@ export const CompassContainer = styled.div`
   position: relative;
   min-height: 15rem;
   min-width: 15rem;
+  --black: #000;
   
   @media only screen and (min-width: 768px) {
     min-height: 20rem;
@@ -84,8 +85,8 @@ export const QuestionLink = styled.a`
   height: 1.5rem;
   width: 1.5rem;
   padding: 0;
-  background: #F5F5F5;
-  color: #111;
+  background: var(--gray-2);
+  color: var(--black-1);
   margin-left: 0.5em;
   font-size: 0.75rem;
 `;

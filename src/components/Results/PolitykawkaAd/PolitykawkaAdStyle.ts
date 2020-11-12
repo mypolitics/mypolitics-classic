@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #F2F2F2;
+  background: var(--gray-2);
   border-radius: 0.5rem;
   margin-top: 1rem;
   padding: 1.5rem;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
   font-size: 1.25rem;
   font-weight: 700;
-  color: #00B3DB;
+  color: var(--blue-3);
   text-align: center;
   margin: 0 0 1.5rem;
   

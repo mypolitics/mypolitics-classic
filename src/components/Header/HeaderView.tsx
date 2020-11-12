@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 
 import './Header.scss';
 import { ReactComponent as Logo } from 'assets/vectors/logo.svg';
 import Nav from './Nav';
+import { ThemeContext } from '../App/AppView';
 
-library.add(faBars, faTimes);
+library.add(faBars, faTimes, faSun);
 
 type Props = {
   toggleNav: Function
@@ -17,6 +18,13 @@ type Props = {
 
 export const HeaderView: React.FC<Props> = (props) => {
   const { toggleNav, showNav } = props;
+  const { theme, setTheme } = React.useContext(ThemeContext);
+
+  const toggleTheme = () => {
+    const newValue = theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', newValue);
+    setTheme(newValue);
+  };
 
   return (
     <header className="header">
@@ -24,10 +32,15 @@ export const HeaderView: React.FC<Props> = (props) => {
         <Link to="/">
           <Logo />
         </Link>
-        <button className="header__nav__btn" type="button" onClick={() => toggleNav()}>
-          {!showNav && <FaIcon icon={faBars} />}
-          {showNav && <FaIcon icon={faTimes} />}
-        </button>
+        <div>
+          <button className="header__nav__btn header__nav__btn-mode" type="button" onClick={() => toggleTheme()}>
+            <FaIcon icon={faSun} />
+          </button>
+          <button className="header__nav__btn" type="button" onClick={() => toggleNav()}>
+            {!showNav && <FaIcon icon={faBars} />}
+            {showNav && <FaIcon icon={faTimes} />}
+          </button>
+        </div>
       </div>
       <Nav toggleNav={toggleNav} showNav={showNav} />
     </header>

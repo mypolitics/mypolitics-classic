@@ -61,7 +61,7 @@ const ModalAd: React.FC<Props> = ({ results, loading }: Props) => {
   return (
     <>
       {!loading && (
-        <ButtonsContainer>
+        <ButtonsContainer className="results-ad-buttons">
           <MainButtonLink
             as="a"
             target="_blank"

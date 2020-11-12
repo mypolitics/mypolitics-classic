@@ -17,38 +17,45 @@ import Footer from '../Footer';
 import { Content } from './AppStyle';
 
 const Lab = React.lazy(() => import('components/Lab'));
+export const ThemeContext = React.createContext<any>([{}, () => {}]);
 
 library.add(faBars, faTimes);
 
-const App: React.FC = () => (
-  <div className="app">
-    <Helmet>
-      <title>myPolitics – Test poglądów politycznych</title>
-      <meta property="og:title" content="myPolitics – Test poglądów politycznych" />
-      <meta name="description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
-      <meta property="og:description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
-      <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
-    </Helmet>
-    <Router>
-      <Header />
-      <Content>
-        <React.Suspense fallback={null}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/quiz" component={Quiz} />
-              <Route path="/results/:id" component={Results} />
-              <Route path="/history" component={ResultsHistory} />
-              <Route path="/privacy" component={Privacy} />
-              <Route path="/404" component={Error404} />
-              <Route path="/lab" component={Lab} />
-              <Route path="/team" component={Team} />
-              <Route path="*" component={Error404} />
-            </Switch>
-        </React.Suspense>
-      </Content>
-      <Footer />
-    </Router>
-  </div>
-);
+const App: React.FC = () => {
+  const [theme, setTheme] = React.useState(localStorage.getItem('theme') || 'light');
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div className={`app ${theme}`}>
+        <Helmet>
+          <title>myPolitics – Test poglądów politycznych</title>
+          <meta property="og:title" content="myPolitics – Test poglądów politycznych" />
+          <meta name="description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
+          <meta property="og:description" content="Test polityczny ukazujący twoje poglądy na siedmiu osiach." />
+          <meta property="og:image" content="/images/thumbnails/mypolitics.png" />
+        </Helmet>
+        <Router>
+          <Header />
+          <Content>
+            <React.Suspense fallback={null}>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/quiz" component={Quiz} />
+                <Route path="/results/:id" component={Results} />
+                <Route path="/history" component={ResultsHistory} />
+                <Route path="/privacy" component={Privacy} />
+                <Route path="/404" component={Error404} />
+                <Route path="/lab" component={Lab} />
+                <Route path="/team" component={Team} />
+                <Route path="*" component={Error404} />
+              </Switch>
+            </React.Suspense>
+          </Content>
+          <Footer />
+        </Router>
+      </div>
+    </ThemeContext.Provider>
+  );
+}
 
 export default App;

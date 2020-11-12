@@ -6,27 +6,27 @@
   transition: 0.2s ease-in-out;
 
   &--darkgreen {
-    color: #fafafa;
+    color: var(--gray-1);
     background: #16a085;
   }
 
   &--green {
-    color: #fafafa;
+    color: var(--gray-1);
     background: #2abb9b;
   }
 
   &--grey {
-    color: #111;
-    background: #fafafa;
+    color: var(--black-1);
+    background: var(--gray-1);
   }
 
   &--red {
-    color: #fafafa;
+    color: var(--gray-1);
     background: #d24d57;
   }
 
   &--darkred {
-    color: #fafafa;
+    color: var(--gray-1);
     background: #d64541;
   }
 

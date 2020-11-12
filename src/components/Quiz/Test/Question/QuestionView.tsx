@@ -14,7 +14,7 @@ const Question: React.FC<Props> = (props) => {
   return (
     <div className="test__question">
       {!loading && text}
-      {loading && <LoadingInfo colorHEX="#111" />}
+      {loading && <LoadingInfo colorHEX="var(--black-1)" />}
     </div>
   );
 };

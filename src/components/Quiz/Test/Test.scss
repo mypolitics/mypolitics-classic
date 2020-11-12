@@ -7,8 +7,8 @@
   }
 
   &__button-repair {
-    background: #00b4db;
-    color: #FFF;
+    background: var(--blue-3);
+    color: var(--white);
     font-weight: 600;
     display: flex;
     justify-content: center;

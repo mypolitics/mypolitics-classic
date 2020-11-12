@@ -66,7 +66,7 @@ export const getOrganizationElements = (
         elements.push(
           <div style={{
             ...style,
-            background: '#000',
+            background: 'var(--black)',
             opacity: 0.9,
           }}
           />,

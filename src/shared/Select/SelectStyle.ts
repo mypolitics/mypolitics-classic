@@ -6,6 +6,6 @@ export const Container = styled.select`
   border: 0;
   border-radius: 0.5rem;
   background: #00b4db;
-  color: #FFF;
+  color: var(--white);
   font-weight: 600;
 `;

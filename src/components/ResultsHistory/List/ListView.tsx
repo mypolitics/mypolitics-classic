@@ -44,7 +44,7 @@ const ListView: React.FC<Props> = (props) => {
           Po wykonaniu quizu twoje poprzednie wyniki pokażą się tutaj
         </div>
       )}
-      {loading && <LoadingInfo colorHEX="#111" />}
+      {loading && <LoadingInfo colorHEX="var(--black-1)" />}
     </div>
   );
 };

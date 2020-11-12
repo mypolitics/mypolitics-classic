@@ -22,10 +22,9 @@ class Header extends React.Component<any, State> {
     }));
   }
 
-  render = () => HeaderView({
-    toggleNav: this.toggleNav,
-    showNav: this.state.showNav,
-  })
+  render() {
+    return <HeaderView toggleNav={this.toggleNav} showNav={this.state.showNav} />;
+  }
 }
 
 export default Header;

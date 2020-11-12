@@ -13,7 +13,9 @@ class App extends React.Component<any> {
     }
   }
 
-  render = () => AppView({})
+  render() {
+    return <AppView />;
+  }
 }
 
 export default App;

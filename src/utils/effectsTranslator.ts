@@ -66,7 +66,7 @@ const translations: Translations = [
       },
       {
         name: 'anthropocentrism',
-        text: 'antropocentryzm',
+        text: 'industrializm',
       },
       {
         name: 'progressivism',

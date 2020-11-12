@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const Inner = styled.div`
   border-radius: 0.5rem;
   overflow: hidden;
-  background: #f5f5f5;
+  background: var(--gray-2);
   
   @media only screen and (min-width: 768px) {
     display: grid;
@@ -48,7 +48,7 @@ export const InfoContainer = styled.a<InfoContainerProps>`
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      background: #ECECEC;
+      background: var(--gray-3);
       font-weight: 600;
     `
   )}
@@ -65,5 +65,5 @@ export const Name = styled.div`
   align-items: center;
   padding: 1rem;
   font-weight: 600;
-  color: #FFF;
+  color: var(--white);
 `;

@@ -7,20 +7,20 @@
     text-align: center;
     margin: 0;
     padding: 1rem;
-    background: #ececec;
+    background: var(--gray-3);
     border-radius: 0.5rem;
   }
 
   &__info {
     padding: 1rem;
     border-radius: 0.5rem;
-    background: #f5f5f5;
+    background: var(--gray-2);
     font-weight: 700;
     font-size: 1.2rem;
     line-height: 1.2;
     margin: 1rem 0;
     & > span {
-      color: #00b4db;
+      color: var(--blue-3);
     }
     & > ol {
       list-style: none;
@@ -32,7 +32,7 @@
           content: counter(counter);
           counter-increment: counter;
           font-weight: 700;
-          color: #fafafa;
+          color: var(--gray-1);
           padding: 0.5rem;
           border-radius: 0.5rem;
           text-align: center;
@@ -41,12 +41,12 @@
           margin-right: 0.75rem;
           width: 1rem;
           display: table;
-          background: #00b4db;
-          background: linear-gradient(to right, #00b4db, #0083b0);
+          background: var(--blue-3);
+          background: #0083b0;
         }
 
         a, b {
-          color: #111;
+          color: var(--black-1);
           font-weight: 700;
         }
 
@@ -58,13 +58,13 @@
   }
 
   &__btn {
-    background: #00b4db;
-    background: linear-gradient(to right, #00b4db, #0083b0);
+    background: var(--blue-3);
+    background: #0083b0;
     padding: 1rem;
     font-weight: 600;
     border: 0;
     border-radius: 0.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
     width: 100%;
     text-align: center;
     text-decoration: none;

@@ -24,7 +24,7 @@ export const Button = styled.div`
   text-decoration: none;
   border-radius: 0.5rem;
   background: #00b3da;
-  color: #f5f5f5;
+  color: var(--gray-2);
   transition: 0.2s ease-in-out;
   cursor: pointer;
   font-weight: 600;

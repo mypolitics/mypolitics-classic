@@ -2,7 +2,7 @@
   padding: 2rem 1rem;
 
   &__title {
-    color: #111;
+    color: var(--black-1);
     margin: 0;
     padding-bottom: 2rem;
     line-height: 1.2;
@@ -15,7 +15,7 @@
   }
 
   &__el {
-    background: #fafafa;
+    background: var(--gray-1);
     border-radius: 0.5rem;
     overflow: hidden;
     &__value {
@@ -27,8 +27,8 @@
       padding: 1rem;
       font-weight: 600;
       font-size: 1.25rem;
-      color: #fafafa;
-      background: #00B3DB;
+      color: var(--gray-1);
+      background: var(--blue-1);
     }
   }
 }

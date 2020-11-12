@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 
 import 'normalize.css';
+import 'style.scss';
 import App from 'components/App';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './store';

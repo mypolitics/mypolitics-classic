@@ -47,7 +47,7 @@ const button = css`
   text-align: center;
   font-weight: 600;
   background: #00B3DB;
-  color: #FFF;
+  color: var(--white);
   border-radius: 0.5rem;
   border: 0;
   font-size: 1.1rem;
@@ -79,17 +79,18 @@ export const MainButtonLink = styled.a`
 export const Container = styled.article`
   display: grid;
   grid-template-columns: 100%;
-  background: #FFF;
+  background: var(--white);
   border-radius: 0.5rem;
   overflow: hidden;
   margin: 0.5rem;
   max-width: 30rem;
+  --white: FFF;
 `;
 
 export const TopContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 3rem;
-  background: #00B3DB;
+  background: var(--blue-1);
   
   @media only screen and (min-width: 768px) {
     grid-template-columns: 1fr 4rem;
@@ -99,7 +100,7 @@ export const TopContainer = styled.div`
 export const TopTitle = styled.header`
   padding: 1rem;
   font-size: 1.1rem;
-  color: #FFF;
+  color: var(--white);
   font-weight: 600;
   background: rgba(0, 0, 0, 0.1);
   
@@ -113,7 +114,7 @@ export const TopButton = styled.button`
   padding: 1rem;
   font-weight: 600;
   background: rgba(0, 0, 0, 0.2);
-  color: #FFF;
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,9 +134,9 @@ export const TopButton = styled.button`
 
 export const MiddleContainer = styled.section`
   padding: 1rem;
-  background: #00B3DB;
+  background: var(--blue-1);
   font-weight: 600;
-  color: #FFF;
+  color: var(--white);
   line-height: 1.2;
   
   @media only screen and (min-width: 768px) {
@@ -206,7 +207,7 @@ export const Link = styled.a<LinkProps>`
   align-items: center;
   font-weight: 600;
   background: #efc030;
-  color: #FFF;
+  color: var(--white);
   cursor: pointer;
   transition: 0.2s ease-in-out;
   

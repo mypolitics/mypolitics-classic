@@ -25,6 +25,7 @@ const PolitykawkaAdView: React.FC<Props> = ({ spheresResults }) => {
       <LinkWrapper>
         <Link href="https://politykawka.pl" target="_blank">
           <img
+            className="darkmode-bw-image"
             src="/images/politykawka.png"
             alt="Politykawka"
           />

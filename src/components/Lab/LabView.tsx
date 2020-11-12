@@ -88,7 +88,7 @@ const LabSection: React.FC<LabSectionProps> = ({ title, content }) => {
           )}
         </span>
       </SectionTitle>
-      <React.Suspense fallback={<LoadingInfo colorHEX="#111" />}>
+      <React.Suspense fallback={<LoadingInfo colorHEX="var(--black-1)" />}>
         {visible && content}
       </React.Suspense>
     </Section>

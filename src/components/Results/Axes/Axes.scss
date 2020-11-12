@@ -18,7 +18,7 @@
     width: 1.5rem;
     height: 1.5rem;
     font-size: 1.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
     cursor: pointer;
     &.big {
       font-size: 2rem;
@@ -47,10 +47,10 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
     &--grey {
-      background: #fafafa;
-      color: #111;
+      background: var(--gray-1);
+      color: var(--black-1);
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
@@ -69,7 +69,7 @@
         padding: 0.5rem;
         border-bottom-left-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
-        color: #FFF;
+        color: var(--white);
         font-weight: 600;
 
         &::after {
@@ -79,7 +79,7 @@
 
       span {
         padding: 0.5rem;
-        color: #FFF;
+        color: var(--white);
         font-weight: 600;
       }
 
@@ -90,11 +90,11 @@
 
         input {
           background: none;
-          color: #000;
+          color: var(--black);
         }
 
         span {
-          color: #000;
+          color: var(--black);
         }
       }
     }
@@ -120,7 +120,7 @@
     width: 1.5rem;
     height: 1.5rem;
     font-size: 1.5rem;
-    color: #fafafa;
+    color: var(--gray-1);
     &.big {
       font-size: 2rem;
       font-weight: 900;
@@ -147,7 +147,7 @@
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
   }
 
   &.left {
