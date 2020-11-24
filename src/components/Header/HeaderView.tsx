@@ -7,7 +7,7 @@ import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
 import './Header.scss';
 import { ReactComponent as Logo } from 'assets/vectors/logo.svg';
 import Nav from './Nav';
-import { ThemeContext } from '../App/AppView';
+import { ThemeContext } from '../App/ThemeContext';
 
 library.add(faBars, faTimes, faSun);
 
