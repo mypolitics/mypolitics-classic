@@ -18,14 +18,14 @@
     background: var(--gray-1);
     padding: 1rem;
     border-radius: 0.5rem;
-    color: #363636;
+    color: var(--black-2);
     line-height: 1.5;
     b {
       font-weight: 700;
     }
     h2,
     a {
-      color: #363636;
+      color: var(--black-2);
     }
     h2:first-child {
       margin-top: 0;

@@ -1,6 +1,7 @@
 $white: #FFF;
 $black: #000;
 $black-1: #111;
+$black-2: #363636;
 $gray-1: #FAFAFA;
 $gray-2: #F5F5F5;
 $gray-3: #ECECEC;
@@ -8,11 +9,13 @@ $blue-1: #00B3DB;
 $blue-2: #00A1C6;
 $blue-3: #00b4db;
 
-.app {
+body {
   min-height: 100vh;
+  background: var(--white);
   --white: #{$white};
   --black: #{$black};
   --black-1: #{$black-1};
+  --black-2: #{$black-2};
   --gray-1: #{$gray-1};
   --gray-2: #{$gray-2};
   --gray-3: #{$gray-3};
@@ -21,19 +24,16 @@ $blue-3: #00b4db;
   --blue-3: #{$blue-3};
 }
 
-.app, main {
-  background: var(--white);
-}
-
-.app.dark {
+body.dark {
   --white: #{invert($white)};
   --black: #{invert($black)};
   --black-1: #{invert($black-1)};
+  --black-2: #{invert($black-2)};
   --gray-1: #{invert($gray-1)};
   --gray-2: #{invert($gray-2)};
   --gray-3: #{invert($gray-3)};
-  --blue-1: #{darken($blue-1, 40%)};
-  --blue-2: #{darken($blue-2, 40%)};
+  --blue-1: #{darken($blue-1, 10%)};
+  --blue-2: #{darken($blue-2, 10%)};
   --blue-3: #{darken($white, 20%)};
 
   .home__hero__overlay {
@@ -59,4 +59,9 @@ $blue-3: #00b4db;
   img, ins {
     filter: brightness(85%);
   }
+
+  .team__list__title, .team__list__element span, .privacy__title {
+    color: var(--black);
+  }
+
 }
