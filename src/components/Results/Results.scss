@@ -85,6 +85,22 @@
     }
   }
 
+  &__info {
+    padding: 2rem;
+    height: 100%;
+    background: var(--gray-2);
+    color: var(--black-1);
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    line-height: 1.2;
+  }
+
   &__inner {
     display: grid;
     grid-gap: 1rem;
@@ -121,6 +137,14 @@
       }
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    &__column.classic {
+      grid-template-rows: auto auto 1fr;
+
+      & > div {
+        margin: 0;
       }
     }
   }

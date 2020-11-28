@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import LoadingInfo from 'components/LoadingInfo';
 import { Results } from 'store/results/types';
-import { SpheresVariant, SpheresType } from 'utils/spheresCalculator';
+import { SpheresType, SpheresVariant } from 'utils/spheresCalculator';
 import Axes from './Axes';
 import Ideology from './Ideology';
 import Compass from './Compass';
@@ -34,6 +34,7 @@ const ResultsView: React.FC<Props> = ({
 }) => {
   const isPolitician = !loading && results.id && politicansResults.map((r) => r.id).includes(results.id);
   const politician = isPolitician ? politicansResults.find((r) => r.id === results.id) : false;
+  const isClassic = spheresCalcMethod === SpheresVariant.Classic;
 
   React.useEffect(() => {
     if (!loading) {
@@ -116,7 +117,7 @@ const ResultsView: React.FC<Props> = ({
               <Axes results={results} />
               {actions}
             </div>
-            <div className="results__inner__column">
+            <div className={`results__inner__column ${isClassic ? 'classic' : ''}`}>
               <Ideology spheresResults={spheresResults} />
               <Compass
                 results={results}
@@ -124,8 +125,17 @@ const ResultsView: React.FC<Props> = ({
                 spheresCalcMethod={spheresCalcMethod}
                 onSpheresCalcMethod={onSpheresCalcMethod}
               />
-              <Party spheresResults={spheresResults} />
-              <YoutOrg spheresResults={spheresResults} />
+              {!isClassic && (
+                <>
+                  <Party spheresResults={spheresResults} />
+                  <YoutOrg spheresResults={spheresResults} />
+                </>
+              )}
+              {isClassic && (
+                <div className="results__info">
+                  Informacje dodatkowe nie są dostępne w&nbsp;trybie klasycznym
+                </div>
+              )}
             </div>
             {actions}
           </div>
