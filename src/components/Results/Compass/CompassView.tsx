@@ -88,7 +88,7 @@ const CompassView: React.FC<Props> = ({
         </div>
         <div className="compass__method">
           <span className="method__title">
-            Rodzaj
+            Tryb
           </span>
           <button
             type="button"
