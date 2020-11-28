@@ -166,7 +166,7 @@ const ResultsView: React.FC<Props> = ({
             style={{
               display: 'block',
               width: '100%',
-              marginBottom: '1rem',
+              marginTop: '1rem',
             }}
             data-ad-client="ca-pub-2006154132998057"
             data-ad-slot="2610433460"

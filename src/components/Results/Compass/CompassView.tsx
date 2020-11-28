@@ -22,7 +22,7 @@ const CompassView: React.FC<Props> = ({
   const isClassic = spheresCalcMethod === SpheresVariant.Classic;
 
   const thirdAxePosition = (
-    (progressivism / (progressivism + traditionalism)) * 100
+    Math.abs((traditionalism - progressivism) - 100) / 2
   );
 
   const axisResultsInfo = (value: number): string => (
@@ -81,7 +81,7 @@ const CompassView: React.FC<Props> = ({
                 Progresywizm:&nbsp;
               </div>
               <div className="compass__info__value">
-                {axisResultsInfo(thirdAxePosition/ 100)}
+                {axisResultsInfo(thirdAxePosition / 100)}
               </div>
             </div>
           )}

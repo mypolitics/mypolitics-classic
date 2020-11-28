@@ -52,11 +52,9 @@ const calcSocialSphere = (axes: AxesResults, method: SpheresVariant): number => 
 
   const calcClassic = () => {
     const { left, right } = axesSides[2];
-    const socialSum = axes[left] + axes[right];
-    const socialLeft = (axes[left] / socialSum) * 100;
-    const socialRight = (axes[right] / socialSum) * 100;
+    const socialLeft = axes[left];
+    const socialRight = axes[right];
     const socialDifference = socialRight - socialLeft;
-    console.log(socialLeft, socialRight)
     return socialDifference / 100;
   };
 
