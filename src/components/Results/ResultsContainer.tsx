@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 
 import './Results.scss';
-import calcSpheresResults, { SpheresCalculatorMethod } from 'utils/spheresCalculator';
+import calcSpheresResults, { SpheresVariant } from 'utils/spheresCalculator';
 import { mapDispatcherToProps, mapStateToProps } from './ResultsRedux';
 import LoadingInfo from '../LoadingInfo';
 import ResultsView from './ResultsView';
@@ -21,8 +21,8 @@ const Results: React.FC<Props> = ({
   history,
 }) => {
   const [loading, setLoading] = React.useState<boolean>(true);
-  const [spheresCalcMethod, setSpheresCalcMethod] = React.useState<SpheresCalculatorMethod>(
-    SpheresCalculatorMethod.New,
+  const [spheresCalcMethod, setSpheresCalcMethod] = React.useState<SpheresVariant>(
+    SpheresVariant.Extended,
   );
   const getCalculatedSpheresResults = React.useCallback(() => calcSpheresResults(
     resultsData,
@@ -30,7 +30,7 @@ const Results: React.FC<Props> = ({
   ), [resultsData, spheresCalcMethod]);
   const spheresResults = getCalculatedSpheresResults();
 
-  const handleSpheresCalcMethod = (method: SpheresCalculatorMethod) => (
+  const handleSpheresCalcMethod = (method: SpheresVariant) => (
     setSpheresCalcMethod(method)
   );
 

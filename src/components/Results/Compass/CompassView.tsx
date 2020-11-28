@@ -1,35 +1,33 @@
 import * as React from 'react';
 import './Compass.scss';
 
-import { SpheresCalculatorMethod, SpheresType } from 'utils/spheresCalculator';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SpheresVariant, SpheresType } from 'utils/spheresCalculator';
+import { Results } from '../../../store/results/types';
 
 interface Props {
+  results: Results
   spheresResults: SpheresType
-  spheresCalcMethod: SpheresCalculatorMethod
-  onSpheresCalcMethod(method: SpheresCalculatorMethod): void
+  spheresCalcMethod: SpheresVariant
+  onSpheresCalcMethod(method: SpheresVariant): void
 }
 
 const CompassView: React.FC<Props> = ({
   spheresCalcMethod,
   spheresResults,
   onSpheresCalcMethod,
+  results,
 }) => {
   const { economics, social } = spheresResults;
-  const isOldMethod = spheresCalcMethod === SpheresCalculatorMethod.Old;
+  const { progressivism, traditionalism } = results.axes;
+  const isClassic = spheresCalcMethod === SpheresVariant.Classic;
 
-  const axisResultsInfo = (value: number): string => {
-    let wing = '';
-    if (value < -0.33) {
-      wing = 'lewica';
-    } else if (value < 0.33) {
-      wing = 'centrum';
-    } else {
-      wing = 'prawica';
-    }
+  const thirdAxePosition = (
+    (progressivism / (progressivism + traditionalism)) * 100
+  );
 
-    return `${value.toFixed(1)} (${wing})`;
-  };
+  const axisResultsInfo = (value: number): string => (
+    value.toFixed(1)
+  );
 
   const correctPosition = (value: number): string => {
     const roundedValue = Math.round((value + Number.EPSILON) * 100) / 100;
@@ -45,15 +43,25 @@ const CompassView: React.FC<Props> = ({
 
   return (
     <div className="compass__container">
-      <div className="compass">
+      <div className={`compass ${isClassic ? 'classic' : ''}`}>
         <div className="compass__chart">
           <img src="/vectors/chart.svg" alt="Wykres" />
           <div className="compass__point" style={style} />
         </div>
+        {isClassic && (
+          <div className="compass__gradient">
+            <div className="compass__gradient-inner">
+              <div
+                className="compass__gradient-pointer"
+                style={{ top: `${thirdAxePosition}%` }}
+              />
+            </div>
+          </div>
+        )}
         <div className="compass__info">
           <div className="compass__info__el">
             <div className="compass__info__title">
-              Oś ekonomiczna:&nbsp;
+              Ekonomiczna:&nbsp;
             </div>
             <div className="compass__info__value">
               {axisResultsInfo(economics)}
@@ -61,38 +69,40 @@ const CompassView: React.FC<Props> = ({
           </div>
           <div className="compass__info__el">
             <div className="compass__info__title">
-              Oś obyczajowa:&nbsp;
+              Społeczna:&nbsp;
             </div>
             <div className="compass__info__value">
               {axisResultsInfo(social)}
             </div>
           </div>
+          {isClassic && (
+            <div className="compass__info__el">
+              <div className="compass__info__title">
+                Progresywizm:&nbsp;
+              </div>
+              <div className="compass__info__value">
+                {axisResultsInfo(thirdAxePosition/ 100)}
+              </div>
+            </div>
+          )}
         </div>
         <div className="compass__method">
           <span className="method__title">
-            Metoda
-            <a
-              className="method__button"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://l.orlow.me/mypolitics-metoda"
-            >
-              <FontAwesomeIcon icon="question" />
-            </a>
+            Rodzaj
           </span>
           <button
             type="button"
-            className={`method__button ${isOldMethod && 'selected'}`}
-            onClick={() => onSpheresCalcMethod(SpheresCalculatorMethod.Old)}
+            className={`method__button ${isClassic && 'selected'}`}
+            onClick={() => onSpheresCalcMethod(SpheresVariant.Classic)}
           >
-            Stara
+            Klasyczny
           </button>
           <button
             type="button"
-            className={`method__button ${!isOldMethod && 'selected'}`}
-            onClick={() => onSpheresCalcMethod(SpheresCalculatorMethod.New)}
+            className={`method__button ${!isClassic && 'selected'}`}
+            onClick={() => onSpheresCalcMethod(SpheresVariant.Extended)}
           >
-            Nowa
+            Rozszerzony
           </button>
         </div>
       </div>
