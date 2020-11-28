@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import LoadingInfo from 'components/LoadingInfo';
 import { Results } from 'store/results/types';
-import { SpheresCalculatorMethod, SpheresType } from 'utils/spheresCalculator';
+import { SpheresVariant, SpheresType } from 'utils/spheresCalculator';
 import Axes from './Axes';
 import Ideology from './Ideology';
 import Compass from './Compass';
@@ -19,8 +19,8 @@ type Props = {
   loading: boolean
   results: Results
   spheresResults: SpheresType
-  spheresCalcMethod: SpheresCalculatorMethod
-  onSpheresCalcMethod(method: SpheresCalculatorMethod): void
+  spheresCalcMethod: SpheresVariant
+  onSpheresCalcMethod(method: SpheresVariant): void
 };
 
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -119,6 +119,7 @@ const ResultsView: React.FC<Props> = ({
             <div className="results__inner__column">
               <Ideology spheresResults={spheresResults} />
               <Compass
+                results={results}
                 spheresResults={spheresResults}
                 spheresCalcMethod={spheresCalcMethod}
                 onSpheresCalcMethod={onSpheresCalcMethod}

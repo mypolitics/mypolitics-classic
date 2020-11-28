@@ -8,7 +8,7 @@ import './Answer.scss';
 import { calcResults } from 'utils/resultsCalculator';
 import { mapStateToProps, mapDispatcherToProps } from './AnswerRedux';
 import AnswerView, { Props as AnswerProps } from './AnswerView';
-import calcSpheresResults, { SpheresCalculatorMethod } from '../../../../../utils/spheresCalculator';
+import calcSpheresResults, { SpheresVariant } from '../../../../../utils/spheresCalculator';
 import findIdeology from '../../../../../utils/ideologyFinder';
 import findParty from '../../../../../utils/partyFinder';
 import findYouthOrg from '../../../../../utils/youthOrgFinder';
@@ -61,7 +61,7 @@ class Answer extends React.Component<Props> {
       const results = calcResults(this.props.answers);
       const spheresResults = calcSpheresResults(
         results,
-        SpheresCalculatorMethod.New,
+        SpheresVariant.Extended,
       );
       const { economics, social } = spheresResults;
       const quarter: string = getQuarterName(spheresResults);

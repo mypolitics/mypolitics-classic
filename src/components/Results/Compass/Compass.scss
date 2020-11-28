@@ -1,23 +1,28 @@
-@mixin chart($height) {
+@mixin chart($height, $withGradient: flase) {
   grid-template-columns: $height calc(100% - #{$height});
+
+  @if $withGradient {
+    grid-template-columns: $height 3rem calc(100% - #{$height} - 3rem);
+  }
 
   &__chart {
     grid-area: chart;
     position: relative;
-    height: $height;
-    width: $height;
+    height: 100%;
+    width: 100%;
+    display: block;
     img {
       display: block;
-      width: $height;
-      height: $height;
+      height: 100%;
+      width: 100%;
     }
   }
 
   &__info {
     $padding: $height / 4;
     grid-gap: $padding / 2;
-    width: calc(100% - #{$padding * 2});
-    padding: $padding / 6 $padding;
+    width: calc(100% - #{$padding});
+    padding: $padding / 2;
     @media only screen and (min-width: 400px) {
       padding: $padding / 2 $padding;
     }
@@ -25,7 +30,7 @@
 }
 
 .compass {
-  @include chart(6rem);
+  @include chart(7rem, false);
   display: grid;
   margin: auto;
   width: 100%;
@@ -35,6 +40,47 @@
   grid-template-areas:
     "chart info"
     "method method";
+
+  &.classic {
+    @include chart(7rem, true);
+
+    grid-template-areas:
+      "chart gradient info"
+      "method method method";
+
+    @media only screen and (max-width: 400px) {
+      grid-template-columns: auto 4rem;
+      grid-template-areas:
+              "chart gradient"
+              "info info"
+              "method method";
+    }
+  }
+
+  &__gradient {
+    grid-area: gradient;
+    padding: 0.5rem;
+    background: var(--gray-2);
+
+    &-inner {
+      background: linear-gradient(to top, #1141bb, #11bb4a);
+      height: 100%;
+      width: 100%;
+      border-radius: 0.25rem;
+      position: relative;
+    }
+
+    &-pointer {
+      position: absolute;
+      width: calc(100% + 0.5rem);
+      top: 75%;
+      left: -0.25rem;
+      height: 0.5rem;
+      border-radius: 0.15rem;
+      background: #00b3da;
+      border: 0.1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
 
   &__point {
     width: 1rem;
@@ -55,12 +101,15 @@
     &__el {
       display: flex;
       justify-content: left;
-      flex-direction: column;
       align-items: center;
       height: 100%;
       font-weight: 600;
       width: 100%;
       font-size: 1rem;
+
+      @media only screen and (max-width: 400px) {
+        flex-direction: column;
+      }
     }
 
     &__value {
@@ -76,7 +125,7 @@
     .method__button {
       background: var(--gray-3);
       border: 0;
-      padding: 0.5rem;
+      padding: 0.75rem;
       cursor: pointer;
       transition: 0.2s ease-in-out;
       font-weight: 600;
@@ -127,7 +176,7 @@
 
 @media only screen and (min-width: 768px) {
   .compass {
-    @include chart(10rem);
+    @include chart(10rem, false);
     &__info__el {
       font-size: 1.2rem;
     }
@@ -135,5 +184,13 @@
     grid-template-areas:
       "chart info"
       "chart method";
+
+    &.classic {
+      @include chart(12rem, true);
+
+      grid-template-areas:
+        "chart gradient info"
+        "chart gradient method";
+    }
   }
 }
