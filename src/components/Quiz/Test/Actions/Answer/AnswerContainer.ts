@@ -88,6 +88,8 @@ class Answer extends React.Component<Props> {
         youthOrg: youthOrg ? youthOrg.name : 'NONE',
       });
 
+      localStorage.setItem('last-id', resultsId);
+
       clearQuizData();
       this.props.history.push(`/results/${resultsId}`);
     } else {

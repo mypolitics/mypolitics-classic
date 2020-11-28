@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { FontAwesomeIcon as FaIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import LoadingInfo from 'components/LoadingInfo';
 import { Results } from 'store/results/types';
 import { SpheresType, SpheresVariant } from 'utils/spheresCalculator';
@@ -11,9 +14,12 @@ import Party from './Party';
 import Actions from './Actions';
 import YoutOrg from './YouthOrg';
 import ModalAd from './ModalAd';
+import Rate from './Rate';
 import PolitykawkaAdView from './PolitykawkaAd';
 import { politicansResults } from '../../utils/politicansResults';
 import PoliticiansResultsList from '../PoliticiansResultsList/PoliticiansResultsListView';
+
+library.add(faThumbsDown, faThumbsUp);
 
 type Props = {
   loading: boolean
@@ -35,6 +41,7 @@ const ResultsView: React.FC<Props> = ({
   const isPolitician = !loading && results.id && politicansResults.map((r) => r.id).includes(results.id);
   const politician = isPolitician ? politicansResults.find((r) => r.id === results.id) : false;
   const isClassic = spheresCalcMethod === SpheresVariant.Classic;
+  const canRate = results.id && localStorage.getItem('last-id') === results.id;
 
   React.useEffect(() => {
     if (!loading) {
@@ -80,24 +87,27 @@ const ResultsView: React.FC<Props> = ({
       )}
       {!loading && spheresResults && (
         <div>
-          <h1 className="results__title">
-            {!isPolitician && (
-              <>
-                Wyniki z
-                {' '}
-                {new Date(results.additionDate).toLocaleDateString(
-                  'pl-PL',
-                  dateOptions,
-                )}
-                {results.generated && (
-                  <span className="results__title-generated">Wygenerowane</span>
-                )}
-              </>
-            )}
-            {politician && (
-              politician.person.name
-            )}
-          </h1>
+          <div className={`results__header ${canRate ? 'with-rate' : ''}`}>
+            <h1 className="results__title">
+              {!isPolitician && (
+                <>
+                  Wyniki z
+                  {' '}
+                  {new Date(results.additionDate).toLocaleDateString(
+                    'pl-PL',
+                    dateOptions,
+                  )}
+                  {results.generated && (
+                    <span className="results__title-generated">Wygenerowane</span>
+                  )}
+                </>
+              )}
+              {politician && (
+                politician.person.name
+              )}
+            </h1>
+            {canRate && <Rate results={results} />}
+          </div>
 
           {politician && (
             <div className="results__politician">
@@ -147,7 +157,7 @@ const ResultsView: React.FC<Props> = ({
         loading={loading}
       />
       {!loading && spheresResults && (
-        <PolitykawkaAdView spheresResults={spheresResults}/>
+        <PolitykawkaAdView spheresResults={spheresResults} />
       )}
       {!loading && (
         <>

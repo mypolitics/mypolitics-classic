@@ -2,6 +2,19 @@
   margin: 80px auto 4rem;
   padding: 1rem;
   max-width: 1200px;
+  &__header {
+    display: grid;
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+    grid-template-columns: 100%;
+
+    @media only screen and (min-width: 500px) {
+      &.with-rate {
+        grid-template-columns: 1fr auto;
+      }
+    }
+  }
+
   &__title {
     display: flex;
     justify-content: center;
@@ -12,9 +25,7 @@
     color: var(--gray-1);
     padding: 1rem;
     background: #00A6CB;
-    background: #00A6CB;
     margin: 0;
-    margin-bottom: 1.5rem;
 
     &-generated {
       margin-left: 1rem;
