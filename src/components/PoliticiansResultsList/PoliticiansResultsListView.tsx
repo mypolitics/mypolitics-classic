@@ -1,11 +1,11 @@
 import React from 'react';
 import { ListContainer, ListElement, ListElementImage, ListElementTitle } from './PoliticiansResultsListStyle';
-import { politicansResults } from '../../utils/politicansResults';
+import { politiciansResults } from '../../utils/politiciansResults';
 import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 
 const PoliticiansResultsListView: React.FC = () => {
-  const politiciansResultsShuffled = politicansResults.sort(() => 0.5 - Math.random());
+  const politiciansResultsShuffled = politiciansResults.sort(() => 0.5 - Math.random());
 
   const handleClick = (name: string) => {
     ReactGA.event({

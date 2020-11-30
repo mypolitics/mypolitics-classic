@@ -16,7 +16,7 @@ import YoutOrg from './YouthOrg';
 import ModalAd from './ModalAd';
 import Rate from './Rate';
 import PolitykawkaAdView from './PolitykawkaAd';
-import { politicansResults } from '../../utils/politicansResults';
+import { politiciansResults } from '../../utils/politiciansResults';
 import PoliticiansResultsList from '../PoliticiansResultsList/PoliticiansResultsListView';
 
 library.add(faThumbsDown, faThumbsUp);
@@ -38,8 +38,8 @@ const ResultsView: React.FC<Props> = ({
   spheresCalcMethod,
   onSpheresCalcMethod,
 }) => {
-  const isPolitician = !loading && results.id && politicansResults.map((r) => r.id).includes(results.id);
-  const politician = isPolitician ? politicansResults.find((r) => r.id === results.id) : false;
+  const isPolitician = !loading && results.id && politiciansResults.map((r) => r.id).includes(results.id);
+  const politician = isPolitician ? politiciansResults.find((r) => r.id === results.id) : false;
   const isClassic = spheresCalcMethod === SpheresVariant.Classic;
   const canRate = results.id && localStorage.getItem('last-id') === results.id;
 
